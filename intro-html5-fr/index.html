@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Introduction à HTML5</title>
+
+    <meta name="description" content="Slides" />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../assets/dist/reset.css" />
+    <link rel="stylesheet" href="../assets/dist/reveal.css" />
+    <link rel="stylesheet" href="../assets/dist/theme/maf.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <fi class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="./images/html5-logo.svg"
+            alt="HTML5 Logo"
+            title="Logo de HTML5"
+          />
+          <h2>Introduction à HTML5</h2>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Internet -->
+        <section>
+          <h3>Fonctionnement d'Internet</h3>
+          <div class="r-hstack space-between">
+            <div class="mr-4">
+              <p>
+                Internet est un réseau de dispositifs qui échangent de
+                l'information/des données.
+              </p>
+              <p>
+                À l'image, une vue partielle de internet en 2005. Chaque ligne
+                connecte deux adresses IP.
+              </p>
+            </div>
+            <figure class="r-stretch ml-4">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Internet_map_1024_-_transparent%2C_inverted.png"
+                alt="Partial map of the Internet based on the January 15, 2005"
+                title="Partial map of the Internet based on the January 15, 2005"
+              />
+              <figcaption>
+                <small
+                  >Crédits :
+                  <a
+                    href="https://commons.wikimedia.org/wiki/File:Internet_map_1024_-_transparent,_inverted.png"
+                    title="via Wikimedia Commons"
+                    >The Opte Project</a
+                  >
+                  /
+                  <a href="https://creativecommons.org/licenses/by/2.5"
+                    >CC BY</a
+                  ></small
+                >
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Web -->
+        <section>
+          <h3>Le World Wide Web</h3>
+          <div class="d-flex space-between">
+            <div>
+              <p>Le Web est une manière d'échanger des informations basée sur 3 éléments principaux :</p>
+              <ol>
+                <li>
+                  <abbr title="Uniform Resource Locator">URL</abbr> (adresse
+                  web)
+                </li>
+                <li>
+                  Protocole
+                  <abbr title="HyperText Transfer Protocol">HTTP</abbr>
+                </li>
+                <li class="accent">HyperText Mark-up Language (HTML)</li>
+              </ol>
+            </div>
+            <figure class="ml-4">
+              <img
+                src="./images/request-response.png"
+                alt="Web Architecture"
+                title="Requête/Réponse"
+              />
+              <figcaption>
+                <small
+                  >Le client fait une requête d'un URL et reçoit une réponse en
+                  HTML à travers le protocole HTTP(S).</small
+                >
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Première page web -->
+        <section class="align-center"">
+          <h3>Première page web</h3>
+            <img
+              src="https://edutechwiki.unige.ch/fmediawiki/images/7/76/HTML_premi%C3%A8re_page_web.png"
+              alt="Capture de la première page web"
+              title="Capture d'écran et code source de la première page du web"
+              class="r-stretch"
+            />
+            <p>
+              <small>
+                Apparence dans le navigateur (gauche) et code source HTML
+                (droite) de la <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">première page web</a> publiée par le CERN en 1990.
+              </small>
+            </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="../assets/dist/reveal.js"></script>
+    <script src="../assets/plugin/zoom/zoom.js"></script>
+    <script src="../assets/plugin/notes/notes.js"></script>
+    <script src="../assets/plugin/search/search.js"></script>
+    <script src="../assets/plugin/markdown/markdown.js"></script>
+    <script src="../assets/plugin/highlight/highlight.js"></script>
+    <script src="../assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
