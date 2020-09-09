@@ -16,9 +16,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://mafritz.ch/slides/assets/dist/reset.css" />
-    <link rel="stylesheet" href="https://mafritz.ch/slides/assets/dist/reveal.css" />
-    <link rel="stylesheet" href="https://mafritz.ch/slides/assets/dist/theme/maf.css" id="theme" />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
+      id="theme"
+    />
 
     <!-- Theme used for syntax highlighting of code -->
     <link
@@ -31,7 +41,7 @@
   <body>
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide -->
-      <fi class="slides">
+      <div class="slides">
         <!-- Title -->
         <section>
           <img
@@ -90,7 +100,10 @@
           <h3>Le World Wide Web</h3>
           <div class="d-flex space-between">
             <div>
-              <p>Le Web est une manière d'échanger des informations basée sur 3 éléments principaux :</p>
+              <p>
+                Le Web est une manière d'échanger des informations basée sur 3
+                éléments principaux :
+              </p>
               <ol>
                 <li>
                   <abbr title="Uniform Resource Locator">URL</abbr> (adresse
@@ -120,20 +133,214 @@
         </section>
 
         <!-- Première page web -->
-        <section class="align-center"">
+        <section class="align-center">
           <h3>Première page web</h3>
-            <img
-              src="https://edutechwiki.unige.ch/fmediawiki/images/7/76/HTML_premi%C3%A8re_page_web.png"
-              alt="Capture de la première page web"
-              title="Capture d'écran et code source de la première page du web"
-              class="r-stretch"
-            />
-            <p>
-              <small>
-                Apparence dans le navigateur (gauche) et code source HTML
-                (droite) de la <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">première page web</a> publiée par le CERN en 1990.
-              </small>
-            </p>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/7/76/HTML_premi%C3%A8re_page_web.png"
+            alt="Capture de la première page web"
+            title="Capture d'écran et code source de la première page du web"
+            class="r-stretch"
+          />
+          <p>
+            <small>
+              Apparence dans le navigateur (gauche) et code source HTML (droite)
+              de la
+              <a href="http://info.cern.ch/hypertext/WWW/TheProject.html"
+                >première page web</a
+              >
+              publiée par le CERN en 1990.
+            </small>
+          </p>
+        </section>
+
+        <!-- HTML5 -->
+        <section>
+          <h3>Example de code HTML5</h3>
+          <p>
+            HTML5 est la <span class="accent">cinquème version de HTML</span>,
+            caractérisée par l'entête à la ligne 1 du code suivant :
+          </p>
+          <pre><code data-line-numbers>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Document HTML5&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Je suis un document HTML5 !&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <!-- Language de marquage -->
+        <section>
+          <h3>Langage de marquage</h3>
+          <p>
+            HTML5 utilise une notation par
+            <span class="accent">balises</span>, ou tags en anglais, qui
+            consiste à contourner le contenu textuel avec des éléments qui en
+            qualifie la nature.
+          </p>
+          <pre><code><p>Ceci est le texte d'un paragraphe.</p></code></pre>
+          <pre><code><h1>Titre de niveaux 1</h1></code></pre>
+          <pre><code><a href="https://edutechwiki.unige.ch">Lien vers EduTechWiki</a></code></pre>
+        </section>
+
+        <!-- Nature combinatoire -->
+        <section>
+          <h3>Combiner les éléments</h3>
+          <p>
+            Le langage est de nature combinatoire. On peut <em>embôiter</em> les
+            éléments.
+          </p>
+          <pre><code><p>Si vous êtes intéressé-e-s par la technologie éducative, 
+vous devez absolument visiter 
+<a href="https://edutechwiki.unige.ch">EduTechWiki</a> 
+au plus vite !</p></code></pre>
+          <p>
+            Un lien hypertextuel qui permet de passer d'une page à l'autre est
+            inséré à l'intérieur d'un paragraphe.
+          </p>
+        </section>
+
+        <!-- Termes -->
+        <section>
+          <h3>Termes techniques</h3>
+          <p>
+            Pour pouvoir identifier les différents éléments dans un langage de
+            marquage, on utilise des termes techniques illustrés à l'image.
+          </p>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/c/c2/HTML5_balises_et_attributs.png"
+            class="r-stretch r-frame p-1"
+            alt="Termes techniques"
+            title="Termes techniques utilisés pour identifier les éléments dans un langage de marquage"
+          />
+        </section>
+
+        <!-- Contenu d'une balise -->
+        <section>
+          <h3>Contenu d'une balise</h3>
+          <p>Une balise HTML5 peut contenir :</p>
+          <ul>
+            <li>Du texte</li>
+            <li>Une ou plusieurs autres balises</li>
+            <li>Du texte combiné avec une ou plusieurs autres balises</li>
+            <li>Rien (balise vide)</li>
+          </ul>
+        </section>
+
+        <!-- Contenu textuel -->
+        <section>
+          <h3>Contenu textuel</h3>
+          <p>
+            Le contenu textuel se trouve directement à l'intérieur de la balise,
+            sans aucun marquage ultérieur.
+          </p>
+          <pre><code><p>Voici du contenut textuel simple dans un paragraphe.</p></code></pre>
+        </section>
+
+        <!-- Plusieurs balises -->
+        <section>
+          <h3>Contenu avec d'autres balises</h3>
+          <p>Plusieurs balises peuvent être emboîtés à différents niveaux.</p>
+          <pre><code><main>
+  <article>
+    <section>
+      <h1>Titre</h1>
+      <p>Paragraphe</p>
+    </section>
+  </article>
+</main></code></pre>
+          <p>
+            Dans ce cas, il est important de respecter
+            <span class="accent">l'ordre d'ouverture et clôture</span> des
+            balises.
+          </p>
+        </section>
+
+        <!-- Texte et balises -->
+        <section>
+          <h3>Contenu mixte</h3>
+          <p>Un balise peut contenir du texte mélangé avec d'autres balises.</p>
+          <pre><code>
+<p>Hello <strong>World</strong>! How are <em>you</em>?</p>
+          </code></pre>
+        </section>
+
+        <!-- Balises vides -->
+        <section>
+          <h3>Balises vides</h3>
+          <p>
+            Certains balises n'acceptent pas de contenu. Dans ces cas on utilise
+            une notation <em>auto-fermant</em> :
+          </p>
+          <pre><code>&lt;br /&gt;</code></pre>
+          <p>Les balises vides utilisent souvent des attributs :</p>
+          <pre><code>&lt;img src="my-photo.jpg" alt="Ma photo" title="Me voici !" /&gt;</code></pre>
+        </section>
+
+        <!-- DOM -->
+        <section class="align-center">
+          <h3>Document Object Model (DOM)</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/7/72/DOM_html_exemple_avec_couleurs.png"
+            alt="Exemple de DOM"
+            title="Représentation du Document Object Model (DOM)"
+            class="stretch"
+          />
+          <p>
+            <small
+              >L'ensemble du code d'une page détermine le DOM : la structure
+              hiérarchique des éléments.</small
+            >
+          </p>
+        </section>
+
+        <!-- Structure fixe -->
+        <section>
+          <h3>3 éléments fixe dans le DOM</h3>
+          <p>
+            Le DOM présente trois éléments fixes, le reste varie selon le
+            contenu : (1) la racine de la page est
+            <code class="accent">&lt;html&gt;</code> ; à l'intérieur de html se
+            trouvent (2) le <code class="accent">&lt;head&gt;</code> et (3) le
+            <code class="accent">&lt;body&gt;</code>
+          </p>
+
+          <pre><code data-trim>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;!-- Balises ici --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Balises ici --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <p>Toute autre balise va dans le head ou dans le body.</p>
+        </section>
+
+        <!-- Head -->
+        <section>
+          <h3>&lt;head&gt; : infos pour le navigateur</h3>
+        </section>
+
+        <!-- Body -->
+        <section>
+          <h3>&lt;body&gt; : contenu <em>visible</em></h3>
+        </section>
+
+        <!-- Règles syntaxiques -->
+        <section>
+          <h3>Règles syntaxiques</h3>
+          <p>
+            Tout comme un <em>vrai</em> langage, HTML5 a des règles syntaxiques
+            qui sont souvent d'ordre <em>logique</em>. Par exemple :
+          </p>
+          <ul>
+            <li>Test</li>
+          </ul>
         </section>
 
         <!-- End of slides -->

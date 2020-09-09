@@ -16,7 +16,7 @@ body {
   background-image: url(../../images/maf-logo-text-only-red.svg) !important;
   background-repeat: no-repeat !important;
   background-position: left 20px bottom 20px !important;
-  background-size: 97px !important;
+  background-size: contain;
 }
 
 section {
