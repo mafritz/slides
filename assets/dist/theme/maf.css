@@ -1,5 +1,8 @@
 /**
- * Adaptation of reveal.js theme
+ * A personal adaptation of the reveal.js main theme
+ *
+ * Original theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&family=Raleway:wght@400;600&display=swap");
 section.has-dark-background,
@@ -58,8 +61,16 @@ ul.times li:before {
   padding: 0 10px 0 0;
 }
 
+ul.check li:before {
+  font-family: "FontAwesome";
+  content: "\f058";
+  float: left;
+  color: #016121;
+  padding: 0 10px 0 0;
+}
+
 ul li.accent:before {
-  color: #970000;
+  color: #44546a;
 }
 
 input,
@@ -105,7 +116,51 @@ img.img-rounded {
 }
 
 .accent {
-  color: #970000;
+  color: #44546a;
+}
+
+figure {
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-success {
+  color: #016121;
+}
+
+.text-danger {
+  color: #f8d71b;
+}
+
+.text-error {
+  color: #dd0000;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-success {
+  background-color: #016121;
+}
+
+.bg-danger {
+  background-color: #f8d71b;
+}
+
+.bg-error {
+  background-color: #016121;
 }
 
 .m-1 {
@@ -368,13 +423,9 @@ img.img-rounded {
   border: 5px solid #970000;
 }
 
-figure {
-  text-align: center;
-}
-
 /*********************************************
- * GLOBAL STYLES
- *********************************************/
+  * GLOBAL STYLES
+  *********************************************/
 :root {
   --background-color: #fff;
   --main-font: Crimson Pro, sans-serif;
@@ -395,8 +446,8 @@ figure {
   --heading3-size: 1.55em;
   --heading4-size: 1em;
   --code-font: monospace;
-  --link-color: #143980;
-  --link-color-hover: #143980;
+  --link-color: #970000;
+  --link-color-hover: #fd0000;
   --selection-background-color: rgba(0, 0, 0, 0.99);
   --selection-color: #fff;
 }
@@ -432,8 +483,8 @@ figure {
 }
 
 /*********************************************
- * HEADERS
- *********************************************/
+  * HEADERS
+  *********************************************/
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -472,8 +523,8 @@ figure {
 }
 
 /*********************************************
- * OTHER
- *********************************************/
+  * OTHER
+  *********************************************/
 .reveal p {
   margin: 20px 0;
   line-height: 1.3;
@@ -640,17 +691,16 @@ figure {
 }
 
 /*********************************************
- * LINKS
- *********************************************/
+  * LINKS
+  *********************************************/
 .reveal a {
-  color: var(--link-color);
+  color: #970000;
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .reveal a:hover {
-  color: var(--link-color-hover);
-  text-decoration: underline;
+  color: #fd0000;
   text-shadow: none;
   border: none;
 }
@@ -661,8 +711,8 @@ figure {
 }
 
 /*********************************************
- * Frame helper
- *********************************************/
+  * Frame helper
+  *********************************************/
 .reveal .r-frame {
   border: 4px solid #3f3f3f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -678,23 +728,23 @@ figure {
 }
 
 /*********************************************
- * NAVIGATION CONTROLS
- *********************************************/
+  * NAVIGATION CONTROLS
+  *********************************************/
 .reveal .controls {
   color: #970000;
 }
 
 /*********************************************
- * PROGRESS BAR
- *********************************************/
+  * PROGRESS BAR
+  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
   color: #970000;
 }
 
 /*********************************************
- * PRINT BACKGROUND
- *********************************************/
+  * PRINT BACKGROUND
+  *********************************************/
 @media print {
   .backgrounds {
     background-color: #fff;

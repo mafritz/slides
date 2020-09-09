@@ -293,7 +293,7 @@ au plus vite !</p></code></pre>
 
         <!-- Structure fixe -->
         <section>
-          <h3>3 éléments fixe dans le DOM</h3>
+          <h3>3 éléments fixes dans le DOM</h3>
           <p>
             Le DOM présente trois éléments fixes, le reste varie selon le
             contenu : (1) la racine de la page est
@@ -328,16 +328,42 @@ au plus vite !</p></code></pre>
   &lt;title&gt;Titre dans le tab/fenêtre du navigateur&lt;/title&gt;
 &lt;/head&gt;
 </code></pre>
-          <p>
-            <i class="fas fa-exclamation-triangle"></i> La balise
-            <code class="accent">&lt;title&gt;</code> détermine aussi le label
-            du lien dans les moteurs de recherche.
-          </p>
+          <div class="r-frame">
+            <p class="text-center pr-1 pl-1">
+              <i class="fas fa-exclamation-triangle text-danger fa-2x"></i
+              ><br />
+              La balise
+              <code class="accent">&lt;title&gt;</code> détermine aussi le label
+              du lien dans les moteurs de recherche.
+            </p>
+          </div>
         </section>
 
         <!-- Body -->
         <section>
           <h3>&lt;body&gt; : contenu <em>visible</em></h3>
+          <p>
+            HTML5 structure le contenu avec des
+            <span class="accent">balises sémantiques</span>. Les propriétés
+            graphiques sont gérées avec
+            <abbr title="Cascading Style Sheets">CSS</abbr>.
+          </p>
+          <pre><code data-trim>&lt;body&gt;
+  &lt;header&gt;
+    &lt;img src="logo.png" alt="Logo" title="Mon logo" /&gt;
+  &lt;/header&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&copy; 2020&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
         </section>
 
         <!-- Règles syntaxiques -->
@@ -435,7 +461,7 @@ au plus vite !</p></code></pre>
               </tr>
               <tr>
                 <td scope="row">XHTML2.0</td>
-                <td class="accent">Jamais</td>
+                <td><span class="text-error">Jamais</span></td>
                 <td>
                   <small
                     >Format plus strict, non accepté par les producteurs des
@@ -466,6 +492,77 @@ au plus vite !</p></code></pre>
             <span class="accent">trop</span> flexible, et laisse ces aspects aux
             bonnes pratiques des créateurs des pages.
           </p>
+        </section>
+
+        <!-- Ecosystème -->
+        <section class="align-center">
+          <h3>L'écosystème HTML5</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/f/fe/HTML5-APIs-and-related-technologies-oct-2014.svg"
+            class="r-stretch r-frame p-1"
+            alt="Écosystème HTML5"
+            title="Technologies liées à
+          HTML5"
+          />
+          <p>
+            <small
+              >HTML5 related APIs. HTML5 & CSS3 Quick Reference by Sergey
+              Mavrody updated by Wikipedians. Source and copyright:
+              Wikipedia</small
+            >
+          </p>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a href="https://edutechwiki.unige.ch/fr/Introduction_%C3%A0_HTML5"
+              >un article sur EduTechWiki</a
+            >
+            dont je suis l'auteur principale.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <p>
+            Mattia A. Fritz<br />
+            TECFA, Université de Genève
+          </p>
+          <div>
+            <a href="mailto:mattia.fritz@unige.ch"
+              ><i class="fas fa-envelope fa-fw"></i
+            ></a>
+
+            <a href="https://mafritz.ch">
+              <i class="fas fa-link fa-fw"></i>
+            </a>
+
+            <a href="https://twitter.com/mattiafritz">
+              <i class="fab fa-twitter fa-fw"></i>
+            </a>
+
+            <a href="https://github.com/mafritz">
+              <i class="fab fa-github fa-fw"></i>
+            </a>
+
+            <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+              <i class="fab fa-researchgate fa-fw"></i>
+            </a>
+          </div>
         </section>
 
         <!-- End of slides -->
