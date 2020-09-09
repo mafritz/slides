@@ -2,12 +2,9 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-
     <title>Introduction à HTML5</title>
-
     <meta name="description" content="Slides" />
     <meta name="author" content="Mattia A. Fritz" />
-
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
@@ -24,11 +21,7 @@
       rel="stylesheet"
       href="https://mafritz.ch/slides/assets/dist/reveal.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
-      id="theme"
-    />
+    <link rel="stylesheet" href="../../assets/dist/theme/maf.css" id="theme" />
 
     <!-- Theme used for syntax highlighting of code -->
     <link
@@ -324,6 +317,22 @@ au plus vite !</p></code></pre>
         <!-- Head -->
         <section>
           <h3>&lt;head&gt; : infos pour le navigateur</h3>
+          <p>
+            Le head contient des infos comme le titre pour le tab du navigateur,
+            des méta-données, ou l'encodage des caractères.
+          </p>
+          <pre><code data-trim data-line-numbers>
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Titre dans le tab/fenêtre du navigateur&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+          <p>
+            <i class="fas fa-exclamation-triangle"></i> La balise
+            <code class="accent">&lt;title&gt;</code> détermine aussi le label
+            du lien dans les moteurs de recherche.
+          </p>
         </section>
 
         <!-- Body -->
@@ -338,9 +347,125 @@ au plus vite !</p></code></pre>
             Tout comme un <em>vrai</em> langage, HTML5 a des règles syntaxiques
             qui sont souvent d'ordre <em>logique</em>. Par exemple :
           </p>
-          <ul>
-            <li>Test</li>
+          <ul class="times">
+            <li>
+              Le head ne peut pas contenir des éléments du body et vice-versa
+            </li>
+            <li>
+              Un titre ne peut pas être inséré dans un paragraphe et vice-versa
+            </li>
+            <li>
+              Un paragraphe peut contenir un ou plusieurs liens, mais un lien ne
+              peut pas contenir un paragraphe
+            </li>
           </ul>
+        </section>
+
+        <!-- Qui décide ?-->
+        <section class="align-center">
+          <h3>Qui décide balises et règles ?</h3>
+
+          <div class="d-flex">
+            <div>
+              <p><i class="fas fa-book fa-2x"></i></p>
+              <p>
+                <em>Formellement</em>, un organisme appelé
+                <abbr title="World Wide Web Consortium">W3C</abbr> qui détermine
+                plusieurs standard du web.
+              </p>
+            </div>
+
+            <div>
+              <p>
+                <i class="fab fa-edge fa-2x"></i>
+                <i class="fab fa-chrome fa-2x"></i>
+                <i class="fab fa-safari fa-2x"></i>
+                <i class="fab fa-firefox fa-2x"></i>
+                <i class="fab fa-opera fa-2x"></i>
+              </p>
+              <p>
+                <em>De facto</em>, un groupe de travail composé par les
+                producteurs des navigateurs web, le
+                <abbr title="Web Hypertext Application Technology Working Group"
+                  >WHATWG</abbr
+                >.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Autre versions -->
+        <section>
+          <h3>Histoire de (X)HTML</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Version</th>
+                <th>Année</th>
+                <th>Entête</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">HTML</td>
+                <td>1991</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td scope="row">HTML4.01</td>
+                <td>1999</td>
+                <td>
+                  <small
+                    >&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01
+                    Transitional//EN"
+                    "http://www.w3.org/TR/html4/loose.dtd"&gt;</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">XHTML</td>
+                <td>2000</td>
+                <td>
+                  <small>
+                    &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+                    Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-
+                    transitional.dtd"&gt;
+                  </small>
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">XHTML2.0</td>
+                <td class="accent">Jamais</td>
+                <td>
+                  <small
+                    >Format plus strict, non accepté par les producteurs des
+                    navigateurs qui ont lancé un groupe parallèle.</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">HTML5</td>
+                <td>2014</td>
+                <td>&lt;!DOCTYPE html&gt;</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- HTML5 vs XHTML 2.0-->
+        <section>
+          <h3>HTML5 vs. XHTML 2.0</h3>
+          <p>
+            Le W3C visait implementer un standard plus strict avec XHTML 2.0.
+            Par exemple, le non respect d'ouverture et clôture des balises
+            aurait dû arrêter l'affichage de la page.
+          </p>
+          <pre><code>&lt;strong&gt;&lt;em&gt;Emboîtement non respecté&lt;/strong&gt;&lt;/em&gt;</code></pre>
+          <p>
+            HTML5 est plus flexible, parfois
+            <span class="accent">trop</span> flexible, et laisse ces aspects aux
+            bonnes pratiques des créateurs des pages.
+          </p>
         </section>
 
         <!-- End of slides -->

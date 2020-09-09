@@ -16,7 +16,7 @@ body {
   background-image: url(../../images/maf-logo-text-only-red.svg) !important;
   background-repeat: no-repeat !important;
   background-position: left 20px bottom 20px !important;
-  background-size: contain;
+  background-size: 97px !important;
 }
 
 section {
@@ -48,6 +48,14 @@ ul li:before {
   float: left;
   color: #44546a;
   padding: 0 0 0 0;
+}
+
+ul.times li:before {
+  font-family: "FontAwesome";
+  content: "\f057";
+  float: left;
+  color: #dd0000;
+  padding: 0 10px 0 0;
 }
 
 ul li.accent:before {
