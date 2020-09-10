@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Introduction à CSS</title>
+
+    <meta name="description" content="Slides" />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="./images/css3-logo.svg"
+            alt="CSS3 Logo"
+            title="Logo de CSS3"
+          />
+          <h2>Introduction à CSS</h2>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Bullets -->
+        <section>
+          <h3>Présentation</h3>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li class="accent">Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </section>
+
+        <!-- Form -->
+        <section>
+          <h3>Form</h3>
+          <form action="">
+            <input />
+            <select name="" id="">
+              <option>Hello</option>
+            </select>
+            <button>Hello</button>
+          </form>
+        </section>
+
+        <!-- Flex -->
+        <section>
+          <h3>Flex</h3>
+          <div class="r-hstack space-between">
+            <ul>
+              <li>Text</li>
+            </ul>
+            <ul>
+              <li>On side</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Citation -->
+        <section>
+          <h3>Citation</h3>
+          <blockquote>What is it ?</blockquote>
+        </section>
+
+        <!-- Side by side -->
+        <section class="align-center">
+          <h3>Side by side</h3>
+          <div class="d-flex space-evenly mt-2">
+            <i class="fab fa-node-js fa-4x p-5"></i>
+            <i class="fas fa-globe fa-4x"></i>
+            <i class="fas fa-hockey-puck fa-4x"></i>
+          </div>
+        </section>
+
+        <!-- Borders -->
+        <section>
+          <h3>Borders</h3>
+          <div class="d-flex space-evenly">
+            <div class="border-light-1 p-1">Hello !</div>
+            <div class="border-dark-3 p-1">World !</div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
