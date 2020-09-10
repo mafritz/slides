@@ -225,6 +225,7 @@ au plus vite !</p></code></pre>
             <li>Une ou plusieurs autres balises</li>
             <li>Du texte combiné avec une ou plusieurs autres balises</li>
             <li>Rien (balise vide)</li>
+            <li>Une référence à un fichier multi-média externe</li>
           </ul>
         </section>
 
@@ -274,8 +275,29 @@ au plus vite !</p></code></pre>
             une notation <em>auto-fermant</em> :
           </p>
           <pre><code>&lt;br /&gt;</code></pre>
-          <p>Les balises vides utilisent souvent des attributs :</p>
-          <pre><code>&lt;img src="my-photo.jpg" alt="Ma photo" title="Me voici !" /&gt;</code></pre>
+        </section>
+
+        <!-- Références externes -->
+        <section>
+          <h3>Références externes</h3>
+          <p>
+            Les éléments multimédia (images, vidéos, ...) sont incorporés par
+            référence. Ils doivent disposer de leur propre addresse web (<abbr
+              title="Uniform Resource Locator"
+              >URL</abbr
+            >).
+          </p>
+          <pre><code><!-- URL relatif à la position de la page HTML5 -->
+&lt;img src="my-photo.jpg" alt="Ma photo" title="Me voici !" /&gt;
+
+<!-- URL absolu -->
+&lt;img src="https://mafritz.ch/slides/fr/intro-html5/images/html5-logo.svg" alt="HTML5 Logo" title="Logo de HTML5" /&gt;
+</code></pre>
+          <div class="r-frame p-1 text-center">
+            <i class="fas fa-exclamation-triangle text-danger"></i><br />
+            Il faut avoir le droit d'utiliser et/ou pointer vers les éléments
+            externes !
+          </div>
         </section>
 
         <!-- DOM -->
