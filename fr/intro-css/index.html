@@ -57,68 +57,233 @@
           </p>
         </section>
 
-        <!-- Bullets -->
-        <section>
-          <h3>Présentation</h3>
-          <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li class="accent">Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-          </ul>
-        </section>
-
-        <!-- Form -->
-        <section>
-          <h3>Form</h3>
-          <form action="">
-            <input />
-            <select name="" id="">
-              <option>Hello</option>
-            </select>
-            <button>Hello</button>
-          </form>
-        </section>
-
-        <!-- Flex -->
-        <section>
-          <h3>Flex</h3>
-          <div class="r-hstack space-between">
-            <ul>
-              <li>Text</li>
-            </ul>
-            <ul>
-              <li>On side</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Citation -->
-        <section>
-          <h3>Citation</h3>
-          <blockquote>What is it ?</blockquote>
-        </section>
-
-        <!-- Side by side -->
+        <!-- Browser -->
         <section class="align-center">
-          <h3>Side by side</h3>
-          <div class="d-flex space-evenly mt-2">
-            <i class="fab fa-node-js fa-4x p-5"></i>
-            <i class="fas fa-globe fa-4x"></i>
-            <i class="fas fa-hockey-puck fa-4x"></i>
+          <h3 class="text-left">Comment s'affiche une page ?</h3>
+          <p class="text-left">
+            Le navigateur télécharge le code source de la page et tous les
+            éléments externes.
+          </p>
+          <img
+            src="./images/tecfa-site-code-and-elements.png"
+            alt="TECFA site web"
+            title="Site TECFA avec éléments externes"
+            class="r-stretch"
+          />
+        </section>
+
+        <!-- Deux fonctions -->
+        <section>
+          <h3>Deux fonctions du browser</h3>
+          <p>
+            Le navigateur web effectue deux opérations avec le code source HTML5
+            :
+          </p>
+          <ol>
+            <li>
+              <strong>Parsing</strong> : création du
+              <abbr title="Document Object Model">DOM</abbr> à travers la
+              hiérarchie des balises.
+            </li>
+            <li>
+              <strong class="accent">Rendering</strong> : application des
+              propriétés graphiques aux éléments du
+              <abbr title="Document Object Model">DOM</abbr>.
+            </li>
+          </ol>
+        </section>
+
+        <!-- Parsing -->
+        <section class="align-center">
+          <h3 class="text-left">Parsing : relation entre éléments</h3>
+          <img
+            src="./images/dom-with-relations.png"
+            alt="Exemple de DOM"
+            title="Le DOM détermine les relations entre éléments"
+            class="r-stretch"
+          />
+          <p class="text-left">
+            La relation entre noeuds influence l'affichage d'un élément par
+            rapport à un autre (e.g. embôitement).
+          </p>
+        </section>
+
+        <!-- Rendering -->
+        <section class="align-center">
+          <h3 class="text-left">Rendering : tout est une <em>boîte</em></h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/2/2b/HTML5_bo%C3%AEtes_avec_bordure_CSS.png"
+            alt="Bordures éléments HTML5"
+            title="Bordures pour afficher les éléments HTML5 comme des boîtes"
+            class="r-stretch"
+          />
+          <p>
+            Tout élément HTML5 est une sorte de
+            <strong class="accent"><em>boîte</em> rectangulaire</strong>. À
+            l'image, une bordure rouge est appliquée à tout élément.
+          </p>
+        </section>
+
+        <!-- Block vs. Inline -->
+        <section>
+          <h3>Types de boîtes différents</h3>
+          <div class="d-flex space-between">
+            <div class="mr-1">
+              <p>Il existe ~3 types de boîtes :</p>
+              <ol>
+                <li>
+                  <strong>Block</strong> : l'élément occupe la largeur
+                  disponible.
+                </li>
+                <li>
+                  <strong>Inline</strong> : l'élément occupe seulement la place
+                  nécessaire à son contenu.
+                </li>
+                <li>
+                  <strong>None</strong> : l'élément n'occupe pas de place
+                  <em>physique</em>.
+                </li>
+              </ol>
+            </div>
+            <div class="ml-1">
+              <img
+                src="https://edutechwiki.unige.ch/fmediawiki/images/b/bf/CSS_block_vs_inline_elements.png"
+                alt="Types de boîtes"
+                title="Représentation graphique des types de boîtes différents"
+              />
+              <p>
+                <small>
+                  <code>&lt;h1&gt;</code> et <code>&lt;p&gt;</code> sont des
+                  éléments <em>block</em> qui occupent toute la largeur
+                  disponible indépendamment du contenu.
+                </small>
+              </p>
+              <p>
+                <small>
+                  <code>&lt;a&gt;</code> est un élément <em>inline</em> qui
+                  occupe seulement la place nécessaire et peut même aller à la
+                  ligne avec du contenu sur les deux côtés.
+                </small>
+              </p>
+              <p>
+                <small>
+                  <code>&lt;head&gt;</code> est un élément <em>none</em>, on ne
+                  le <em>voit</em> pas.
+                </small>
+              </p>
+            </div>
           </div>
         </section>
 
-        <!-- Borders -->
+        <!-- CSS = propriétés des boîtes -->
         <section>
-          <h3>Borders</h3>
-          <div class="d-flex space-evenly">
-            <div class="border-light-1 p-1">Hello !</div>
-            <div class="border-dark-3 p-1">World !</div>
+          <h3>CSS = propriétés des boîtes</h3>
+          <div class="d-flex space-between">
+            <div class="mr-1">
+              <p>
+                <abbr title="Cascading Style Sheets">CSS</abbr> est un langage
+                qui permet de déterminer les propriétés graphiques des éléments
+                HTML5. Il s'occupe de :
+              </p>
+              <ol>
+                <li>
+                  Identifier les éléments à styliser avec un
+                  <strong style="color: #ba4642">sélecteur</strong>
+                </li>
+                <li>
+                  Déclarer une ou plusieurs
+                  <strong style="color: #ff0000">propriétés</strong> à modifier
+                </li>
+                <li>
+                  Spécifier les
+                  <strong style="color: #2f3699">valeurs</strong> à appliquer
+                  parmi les choix possibles
+                </li>
+              </ol>
+            </div>
+
+            <div class="ml-1 text-center">
+              <img
+                src="https://edutechwiki.unige.ch/fmediawiki/images/5/56/CSS_d%C3%A9claration_avec_labels.png"
+                alt="Exemple de CSS"
+                title="Exemple de code CSS pour appliquer des propriétés graphiques"
+                class="r-frame p-1"
+              />
+              <p>
+                <small
+                  >Exemple d'un sélecteur avec trois propriétés. Les
+                  <span class="accent">{}</span> délimitent un
+                  <strong>bloc</strong> de code.</small
+                >
+              </p>
+            </div>
           </div>
         </section>
+
+        <!-- 3 niveaux -->
+        <section>
+          <h3>Trois niveaux de CSS</h3>
+          <p>On retrouve du CSS à trois niveaux hiérarchiques différents :</p>
+          <ol>
+            <li>
+              <strong><em>Agent-defined</em></strong> : chaque navigateur
+              possède un fichier CSS qui applique des propriétés par
+              <em>default</em>. Indispensable pour retro-compatibilité avec
+              anciennes pages sans CSS.
+            </li>
+            <li>
+              <strong><em>User-defined</em></strong> : certains navigateurs
+              laissent les utilisateurs choisir quelques paramètres, comme la
+              taille de la police.
+            </li>
+            <li>
+              <strong class="accent"><em>Code-defined</em></strong> : le code
+              CSS est téléchargé avec la page. Ce le niveau qu'on peut définir
+              en tant que créateurs de pages.
+            </li>
+          </ol>
+        </section>
+
+        <!-- Add CSS to page -->
+        <section>
+          <h3>Ajouter du CSS à une page</h3>
+          <p>On peut ajouter du CSS de différentes manières :</p>
+          <ol>
+            <li>
+              À l'intérieur de l'<strong class="accent">attribut</strong>
+              <code>style=""</code> des balises HTML5
+            </li>
+            <li>
+              À l'intérieur d'une <strong class="accent">balise</strong>
+              <code>&lt;style&gt;...&lt;/style&gt;</code> dans le
+              <code>head</code> du document
+            </li>
+            <li>
+              En utilisant un
+              <strong class="accent">fichier .css externe</strong>, qu'on
+              incorpore par référence dans le <code>head</code> du document
+            </li>
+          </ol>
+          <p>Les trois manières peuvent se combiner dans la même page.</p>
+        </section>
+
+        <!-- Attribut style -->
+        <section>
+          <h3>Attribut <code>style=""</code></h3>
+          <p>
+            Toute balise dans le <code>body</code> d'un document HTML5 peut
+            avoir l'attribut style.
+          </p>
+          <pre><code><p style="color: darkorange; font-weight: bold;">
+  Paragraphe avec police orange et en gras.
+</p></code></pre>
+          <p>
+            Propriétés et valeurs sont séparées par un <code>:</code>, et pour
+            séparer plusieurs définitions on utilise <code>;</code>
+          </p>
+        </section>
+
+        <!-- End of slides -->
       </div>
     </div>
 
