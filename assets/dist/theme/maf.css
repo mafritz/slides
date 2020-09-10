@@ -70,7 +70,7 @@ ul.check li:before {
 }
 
 ul li.accent:before {
-  color: #44546a;
+  color: #ffd000;
 }
 
 input,
@@ -116,7 +116,7 @@ img.img-rounded {
 }
 
 .accent {
-  color: #44546a;
+  color: #ffd000;
 }
 
 figure {
@@ -140,7 +140,7 @@ figure {
 }
 
 .text-danger {
-  color: #f8d71b;
+  color: #ffd000;
 }
 
 .text-error {
@@ -156,7 +156,7 @@ figure {
 }
 
 .bg-danger {
-  background-color: #f8d71b;
+  background-color: #ffd000;
 }
 
 .bg-error {
