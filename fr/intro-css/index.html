@@ -244,7 +244,7 @@
           </ol>
         </section>
 
-        <!-- Add CSS to page -->
+        <!-- Ajouter CSS à la page -->
         <section>
           <h3>Ajouter du CSS à une page</h3>
           <p>On peut ajouter du CSS de différentes manières :</p>
@@ -272,14 +272,86 @@
           <h3>Attribut <code>style=""</code></h3>
           <p>
             Toute balise dans le <code>body</code> d'un document HTML5 peut
-            avoir l'attribut style.
+            avoir l'attribut style :
           </p>
           <pre><code><p style="color: darkorange; font-weight: bold;">
   Paragraphe avec police orange et en gras.
 </p></code></pre>
+          <pre><code>L'effet Stroop consiste à écrire le nom d'une couleur, 
+par exemple <span style="color: blue">bleu</span>,
+mais avec la police d'une autre couleur, 
+par exemple <span style="color: yellow">bleu</span>.</code></pre>
           <p>
-            Propriétés et valeurs sont séparées par un <code>:</code>, et pour
-            séparer plusieurs définitions on utilise <code>;</code>
+            Modalité adéquate pour une utilisation ponctuelle, e.g. un élément
+            spécifique dans une page.
+          </p>
+        </section>
+
+        <!-- Balise style -->
+        <section>
+          <h3>Balise <code>&lt;style&gt;</code></h3>
+          <p>
+            Placez la balise à l'intérieur du
+            <strong><code class="accent">head</code></strong>
+            (e.g. à la fin) :
+          </p>
+          <pre><code data-line-numbers="5-10">&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Page avec utilisation de la balise style&lt;/title&gt;
+  &lt;style&gt;
+      body {
+          background-color: darkblue;
+          color: white;
+      }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+          <p>
+            Modalité adéquate si vous n'avez qu'une seule page et peu de code.
+          </p>
+        </section>
+
+        <!-- Fichiers .css externe -->
+        <section>
+          <h3>Fichiers .css externe</h3>
+          <p>Pour placer le code dans un fichier externe il faut :</p>
+          <ol>
+            <li>
+              Créer un fichier avec extension <strong>.css</strong>, par exemple
+              <strong>style.css</strong>. Un fichier .css accepte seulement des
+              déclarations de style CSS, pas du HTML5 ou d'autres notations.
+            </li>
+            <li>
+              L'incorporer par référence à l'intérieur du <code>head</code> de
+              la page de cette manière :
+            </li>
+          </ol>
+          <pre><code>&lt;link rel="stylesheet" href="style.css" /&gt;</code></pre>
+          <p>
+            Modalité adéquate pour appliquer le même style à plusieurs page
+            et/ou beaucoup de code.
+          </p>
+        </section>
+
+        <!-- Exemple HTML5 pour fichier externe -->
+        <section>
+          <h3>Exemple de code HTML5</h3>
+          <pre><code data-line-numbers="7">&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page HTML5 avec fichier .css externe&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <p>
+            On peut pointer au fichier avec des chemins relatifs ou absolus. Il
+            est possible d'incorporer plusieurs fichiers en même temps en
+            repliquant la balise avec un <code>href</code> différent.
           </p>
         </section>
 
