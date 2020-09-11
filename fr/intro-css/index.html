@@ -355,6 +355,243 @@ par exemple <span style="color: yellow">bleu</span>.</code></pre>
           </p>
         </section>
 
+        <!-- Fichier CSS -->
+        <section>
+          <h3>Fichier CSS</h3>
+          <p>
+            Un fichier CSS est un simple fichier de texte avec extension
+            <strong>.css</strong>. On écrit directement les déclarations de
+            style, sans entête nécessaire ou balise <code>style</code>.
+          </p>
+          <pre><code data-line-numbers>/* On peut utiliser des commentaires */
+body {
+  background-color: black;
+  color: white;
+}
+
+p {
+  color: darkgray;
+}</code></pre>
+        </section>
+
+        <!-- Sélecteurs -->
+        <section>
+          <h3>Sélecteurs CSS</h3>
+          <p>
+            On peut identifier les éléments à styliser de différentes manières :
+          </p>
+          <ol>
+            <li>
+              Avec le <strong class="accent">nom des balises</strong> HTML5.
+            </li>
+            <li>
+              Avec l'attribut
+              <strong class="accent"><code>class="..."</code></strong> des
+              balises HTML5.
+            </li>
+            <li>
+              Avec l'attribut <code>id="..."</code> des balises HTML5 (<span
+                class="text-error"
+                >déconseillé</span
+              >).
+            </li>
+          </ol>
+        </section>
+
+        <!-- Nom de la balise -->
+        <section>
+          <h3>Nom de la balise</h3>
+          <pre><code data-line-numbers>/* Balises "simple" */
+p {
+  color: red;
+}
+
+/* Balises embôitées, s'applique à un p à l'intérieur d'un div */
+div p {
+  color: blue;
+}
+
+/* Plusieurs balises en même temps */
+h1, h2, h3, h4 {
+  font-weight: bold;
+}</code></pre>
+          <p>
+            À utiliser pour des déclarations générales, elles s'appliquent sans
+            intervention dans le code des balises.
+          </p>
+        </section>
+
+        <!-- Classes -->
+        <section>
+          <h3>Classes de style</h3>
+          <p>
+            Choisir le nom d'une classe avec notation
+            <strong>.nom-classe</strong> :
+          </p>
+          <pre><code data-line-numbers>/* Classe "générale", peut s'appliquer à tout élément */
+.important {
+  color: darkorange;
+}
+/* Classe restreinte à une balise spécifique */
+span.error {
+  color: red;
+}</code></pre>
+          <p>
+            Il faut enseuite spécifier le nom de la classe dans l'attribut
+            <code class="accent">class=""</code> des éléments HTML5 (<strong
+              >sans le . initiale) :</strong
+            >
+          </p>
+          <pre><code data-line-numbers><p class="important">Information importante...</p>
+<p>Test : <span class="error">failed</span></p></code></pre>
+        </section>
+
+        <!-- ID -->
+        <section>
+          <h3>
+            Attribut <code>id=""</code> (<span class="text-error"
+              >déconseillé</span
+            >)
+          </h3>
+          <p>
+            Même principe que pour la classe, mais avec notation
+            <code>#identifiant</code> :
+          </p>
+          <pre><code data-line-numbers>#result {
+  font-weight: bold;
+  color: darkviolet;
+}
+          </code></pre>
+          <p>
+            Application dans l'attribut <code>id=""</code> de la balise (id
+            univoque par page)
+          </p>
+          <pre><code data-line-numbers><p>Vous avez obtenu <span id="result">10</span> points.</p></code></pre>
+        </section>
+
+        <!-- Cascade -->
+        <section>
+          <h3>Application a <em>cascade</em></h3>
+          <p>
+            Les propriétés de style se propagent aux éléments embôités (i.e.
+            children and descendants).
+          </p>
+          <pre><code data-line-numbers><div style="background-color:black; color:white;">
+  <h1>Texte blanc sur fond noir</h1>
+  <p>Texte blanc sur fond noir</p>
+</div></code></pre>
+          <p>
+            Sauf si l'élément emboîté a une déclaration qui <em>écrase</em> la
+            propriété du parent.
+          </p>
+          <pre><code data-line-numbers><div style="background-color:black; color:white;">
+  <h1>Texte blanc sur fond noir</h1>
+  <p style="color: yellow">Texte jaune sur fond noir</p>
+</div></code></pre>
+        </section>
+
+        <!-- Cascade fichier CSS -->
+        <section>
+          <h3><em>Cascade</em> dans un fichier .css</h3>
+          <p>
+            Le même principe s'applique si le code est dans un fichier .css
+            externe (ou balise <code>style</code>) :
+          </p>
+          <pre><code data-line-numbers>div {
+  background-color: black;
+  color: white;
+}
+p {
+  color: yellow;
+}</code></pre>
+          <pre><code data-line-numbers><div>
+  <h1>Texte blanc sur fond noir</h1>
+  <p>Texte jaune sur fond noir</p>
+</div></code></pre>
+        </section>
+
+        <!-- CSS puissance -->
+        <section>
+          <h3>Possibilités avec CSS</h3>
+          <p>CSS est une technologie très puissante qui permet de créer :</p>
+          <ul>
+            <li>
+              Des layout complexes et qui s'adaptent à différents écrans (i.e.
+              responsive)
+            </li>
+            <li>
+              Des animations et effets visuels (rotation, translation, ...)
+            </li>
+            <li>Des filtres ou gradients</li>
+            <li>Des documents prêts pour l'impression papier</li>
+          </ul>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a href="https://edutechwiki.unige.ch/fr/Introduction_%C3%A0_CSS"
+              >un article sur EduTechWiki</a
+            >.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
         <!-- End of slides -->
       </div>
     </div>
