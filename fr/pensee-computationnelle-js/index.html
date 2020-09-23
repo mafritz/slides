@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Pensée computationnelle avec JavaScript</title>
+
+    <meta
+      name="description"
+      content="Présentation sur la pensée computationnelle avec JavaScript"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="https://edutechwiki.unige.ch/fmediawiki/images/d/de/JePenseDoncJS-logo.svg"
+            alt="Logo du projet"
+            title="Je pense, donc JS"
+          />
+          <h3>Pensée computationnelle avec JavaScript</h3>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Problème sur les cierges -->
+        <section>
+          <h3>Problème</h3>
+          <p>
+            Frère Luc est l'intendant de l'abbaye. Très économe, il réutilise
+            les bouts de cierges usagés pour en faire de nouveaux. Il est
+            capable de reconstituer un cierge à partir de trois bouts de cierges
+            qu'il fait fondre.
+          </p>
+          <p>
+            Combien pourra-t-il reconstituer de cierges avec les neuf bouts de
+            cierges qu'il a récupérés ce matin dans l'abbatiale ?
+          </p>
+        </section>
+
+        <!-- Solution "cognitive" -->
+        <section>
+          <h3>Solution <em>cognitive</em></h3>
+          <ol>
+            <li class="fragment">
+              Avec 9 bouts, il peut reconstituer 3 cierges.
+            </li>
+            <li class="fragment">
+              En brûlant les 3 cierges, il recupère 3 nouveaux bouts.
+            </li>
+            <li class="fragment">
+              Avec ces 3 bouts supplémentaire, il peut reconstituer 1 nouveau
+              cierge (<strong class="text-danger">récursivité</strong>).
+            </li>
+          </ol>
+          <p class="border-dark-1 p-1 text-success text-center fragment">
+            <i class="fa fa-check"></i> Au total, il recupère 4 cierges !
+          </p>
+        </section>
+
+        <!-- Solution computationnelle -->
+        <section>
+          <h3>Solution computationnelle</h3>
+          <p>Implémentation en code JavaScript.</p>
+          <pre><code data-trim data-line-numbers>
+            //Set the initial number of pieces available
+            var numberOfPieces = 9;
+            //How many pieces are needed for a candle?
+            var piecesRequired = 3;
+            //Set a variable to be incremented for each new candle
+            var totalCandlesObtained = 0;
+            //Go on until the number of candles can be divided by the pieces
+            while (numberOfPieces / piecesRequired >= 1) {
+              //At each cycle define the new number of candles
+              numberOfPieces = Math.floor(numberOfPieces / piecesRequired);
+              //Add it to the previous total
+              totalCandlesObtained += numberOfPieces;
+            }
+            //Print the result
+            console.log('TOTAL:' + totalCandlesObtained + ' candles');
+          </code></pre>
+        </section>
+
+        <!-- Application interactive -->
+        <section>
+          <h3>Généralisation du code</h3>
+          <div id="enigma1">
+            <form
+              v-on:submit.prevent="resolveFirstEnigma()"
+              autocomplete="off"
+              class="form-inline"
+            >
+              <div class="d-flex space-between">
+                <div class="form-group">
+                  <label for="numberOfCandles">Bouts dispo : </label>
+                  <input
+                    type="number"
+                    min="1"
+                    class="form-control input-lg"
+                    id="numberOfCandles"
+                    v-model="piecesAvailable"
+                    style="width: 90px; text-align: center"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="piecesRequired">Bouts pour 1 cierge : </label>
+                  <input
+                    type="number"
+                    min="2"
+                    class="form-control input-lg"
+                    id="piecesRequired"
+                    v-model="piecesRequired"
+                    style="width: 90px; text-align: center"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Calculer
+                </button>
+              </div>
+            </form>
+            <hr />
+            <textarea
+              class="form-control input-lg"
+              rows="7"
+              v-model="solution"
+              style="width: 95%"
+              readonly
+            ></textarea>
+            <p class="text-success text-center" v-if="solution">
+              <i class="fa fa-check text-success"></i> Au total, il obtient
+              <strong>{{totalCandles}}</strong> cierges.
+            </p>
+          </div>
+        </section>
+
+        <!-- Question fondamentale -->
+        <section class="align-center">
+          <p>
+            <i class="fa fa-question-circle fa-4x text-danger"></i>
+          </p>
+          <h3>
+            Connaître la récursivité dans le codage facilite la résolution
+            cognitive du problème ?
+          </h3>
+        </section>
+
+        <!-- Spectrum de la pensée computationnelle -->
+        <section>
+          <h3>Pensée computationnelle est ?</h3>
+          <p>
+            Dans la littérature scientifique, les différentes définitions de la
+            pensée computationnelle peuvent être placées sur un continuum entre
+            <strong class="accent">deux pôles</strong> <em>opposés</em> :
+          </p>
+          <img
+            src="./images/ct-spectrum.svg"
+            alt="Continuum entre deux pôles"
+            title="Continuum entre deux pôles"
+            style="min-width: 100%"
+          />
+          <div class="d-flex space-between text-center">
+            <div class="border-light-1 p-1 fragment">
+              <i class="fa fa-user" aria-hidden="true"></i
+              ><br />Capacités<br />Individuelles
+            </div>
+            <div class="border-light-1 p-1 fragment">
+              <i class="fa fa-user"></i>
+              <i class="fa fa-arrows-alt-h" aria-hidden="true"></i>
+              <i class="fas fa-laptop-code"></i><br />
+              Interaction<br />Homme-Machine
+            </div>
+          </div>
+        </section>
+
+        <!-- Aho 2012 -->
+        <section class="align-center">
+          <h3>Processus <em>universel</em></h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Nous considérons que la pensée computationnelle est le processus de
+            pensée impliqué dans la formulation des problèmes afin que leurs
+            solutions puissent être représentées sous forme d'étapes de calcul
+            et d'algorithmes.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Aho 2012, p. 832</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+        </section>
+
+        <!-- Denning 2016 -->
+        <section class="align-center">
+          <h3>Processus <em>délimité</em></h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i> Un algorithme n'est pas une
+            séquence d'étapes quelconques, mais une série d'étapes qui
+            contrôlent une machine abstraite ou un modèle de calcul sans
+            nécessiter de jugement humain. La pensée computationnelle inclut la
+            conception du modèle, et non seulement les étapes pour le contrôler.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Denning, 2016, p. 33</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+        </section>
+
+        <!-- Troisième dimension sociale -->
+        <section class="align-center">
+          <h3>Troisième dimension sociale</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/3/3b/Perspective_aspects_th%C3%A9oriques_pens%C3%A9e_computationnelle.png"
+            alt="Diagramme avec intersection de trois cercles"
+            title="La pensée computationnelle comme processus émergeant"
+            class="r-stretch"
+          />
+        </section>
+
+        <!-- Fritz 2020 -->
+        <section class="align-center">
+          <h3>Proceuss <em>émergeant</em></h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            La pensée computationnelle est un phénomène émergeant de
+            l'interaction entre l'individu, la technologie, et la communauté de
+            référence. La pensée computationnelle possède une dimension sociale
+            que l'individu et la technologie subissent, mais peuvent également
+            déterminer : l'individu avec ses choix ; la technologie avec son
+            fonctionnement.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Fritz, 2019</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Définition
+              provisoire</small
+            >
+          </p>
+        </section>
+
+        <!-- Computation en sciences sociales -->
+        <section class="align-center">
+          <h3>Informatique : science sociale ?</h3>
+          <div class="border-light-1 mr-1 ml-1 p-1">
+            <i class="fa fa-quote-left"></i>
+            Étant donné que l'informatique en tant que discipline est de plus en
+            plus intégrée dans la vie humaine et sociale, l'informatique en tant
+            que discipline universitaire doit s'éloigner des modèles de
+            programmes d'études inspirés par l'ingénierie et intégrer les
+            perspectives analytiques fournis par les théories et les
+            méthodologies des sciences sociales.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Connolly, 2020</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+        </section>
+
+        <!-- Connely video -->
+        <section>
+          <h3>Informatique : science sociale ?</h3>
+          <div style="padding: 56.25% 0 0 0; position: relative">
+            <iframe
+              src="https://player.vimeo.com/video/433773977"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              class="border-dark-1"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </section>
+
+        <!-- Mouvement bi-directionnel -->
+        <section>
+          <h3>Mouvement bi-directionnel</h3>
+          <p>
+            L'informatique regarde aux sciences sociales, et les sciences
+            sociales utilisent de plus en plus l'informatique.
+          </p>
+          <div class="d-flex space-between mt-4" style="align-items: center">
+            <div class="text-center border-dark-2 p-2">
+              <h4 style="margin: 0">Informatique</h4>
+            </div>
+            <div class="text-center text-danger">
+              <i class="fas fa-sync-alt fa-3x"></i>
+            </div>
+            <div class="text-center border-dark-2 p-2">
+              <h4 style="margin: 0">Sciences sociales</h4>
+            </div>
+          </div>
+        </section>
+
+        <!-- Définition pragmatique -->
+        <section class="align-center">
+          <h3>Définition pragmatique</h3>
+          <div class="border-light-1 mr-1 ml-1 p-1">
+            <i class="fa fa-quote-left"></i>
+            La pensée computationnelle est un terme se référant, de manière
+            plutôt flexible, à un ensemble d'habiletés, compétences et
+            procédures qui facilitent la résolution de problèmes en s'appuyant
+            sur des principes tirés des sciences informatiques.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Fritz & Schneider, 2019</p>
+        </section>
+
+        <!-- Composantes principales -->
+        <section class="align-center">
+          <h3>Composantes principales</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/4/40/CT_4_blocks.png"
+            alt="Schéma avec 4 composantes"
+            title="Les 4 composantes principales de la pensée computationnelle"
+            class="r-stretch"
+          />
+        </section>
+
+        <!-- Décomposition -->
+        <section>
+          <h3>Décomposition</h3>
+          <p>
+            Diviser un problème complexe ou un système en petites parties plus
+            simples à gérer.
+          </p>
+          <div class="text-center fragment">
+            <div class="border-light-1 mr-1 ml-1 p-1">
+              <i class="fa fa-quote-left"></i>
+              S'il y a un problème que vous ne pouvez pas résoudre, alors il y a
+              un problème plus facile que vous ne pouvez pas résoudre :
+              trouvez-le.
+              <i class="fa fa-quote-right"></i>
+            </div>
+            <p class="text-right pr-5">— Polya, 1945/2014</p>
+            <p>
+              <small
+                ><i class="fa fa-exclamation-triangle"></i> Traduction
+                libre</small
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Pattern -->
+        <section>
+          <h3>Reconnaissance de pattern</h3>
+          <p>
+            Identifier des similarités entre problèmes ou à l’intérieur du même
+            problème donné.
+          </p>
+
+          <div class="text-center fragment">
+            <div class="border-light-1 mr-1 ml-1 p-1">
+              <i class="fa fa-quote-left"></i>
+              Chaque élément de connaissance doit avoir une représentation
+              unique, non ambiguë et faisant autorité au sein d'un système.
+              <i class="fa fa-quote-right"></i>
+            </div>
+            <p class="text-right pr-5">— Hunt & Thomas, 1999</p>
+            <p>
+              <small
+                ><i class="fa fa-exclamation-triangle"></i> Traduction
+                libre</small
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Abstraction -->
+        <section>
+          <h3>Abstraction</h3>
+          <p>
+            Se focaliser exclusivement sur les parties importantes du problème.
+          </p>
+
+          <div class="text-center fragment">
+            <div class="border-light-1 mr-1 ml-1 p-1">
+              <i class="fa fa-quote-left"></i>
+              Le processus d'abstraction — qui consiste à décider quels détails
+              nous devons mettre en évidence et quels détails nous pouvons
+              ignorer — est à la base de la pensée computationnelle.
+              <i class="fa fa-quote-right"></i>
+            </div>
+            <p class="text-right pr-5">— Wing, 2008, p. 3718</p>
+            <p>
+              <small
+                ><i class="fa fa-exclamation-triangle"></i> Traduction
+                libre</small
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Algorithmes -->
+        <section>
+          <h3>Algorithmes</h3>
+          <p>
+            Trouver une solution à travers une règle composée par une série
+            d’étapes.
+          </p>
+          <div class="text-center fragment">
+            <div class="border-light-1 mr-1 ml-1 p-1">
+              <i class="fa fa-quote-left"></i>
+              Un algorithme est une procédure de calcul bien définie qui prend
+              une valeur, ou un ensemble de valeurs, comme entrée et produit une
+              valeur, ou un ensemble de valeurs, comme sortie.
+              <i class="fa fa-quote-right"></i>
+            </div>
+            <p class="text-right pr-5">
+              — Cormen, Leiserson, Rivest, & Stein, 2009, p. 5
+            </p>
+            <p>
+              <small
+                ><i class="fa fa-exclamation-triangle"></i> Traduction
+                libre</small
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Déclarative / Procédurale -->
+        <section class="align-center">
+          <h3 class="text-left">Mais...</h3>
+          <p class="text-left">
+            Ces informations ne sont pas suffisantes pour apprendre et tirer
+            profit de la pensée computationnelle. Il est nécessaire de combiner
+            les connaissances <strong>déclaratives</strong> et
+            <strong class="accent">procédurales</strong>.
+          </p>
+          <img
+            src="./images/schema-memoire.png"
+            alt="Schéma de la mémoire"
+            title="Différentes types de mémoire"
+            class="r-stretch"
+          />
+        </section>
+
+        <!-- Trois manières -->
+        <section>
+          <h3>Comment ?</h3>
+          <p>
+            Il existe principalement trois modalités d'enseignement de la pensée
+            computationnelle qui peuvent être combinées :
+          </p>
+          <ol>
+            <li>Activités <strong>débranchées</strong></li>
+            <li>Environnements avec <strong>blocs de code</strong></li>
+            <li>
+              <strong class="accent">Langages de programmation</strong> textuels
+            </li>
+          </ol>
+          <p class="border-light-1 p-1 text-center fragment">
+            <i class="fas fa-search-plus fa-2x"></i><br />
+            Plus de recherche nécessaire sur bénéfices et transfert entre
+            différentes modalités.
+          </p>
+        </section>
+
+        <!-- Activités débranchées -->
+        <section class="align-center">
+          <h3 class="text-left">Activités débranchées</h3>
+          <p class="text-left">
+            Activités qui <strong>n'utilisent pas</strong> un dispositif
+            numérique, mais une modélisation abstraite du fonctionnement.
+          </p>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/a/a2/Photo_2016-12-15_10-19-41.jpg"
+            alt="Exemple d'activité débranchée"
+            title="Programming Boty : programmer avec des jetons"
+            class="r-stretch"
+          /><br />
+          <small>
+            <a href="https://edutechwiki.unige.ch/fr/Programming_Boty"
+              >Programming Boty</a
+            >
+            de L. Boufflers et S. Linh Quang.</small
+          >
+        </section>
+
+        <!-- Bloc de code -->
+        <section class="align-center">
+          <h3 class="text-left">Blocs de code</h3>
+          <p class="text-left">
+            Environnements graphiques qui emboîtent des instructions en forme de
+            <em>briques</em>.
+          </p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Scratch_3.0_GUI.png"
+            alt="Exemple de bloc de code"
+            title="Scratch, du MIT"
+            class="r-stretch"
+          />
+          <small
+            >Capture d'écran de <a href="https://scratch.mit.edu/">Scratch</a>.
+            Crédits :
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Scratch_3.0_GUI.png"
+              title="via Wikimedia Commons"
+              >Thenerdie</a
+            >
+            /
+            <a href="https://creativecommons.org/licenses/by-sa/4.0"
+              >CC BY-SA</a
+            ></small
+          >
+        </section>
+
+        <!-- Langages de programmation -->
+        <section>
+          <h3>Langages de programmation</h3>
+          <p>
+            Utiliser une notation conventionnelle destinée à formuler des
+            algorithmes et produire des programmes informatiques qui les
+            appliquent.
+          </p>
+          <img
+            src="./images/programming-languages-spectrum.svg"
+            alt="Continuum entre deux pôles"
+            title="Choix entre langages désuets ou très utilisés"
+            style="min-width: 100%"
+            class="fragment"
+            data-fragment-index="1"
+          />
+          <div class="d-flex space-between text-center">
+            <div
+              class="border-light-1 p-1 fragment pl-2 pr-2"
+              data-fragment-index="2"
+            >
+              <i class="fas fa-robot"></i><br />
+              Informatique *
+            </div>
+            <div
+              class="border-dark-1 p-1 bg-danger fragment pl-2 pr-2"
+              data-fragment-index="3"
+            >
+              <i class="fas fa-user-friends"></i><br />
+              Sciences sociales
+            </div>
+          </div>
+          <p>
+            <small class="fragment" data-fragment-index="2"
+              >* Pas dans toutes les filières</small
+            >
+          </p>
+        </section>
+
+        <!-- JavaScript -->
+        <section data-background-color="#f7df1e">
+          <h3>Pourquoi JavaScript ?</h3>
+          <div class="d-flex space-between">
+            <div class="mr-1">
+              <ol>
+                <li>
+                  Disponible dans les navigateurs web (environnement pour
+                  commencer)
+                </li>
+                <li>
+                  D'une <em>simple</em> page web interactive à applications
+                  complexes
+                </li>
+                <li>
+                  <em>Un langage pour les gouverner tous</em>
+                  (web, logiciels, objects connectés, ...)
+                </li>
+              </ol>
+            </div>
+            <div class="ml-1">
+              <figure>
+                <img
+                  src="https://edutechwiki.unige.ch/fmediawiki/images/c/ce/Unofficial_JavaScript_logo.svg"
+                  alt="Logo JavaScript"
+                  title="Logo de JavaScript"
+                  class="border-dark-1"
+                />
+                <figcaption>
+                  <small>Logo non officiel de JavaScript</small>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="text-center fragment mt-3">
+            <div class="border-dark-1 mr-1 ml-1 p-1">
+              <i class="fa fa-quote-left"></i>
+              Toute application qui peut être écrite en JavaScript, sera
+              éventuellement écrite en JavaScript
+              <i class="fa fa-quote-right"></i>
+            </div>
+            <p class="text-right pr-5">— Loi de Atwood</p>
+          </div>
+        </section>
+
+        <!-- Application en sciences sociales -->
+        <section>
+          <h3>Utilisation en sciences sociales</h3>
+          <p>Quelques cadres d'utilisation possibles :</p>
+          <ul>
+            <li>
+              Applications multimédia pour l'éducation, la reéducation ou la
+              rémediation
+            </li>
+            <li>Visualisation dynamiques de données</li>
+            <li>Animation et simulation de phénomènes</li>
+            <li>Matériel expérimental et plateformes de recherche online</li>
+            <li>Sites pour projets ou labos "grand public" (look and feel)</li>
+            <li>...</li>
+          </ul>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a
+              href="https://edutechwiki.unige.ch/fr/Initiation_%C3%A0_la_pens%C3%A9e_computationnelle_avec_JavaScript"
+              >Initiation à la pensée computationnelle avec JavaScript</a
+            >
+            sur EduTechWiki.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/vendor/vuejs/vue.min.js"></script>
+    <script src="js/candle-enigmas.js"></script>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
