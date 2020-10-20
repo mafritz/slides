@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Interactivité avec JavaScript</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur le fonctionnement de JavaScript dans un navigatuer"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
+      id="theme"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch border-dark-2"
+            src="https://edutechwiki.unige.ch/fmediawiki/images/c/ce/Unofficial_JavaScript_logo.svg"
+            alt="JS Logo"
+            title="Logo de JavaScript"
+          />
+          <h2>Interactivité avec JavaScript</h2>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Download of JavaScript code -->
+        <section>
+          <h3>JavaScript et le navigateur web</h3>
+          <pre><code class="hljs" data-line-numbers="">&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+	&lt;title&gt;Une page HTML5&lt;/title&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;!-- Téléchargement du CSS --&gt;
+	&lt;link href="assets/css/style.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;!-- Téléchargement du fichier JS --&gt;
+	&lt;script src="assets/js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;						
+</code></pre>
+          <p class="fragment text-center">
+            <i class="fa fa-download"></i> Les
+            <strong><span class="accent">instructions</span></strong> sont
+            téléchargées avec la page.
+          </p>
+        </section>
+
+        <!-- The window global object -->
+        <section>
+          <h3>L'objet global <code>window</code></h3>
+          <div class="border-light-1 p-3 ml-2 mr-2 mb-3">
+            JavaScript peut <strong class="accent">contrôler</strong>, avec des
+            limitations, le navigateur à travers l'objet global
+            <code>window</code>.
+          </div>
+          <ol>
+            <li class="fragment">
+              Ouvrez la console du navigateur
+              <kbd>F12</kbd>
+            </li>
+            <li class="fragment">
+              Entrez
+              <code>window</code>
+            </li>
+            <li class="fragment">
+              Après entrez
+              <code>window.innerHeight</code>
+            </li>
+            <li class="fragment">
+              Enfin entrez
+              <code>window.location.href</code>
+            </li>
+          </ol>
+        </section>
+        <!-- The document object -->
+        <section>
+          <h3>Accès au DOM de la page</h3>
+          <div class="border-light-1 p-3 ml-2 mr-2 mb-3">
+            À l'intérieur de l'objet window, vous avez l'objet
+            <code>window.document</code> qui donne accès au
+            <abbr title="Document Object Model">DOM</abbr>.
+          </div>
+          <ol>
+            <li class="fragment">
+              Entrez <code>window.document</code> dans la console
+            </li>
+            <li class="fragment">
+              Puis seulement
+              <code>document</code>
+            </li>
+            <li class="fragment">
+              Maintenant entrez
+              <code>document.title</code>
+            </li>
+            <li class="fragment">
+              Puis
+              <code>document.title = "J'ai changé le titre de la page !"</code>
+            </li>
+            <li class="fragment">
+              Et enfin
+              <code>document.body</code>
+            </li>
+          </ol>
+        </section>
+        <!-- Manipulate the DOM -->
+        <section>
+          <h3 id="slideTitle">Manipulation du DOM</h3>
+          <div class="border-light-1 p-3 ml-2 mr-2 mb-3">
+            À travers l'accès au DOM vous pouvez
+            <strong class="important"
+              >manipuler les différents éléments de la page</strong
+            >.
+          </div>
+          <ol>
+            <li class="fragment">
+              Entrez
+              <code>document.getElementById('slideTitle').innerHTML</code>
+            </li>
+            <li class="fragment">
+              Puis
+              <code
+                >document.getElementById('slideTitle').innerHTML = 'On peut
+                faire mieux !'</code
+              >
+            </li>
+          </ol>
+        </section>
+        <!-- The code of this slides -->
+        <section>
+          <h3>Instructions pour la présentation</h3>
+          <div class="border-light-1 p-3 ml-2 mr-2 mb-3">
+            Cette présentation utilise du code de
+            <a href="https://github.com/hakimel/reveal.js">Reveal.js</a>, une
+            bibliothèque pour créer des slides en HTML5, CSS et JavaScript.
+          </div>
+          <ol>
+            <li class="fragment">Entrez <code>Reveal</code> dans la console</li>
+            <li class="fragment">
+              Puis entrez
+              <code>Reveal.getTotalSlides()</code>
+            </li>
+            <li class="fragment">
+              Et finalement entrez
+              <code>Reveal.next()</code>
+            </li>
+          </ol>
+        </section>
+        <!-- Button -->
+        <section class="align-center">
+          <h3>Facile, n'est-ce pas ?</h3>
+          <p>Maintenant regardez le code HTML du bouton.</p>
+          <pre><code class="hljs">&lt;button onclick="Reveal.next()"&gt;Prochaine slide&lt;/button&gt;</code></pre>
+          <p>Que ce passe-t-il si vous cliquez ?</p>
+          <button onclick="Reveal.next()">Prochaine slide</button>
+        </section>
+        <!-- Voilà -->
+        <section>
+          <h3><i class="far fa-thumbs-up"></i> Voilà !</h3>
+          <p class="text-center p-2 border-dark-2 bg-warning">
+            Vous avez déclenché une instruction depuis un élément HTML de la
+            page.
+          </p>
+          <p>
+            Les applications interactives en JavaScript se construisent par
+            extension de ce mécanisme de base :
+          </p>
+          <ol>
+            <li>
+              les instructions sont codées en amont et téléchargées avec la page
+            </li>
+            <li>
+              elles sont ensuite déclanchée par des
+              <strong class="accent">événements</strong>, comme par exemple le
+              clique sur un bouton
+            </li>
+          </ol>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a
+              href="https://edutechwiki.unige.ch/fr/Interactivit%C3%A9_avec_JavaScript"
+              >un article sur EduTechWiki</a
+            >.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
