@@ -233,6 +233,34 @@
           <p>Que ce passe-t-il si vous cliquez ?</p>
           <button onclick="Reveal.next()">Prochaine slide</button>
         </section>
+
+        <!-- Button event listener -->
+        <section class="align-center">
+          <h3>Gestionnaire d'événements</h3>
+          <p>
+            Comme pour CSS, on peut ajouter du code en dehors des balises HTML5
+            en utilisant, par exemple, un
+            <em class="accent">event listener</em>.
+          </p>
+          <pre><code class="hljs">&lt;button id="nextSlideBtn""&gt;Prochaine slide&lt;/button&gt;</code></pre>
+          <pre><code class="hljs" data-trim data-line-numbers>
+          // Code JavaScript
+          document.
+            getElementById("nextSlideBtn").
+            addEventListener("click", function() {
+              Reveal.next();
+            });
+          </code></pre>
+          <button id="nextSlideBtn">Prochaine slide</button>
+        </section>
+        <script>
+          document
+            .getElementById("nextSlideBtn")
+            .addEventListener("click", function () {
+              Reveal.next();
+            });
+        </script>
+
         <!-- Voilà -->
         <section>
           <h3><i class="far fa-thumbs-up"></i> Voilà !</h3>
@@ -255,6 +283,74 @@
             </li>
           </ol>
         </section>
+
+        <!-- Binary string -->
+        <section class="align-center">
+          <h3>Autres événements</h3>
+          <p>Insérez un mot pour voir l'équivalent en code binaire.</p>
+          <input type="text" id="textToBinary" />
+          <p id="binaryOutput" class="bg-dark text-white"></p>
+        </section>
+        <script>
+          document
+            .getElementById("textToBinary")
+            .addEventListener("keyup", function () {
+              let output = "";
+              document
+                .getElementById("textToBinary")
+                .value.split("")
+                .forEach(function (letter) {
+                  output += letter.charCodeAt(0).toString(2) + " ";
+                });
+              document.getElementById("binaryOutput").innerHTML = output;
+            });
+        </script>
+
+        <!-- SVG interactif -->
+        <section class="align-center">
+          <h3>Dessin SVG interactif</h3>
+          <p>Cliquez sur les parties du visage pour voir le nom en anglais.</p>
+          <object
+            id="faceSVG"
+            type="image/svg+xml"
+            data="./images/face.svg"
+            class="r-stretch"
+          ></object>
+          <p id="feedbackFace"></p>
+        </section>
+        <script>
+          //Identify the object as any other HTML element
+          var svg = document.getElementById("faceSVG");
+          //Identify the output element in the page
+          var feedback = document.getElementById("feedbackFace");
+          //Since it is an external element, we need to wait for it to be loaded with an event listener
+          svg.addEventListener("load", function () {
+            //At this point, the DOM of the SVG can be accessed with the .contentDocument property
+            var face = svg.contentDocument;
+            //Create an array with the different IDs of the elements
+            var faceElements = [
+              "hat",
+              "glasses",
+              "moustaches",
+              "beard",
+              "mouth",
+            ];
+            //Iterate through the elements
+            faceElements.forEach(function (el) {
+              //Identify the current element of the iteration
+              var current = face.getElementById(el);
+              //Associate a mouseover event-listener to change the pointer
+              current.addEventListener("mouseover", function () {
+                current.style.cursor = "pointer";
+              });
+              //Associate a click event-listener to show the feedback
+              current.addEventListener("click", function () {
+                feedback.innerHTML =
+                  "You have clicked on the " + el.toUpperCase();
+              });
+            });
+          });
+        </script>
 
         <!-- Plus loin -->
         <section>
