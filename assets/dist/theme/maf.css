@@ -34,6 +34,18 @@ section.align-center {
   text-align: center !important;
 }
 
+.reveal code:not(.hljs) {
+  color: #e83e8c;
+}
+
+.reveal kbd {
+  padding: 0.2rem 0.4rem;
+  font-size: 87.5%;
+  color: #fff;
+  background-color: #212529;
+  border-radius: 0.2rem;
+}
+
 ul {
   list-style-type: none !important;
   margin: 0;
@@ -161,6 +173,10 @@ figure {
 
 .bg-error {
   background-color: #016121;
+}
+
+.bg-dark {
+  background-color: #444444;
 }
 
 .m-1 {
