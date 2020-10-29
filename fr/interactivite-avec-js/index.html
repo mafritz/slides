@@ -210,6 +210,7 @@
             </li>
           </ol>
         </section>
+
         <!-- Button -->
         <section class="align-center">
           <h3>Facile, n'est-ce pas ?</h3>
@@ -217,6 +218,25 @@
           <pre><code class="hljs">&lt;button onclick="Reveal.next()"&gt;Prochaine slide&lt;/button&gt;</code></pre>
           <p>Que ce passe-t-il si vous cliquez ?</p>
           <button onclick="Reveal.next()">Prochaine slide</button>
+        </section>
+
+        <!-- Voilà -->
+        <section>
+          <h3><i class="far fa-thumbs-up"></i> Voilà !</h3>
+          <p>
+            Les applications interactives sont une extension de ce mécanisme de
+            base :
+          </p>
+          <ol>
+            <li>
+              Les instructions sont codées en amont et téléchargées avec la page
+            </li>
+            <li>
+              Elles sont ensuite déclenchées par des
+              <strong class="accent">événements</strong>, comme par exemple le
+              clique sur un bouton
+            </li>
+          </ol>
         </section>
 
         <!-- Button event listener -->
@@ -237,26 +257,21 @@
             });
           </code></pre>
           <button id="nextSlideBtn">Prochaine slide</button>
-        </section>
-
-        <!-- Voilà -->
-        <section>
-          <h3><i class="far fa-thumbs-up"></i> Voilà !</h3>
           <p>
-            Les applications interactives sont une extension de ce mécanisme de
-            base :
+            <small
+              >On identifie le bouton dans le DOM et on détermine l'action à
+              déclencher lors de l'événement <strong>click</strong></small
+            >
           </p>
-          <ol>
-            <li>
-              les instructions sont codées en amont et téléchargées avec la page
-            </li>
-            <li>
-              elles sont ensuite déclanchées par des
-              <strong class="accent">événements</strong>, comme par exemple le
-              clique sur un bouton
-            </li>
-          </ol>
         </section>
+        <script>
+          //Next slide
+          document
+            .getElementById("nextSlideBtn")
+            .addEventListener("click", function () {
+              Reveal.next();
+            });
+        </script>
 
         <!-- Binary string -->
         <section class="align-center">
@@ -268,6 +283,21 @@
             <small>Événement <em>keyup</em></small>
           </p>
         </section>
+        <script>
+          // Binary
+          document
+            .getElementById("textToBinary")
+            .addEventListener("keyup", function () {
+              let output = "";
+              document
+                .getElementById("textToBinary")
+                .value.split("")
+                .forEach(function (letter) {
+                  output += letter.charCodeAt(0).toString(2) + " ";
+                });
+              document.getElementById("binaryOutput").innerHTML = output;
+            });
+        </script>
 
         <!-- SVG interactif -->
         <section class="align-center">
@@ -606,6 +636,34 @@
           });
         </script>
 
+        <!-- Résumé -->
+        <section>
+          <h3>En synthèse</h3>
+          <p>Pour créer une interaction il faut :</p>
+          <ol>
+            <li>
+              <strong class="accent">Identifier</strong> l'élément interactif
+              dans le
+              <abbr title="Document Object Model">DOM</abbr>
+            </li>
+            <li>
+              Lui appliquer un
+              <strong class="accent">gestionnaire d'événement</strong> associé à
+              un type d'événement spécifique
+            </li>
+            <li>
+              Définir une
+              <strong class="accent">règle de comportement</strong> (i.e. une
+              fonction) qui est déclenchée par l'événement
+            </li>
+          </ol>
+          <p>
+            Ce processus peut se complexifier avec la programmation. Par
+            exemple, identifier plusieurs éléments ou événements à la fois, ou
+            déclencher plusieurs règles de comportements.
+          </p>
+        </section>
+
         <!-- Plus loin -->
         <section>
           <h3>Pour aller plus loin</h3>
@@ -711,29 +769,5 @@
       src="https://kit.fontawesome.com/ac5eb0c407.js"
       crossorigin="anonymous"
     ></script>
-    <!-- Slides scripts -->
-    <script>
-      //Next slide
-      document
-        .getElementById("nextSlideBtn")
-        .addEventListener("click", function () {
-          Reveal.next();
-        });
-    </script>
-    <script>
-      // Binary
-      document
-        .getElementById("textToBinary")
-        .addEventListener("keyup", function () {
-          let output = "";
-          document
-            .getElementById("textToBinary")
-            .value.split("")
-            .forEach(function (letter) {
-              output += letter.charCodeAt(0).toString(2) + " ";
-            });
-          document.getElementById("binaryOutput").innerHTML = output;
-        });
-    </script>
   </body>
 </html>
