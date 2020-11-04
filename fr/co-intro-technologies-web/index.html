@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Introduction aux technologies du web (CO 2020)</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur les différentes approches à l'enseignement de la pensée computationnelle"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/dist/theme/tecfa.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section class="align-center">
+          <div class="d-flex space-around r-stretch">
+            <img
+              src="../intro-html5/images/html5-logo.svg"
+              alt="Logo HTML5"
+              title="Logo HTML5"
+              style="height: 20vw"
+            />
+            <img
+              src="../intro-css/images/css3-logo.svg"
+              alt="Logo CSS"
+              title="Logo CSS"
+              style="height: 20vw"
+            />
+            <img
+              src="https://edutechwiki.unige.ch/fmediawiki/images/c/ce/Unofficial_JavaScript_logo.svg"
+              alt="Logo JS"
+              title="Logo JS"
+              style="height: 20vw"
+            />
+          </div>
+          <h3>Introduction aux technologies du web (CO 2020)</h3>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Terrain difficile -->
+        <section>
+          <h3>Difficultés pour l'enseignement</h3>
+          <p>
+            Se trouver entre <strong class="accent">deux</strong> systèmes
+            <em>computationnels</em> complexes et distincts, en plus distribués
+            !
+          </p>
+          <img
+            src="./images/systemes-computationnels.png"
+            class="r-stretch"
+            alt="Cerveau et dispositifs numériques comme systèmes computationnels"
+            title="Interaction personne-machine entre deux systèmes computationnels (distribués)"
+          />
+        </section>
+
+        <!-- Différents parcours possibles -->
+        <section class="align-center">
+          <h3>Différents parcours possibles</h3>
+          <img
+            src="./images/differents-parcours.png"
+            class="r-stretch"
+            alt="Diagramme avec Conceptuel, Technique et Pragmatique"
+            title="Différents parcours basé sur le Conceptuel, le Technique et le Pragmatique"
+          />
+        </section>
+
+        <!-- Internet -->
+        <section>
+          <h3>Fonctionnement d'Internet</h3>
+          <div class="r-hstack space-between">
+            <div class="mr-4">
+              <p>
+                Internet est un réseau de dispositifs qui échangent de
+                l'information/des données.
+              </p>
+              <p>
+                À l'image, une vue partielle de internet en 2005. Chaque ligne
+                connecte deux adresses IP.
+              </p>
+            </div>
+            <figure class="r-stretch ml-4">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Internet_map_1024_-_transparent%2C_inverted.png"
+                alt="Partial map of the Internet based on the January 15, 2005"
+                title="Partial map of the Internet based on the January 15, 2005"
+              />
+              <figcaption>
+                <small
+                  >Crédits :
+                  <a
+                    href="https://commons.wikimedia.org/wiki/File:Internet_map_1024_-_transparent,_inverted.png"
+                    title="via Wikimedia Commons"
+                    >The Opte Project</a
+                  >
+                  /
+                  <a href="https://creativecommons.org/licenses/by/2.5"
+                    >CC BY</a
+                  ></small
+                >
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Web -->
+        <section>
+          <h3>Le World Wide Web</h3>
+          <div class="d-flex space-between">
+            <div>
+              <p>
+                Le Web est une manière d'échanger des informations basée sur 3
+                éléments principaux :
+              </p>
+              <ol>
+                <li>
+                  <abbr title="Uniform Resource Locator">URL</abbr> (adresse
+                  web)
+                </li>
+                <li>
+                  Protocole
+                  <abbr title="HyperText Transfer Protocol">HTTP</abbr>
+                </li>
+                <li class="accent">HyperText Mark-up Language (HTML)</li>
+              </ol>
+            </div>
+            <figure class="ml-4">
+              <img
+                src="../intro-html5/images/request-response.png"
+                alt="Web Architecture"
+                title="Requête/Réponse"
+              />
+              <figcaption>
+                <small
+                  >Le client fait une requête d'un URL et reçoit une réponse en
+                  HTML à travers le protocole HTTP(S).</small
+                >
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Première page web -->
+        <section class="align-center">
+          <h3>Première page web</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/7/76/HTML_premi%C3%A8re_page_web.png"
+            alt="Capture de la première page web"
+            title="Capture d'écran et code source de la première page du web"
+            class="r-stretch"
+          />
+          <p>
+            <small>
+              Apparence dans le navigateur (gauche) et code source HTML (droite)
+              de la
+              <a href="http://info.cern.ch/hypertext/WWW/TheProject.html"
+                >première page web</a
+              >
+              publiée par le CERN en 1990.
+            </small>
+          </p>
+        </section>
+
+        <!-- HTML5 -->
+        <section>
+          <h3>Example de code HTML5</h3>
+          <p>
+            HTML5 est la <span class="accent">cinquème version de HTML</span>,
+            caractérisée par l'entête à la ligne 1 du code suivant :
+          </p>
+          <pre><code data-line-numbers>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Document HTML5&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Je suis un document HTML5 !&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <!-- Language de marquage -->
+        <section>
+          <h3>Langage de marquage</h3>
+          <p>
+            HTML5 utilise une notation par
+            <span class="accent">balises</span>, ou tags en anglais, qui
+            consiste à contourner le contenu textuel avec des éléments qui en
+            qualifie la nature.
+          </p>
+          <pre><code><p>Ceci est le texte d'un paragraphe.</p></code></pre>
+          <pre><code><h1>Titre de niveaux 1</h1></code></pre>
+          <pre><code><a href="https://edutechwiki.unige.ch">Lien vers EduTechWiki</a></code></pre>
+        </section>
+
+        <!-- Nature combinatoire -->
+        <section>
+          <h3>Combiner les éléments</h3>
+          <p>
+            Le langage est de nature combinatoire. On peut <em>embôiter</em> les
+            éléments.
+          </p>
+          <pre><code><p>Si vous êtes intéressé-e-s par la technologie éducative, 
+vous devez absolument visiter 
+<a href="https://edutechwiki.unige.ch">EduTechWiki</a> 
+au plus vite !</p></code></pre>
+          <p>
+            Un lien hypertextuel qui permet de passer d'une page à l'autre est
+            inséré à l'intérieur d'un paragraphe.
+          </p>
+        </section>
+
+        <!-- Termes -->
+        <section>
+          <h3>Termes techniques</h3>
+          <p>
+            Pour pouvoir identifier les différents éléments dans un langage de
+            marquage, on utilise des termes techniques illustrés à l'image.
+          </p>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/c/c2/HTML5_balises_et_attributs.png"
+            class="r-stretch r-frame p-1"
+            alt="Termes techniques"
+            title="Termes techniques utilisés pour identifier les éléments dans un langage de marquage"
+          />
+        </section>
+
+        <!-- Références externes -->
+        <section>
+          <h3>Références externes</h3>
+          <p>
+            Les éléments multimédia (images, vidéos, ...) sont incorporés par
+            référence. Ils doivent disposer de leur propre addresse web (<abbr
+              title="Uniform Resource Locator"
+              >URL</abbr
+            >).
+          </p>
+          <pre><code><!-- URL relatif à la position de la page HTML5 -->
+&lt;img src="my-photo.jpg" alt="Ma photo" title="Me voici !" /&gt;
+
+<!-- URL absolu -->
+&lt;img src="https://mafritz.ch/slides/fr/intro-html5/images/html5-logo.svg" alt="HTML5 Logo" title="Logo de HTML5" /&gt;
+</code></pre>
+          <div class="r-frame p-1 text-center">
+            <i class="fas fa-exclamation-triangle text-danger"></i><br />
+            Il faut avoir le droit d'utiliser et/ou pointer vers les éléments
+            externes !
+          </div>
+        </section>
+
+        <!-- Browser -->
+        <section class="align-center">
+          <h3 class="text-left">Comment s'affiche une page ?</h3>
+          <p class="text-left">
+            Le navigateur télécharge le code source de la page et tous les
+            éléments externes.
+          </p>
+          <img
+            src="../intro-css/images/tecfa-site-code-and-elements.png"
+            alt="TECFA site web"
+            title="Site TECFA avec éléments externes"
+            class="r-stretch"
+          />
+        </section>
+
+        <!-- Deux fonctions -->
+        <section>
+          <h3>Deux fonctions du browser</h3>
+          <p>
+            Le navigateur web effectue deux opérations avec le code source HTML5
+            :
+          </p>
+          <ol>
+            <li>
+              <strong>Parsing</strong> : création du
+              <abbr title="Document Object Model">DOM</abbr> à travers la
+              hiérarchie des balises.
+            </li>
+            <li>
+              <strong class="accent">Rendering</strong> : application des
+              propriétés graphiques aux éléments du
+              <abbr title="Document Object Model">DOM</abbr>.
+            </li>
+          </ol>
+        </section>
+
+        <!-- Parsing -->
+        <section class="align-center">
+          <h3 class="text-left">Parsing : relation entre éléments</h3>
+          <img
+            src="../intro-css/images/dom-with-relations.png"
+            alt="Exemple de DOM"
+            title="Le DOM détermine les relations entre éléments"
+            class="r-stretch"
+          />
+          <p class="text-left">
+            La relation entre noeuds influence l'affichage d'un élément par
+            rapport à un autre (e.g. embôitement dans le
+            <abbr title="Document Object Model">DOM</abbr>)
+          </p>
+        </section>
+
+        <!-- Rendering -->
+        <section class="align-center">
+          <h3 class="text-left">Rendering : tout est une <em>boîte</em></h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/2/2b/HTML5_bo%C3%AEtes_avec_bordure_CSS.png"
+            alt="Bordures éléments HTML5"
+            title="Bordures pour afficher les éléments HTML5 comme des boîtes"
+            class="r-stretch"
+          />
+          <p>
+            Tout élément HTML5 est une sorte de
+            <strong class="accent"><em>boîte</em> rectangulaire</strong>. À
+            l'image, une bordure rouge est appliquée à tout élément.
+          </p>
+        </section>
+
+        <!-- Block vs. Inline -->
+        <section>
+          <h3>Types de boîtes différents</h3>
+          <div class="d-flex space-between">
+            <div class="mr-1">
+              <p>Il existe ~3 types de boîtes :</p>
+              <ol>
+                <li>
+                  <strong>Block</strong> : l'élément occupe la largeur
+                  disponible.
+                </li>
+                <li>
+                  <strong>Inline</strong> : l'élément occupe seulement la place
+                  nécessaire à son contenu.
+                </li>
+                <li>
+                  <strong>None</strong> : l'élément n'occupe pas de place
+                  <em>physique</em>.
+                </li>
+              </ol>
+            </div>
+            <div class="ml-1">
+              <img
+                src="https://edutechwiki.unige.ch/fmediawiki/images/b/bf/CSS_block_vs_inline_elements.png"
+                alt="Types de boîtes"
+                title="Représentation graphique des types de boîtes différents"
+              />
+              <p>
+                <small>
+                  <code>&lt;h1&gt;</code> et <code>&lt;p&gt;</code> sont des
+                  éléments <em>block</em> qui occupent toute la largeur
+                  disponible indépendamment du contenu.
+                </small>
+              </p>
+              <p>
+                <small>
+                  <code>&lt;a&gt;</code> est un élément <em>inline</em> qui
+                  occupe seulement la place nécessaire et peut même aller à la
+                  ligne avec du contenu sur les deux côtés.
+                </small>
+              </p>
+              <p>
+                <small>
+                  <code>&lt;head&gt;</code> est un élément <em>none</em>, on ne
+                  le <em>voit</em> pas.
+                </small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CSS = propriétés des boîtes -->
+        <section>
+          <h3>CSS = propriétés des boîtes</h3>
+          <div class="d-flex space-between">
+            <div class="mr-1">
+              <p>
+                <abbr title="Cascading Style Sheets">CSS</abbr> est un langage
+                qui permet de déterminer les propriétés graphiques des éléments
+                HTML5. Il s'occupe de :
+              </p>
+              <ol>
+                <li>
+                  Identifier les éléments à styliser avec un
+                  <strong style="color: #ba4642">sélecteur</strong>
+                </li>
+                <li>
+                  Déclarer une ou plusieurs
+                  <strong style="color: #ff0000">propriétés</strong> à modifier
+                </li>
+                <li>
+                  Spécifier les
+                  <strong style="color: #2f3699">valeurs</strong> à appliquer
+                  parmi les choix possibles
+                </li>
+              </ol>
+            </div>
+
+            <div class="ml-1 text-center">
+              <img
+                src="https://edutechwiki.unige.ch/fmediawiki/images/5/56/CSS_d%C3%A9claration_avec_labels.png"
+                alt="Exemple de CSS"
+                title="Exemple de code CSS pour appliquer des propriétés graphiques"
+                class="r-frame p-1"
+              />
+              <p>
+                <small
+                  >Exemple d'un sélecteur avec trois propriétés. Les
+                  <span class="accent">{}</span> délimitent un
+                  <strong>bloc</strong> de code.</small
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Rappel tride pages web -->
+        <section class="align-center">
+          <h3>Composantes des pages web</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/f/f8/Structure_page_web_dynamique.png"
+            class="r-stretch"
+            alt="HTML5, CSS et JavaScript"
+            title="Triade des technologies web principales"
+          />
+          <div class="d-flex space-between">
+            <div class="ml-5 mr-5 fragment">Structure</div>
+            <div class="ml-5 mr-5 fragment">Forme</div>
+            <div class="ml-5 mr-5 fragment">Interaction</div>
+          </div>
+        </section>
+
+        <!-- Download of JavaScript code -->
+        <section>
+          <h3>JavaScript et le navigateur web</h3>
+          <pre><code class="hljs" data-line-numbers="|11-12">&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+	&lt;title&gt;Une page HTML5&lt;/title&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;!-- Téléchargement du CSS --&gt;
+	&lt;link href="assets/css/style.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;!-- Téléchargement du fichier JS --&gt;
+	&lt;script src="assets/js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;						
+</code></pre>
+          <p class="fragment text-center mt-5">
+            <i class="fa fa-download"></i> Les
+            <strong><span class="accent">instructions</span></strong> sont
+            téléchargées avec la page.
+          </p>
+        </section>
+
+        <!-- Moteur JavaScript -->
+        <section class="align-center">
+          <h3>Un <em>moteur</em> JS dans le navigateur</h3>
+          <img
+            src="../interactivite-avec-js/images/navigateur-moteur-js.svg"
+            class="r-stretch"
+            alt="Moteur JavaScript"
+            title="Le navigateur possède un moteur JavaScript"
+          />
+          <p>Le code est interprété à l'intérieur du navigateur.</p>
+        </section>
+
+        <!-- The window global object -->
+        <section>
+          <h3>L'objet global <code>window</code></h3>
+          <div class="border-light-1 p-1 mb-3">
+            JavaScript peut <strong class="accent">contrôler</strong>, avec des
+            limitations, le navigateur à travers l'objet global
+            <code>window</code>.
+          </div>
+          <ol>
+            <li class="fragment">
+              Ouvrez la console du navigateur
+              <kbd>F12</kbd>
+            </li>
+            <li class="fragment">
+              Entrez
+              <code>window</code>
+            </li>
+            <li class="fragment">
+              Après entrez
+              <code>window.innerHeight</code>
+            </li>
+            <li class="fragment">
+              Enfin entrez
+              <code>window.location.href</code>
+            </li>
+          </ol>
+        </section>
+        <!-- The document object -->
+        <section>
+          <h3>Accès au DOM de la page</h3>
+          <div class="border-light-1 p-1 mb-3">
+            À l'intérieur de l'objet window, vous avez l'objet
+            <code>window.document</code> qui donne accès au
+            <abbr title="Document Object Model">DOM</abbr>.
+          </div>
+          <ol>
+            <li class="fragment">
+              Entrez <code>window.document</code> dans la console
+            </li>
+            <li class="fragment">
+              Puis seulement
+              <code>document</code>
+            </li>
+            <li class="fragment">
+              Maintenant entrez
+              <code>document.title</code>
+            </li>
+            <li class="fragment">
+              Et enfin
+              <code>document.body</code>
+            </li>
+          </ol>
+        </section>
+        <!-- Manipulate the DOM -->
+        <section>
+          <h3 id="slideTitle">Manipulation du DOM</h3>
+          <div class="border-light-1 p-1 mb-3">
+            À travers l'accès au DOM vous pouvez
+            <strong class="important"
+              >manipuler les différents éléments de la page</strong
+            >.
+          </div>
+          <ol>
+            <li class="fragment">
+              Entrez
+              <code>document.getElementById('slideTitle').innerHTML</code>
+            </li>
+            <li class="fragment">
+              Puis
+              <code
+                >document.getElementById('slideTitle').innerHTML = 'On peut
+                faire mieux !'</code
+              >
+            </li>
+          </ol>
+        </section>
+        <!-- The code of this slides -->
+        <section>
+          <h3>Instructions pour la présentation</h3>
+          <div class="border-light-1 p-1 mb-3">
+            Cette présentation utilise du code de
+            <a href="https://github.com/hakimel/reveal.js">Reveal.js</a>, une
+            bibliothèque pour créer des slides en HTML5, CSS et JavaScript.
+          </div>
+          <ol>
+            <li class="fragment">Entrez <code>Reveal</code> dans la console</li>
+            <li class="fragment">
+              Puis entrez
+              <code>Reveal.getTotalSlides()</code>
+            </li>
+            <li class="fragment">
+              Et finalement entrez
+              <code>Reveal.next()</code>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Button -->
+        <section class="align-center">
+          <h3>Facile, n'est-ce pas ?</h3>
+          <p>Maintenant regardez le code HTML du bouton.</p>
+          <pre><code class="hljs">&lt;button onclick="Reveal.next()"&gt;Prochaine slide&lt;/button&gt;</code></pre>
+          <p>Que ce passe-t-il si vous cliquez ?</p>
+          <button onclick="Reveal.next()">Prochaine slide</button>
+        </section>
+
+        <!-- Voilà -->
+        <section>
+          <h3><i class="far fa-thumbs-up"></i> Voilà !</h3>
+          <p>
+            Les applications interactives sont une extension de ce mécanisme de
+            base :
+          </p>
+          <ol>
+            <li>
+              Les instructions sont codées en amont et téléchargées avec la page
+            </li>
+            <li>
+              Elles sont ensuite déclenchées par des
+              <strong class="accent">événements</strong>, comme par exemple le
+              clique sur un bouton
+            </li>
+          </ol>
+        </section>
+
+        <!-- Button event listener -->
+        <section class="align-center">
+          <h3>Gestionnaire d'événements</h3>
+          <p>
+            Comme pour CSS, on peut ajouter du code en dehors des balises HTML5
+            en utilisant, par exemple, un
+            <em class="accent">event listener</em>.
+          </p>
+          <pre><code class="hljs">&lt;button id="nextSlideBtn"&gt;Prochaine slide&lt;/button&gt;</code></pre>
+          <pre><code class="hljs" data-trim data-line-numbers>
+          // Code JavaScript
+          document.
+            getElementById("nextSlideBtn").
+            addEventListener("click", function() {
+              Reveal.next();
+            });
+          </code></pre>
+          <button id="nextSlideBtn">Prochaine slide</button>
+          <p>
+            <small
+              >On identifie le bouton dans le DOM et on détermine l'action à
+              déclencher lors de l'événement <strong>click</strong></small
+            >
+          </p>
+        </section>
+        <script>
+          //Next slide
+          document
+            .getElementById("nextSlideBtn")
+            .addEventListener("click", function () {
+              Reveal.next();
+            });
+        </script>
+
+        <!-- Binary string -->
+        <section class="align-center">
+          <h3>Autres événements</h3>
+          <p>Insérez un mot pour voir l'équivalent en code binaire.</p>
+          <input type="text" id="textToBinary" class="mb-2" />
+          <code id="binaryOutput" class="r-stretch border-dark-2 hljs"></code>
+          <p>
+            <small>Événement <em>keyup</em></small>
+          </p>
+        </section>
+        <script>
+          // Binary
+          document
+            .getElementById("textToBinary")
+            .addEventListener("keyup", function () {
+              let output = "";
+              document
+                .getElementById("textToBinary")
+                .value.split("")
+                .forEach(function (letter) {
+                  output += letter.charCodeAt(0).toString(2) + " ";
+                });
+              document.getElementById("binaryOutput").innerHTML = output;
+            });
+        </script>
+
+        <!-- SVG interactif -->
+        <section class="align-center">
+          <h3>Autres éléments interactifs</h3>
+          <p id="feedbackFace">
+            Cliquez sur les parties du visage pour voir le nom en anglais.
+          </p>
+          <svg
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            width="210mm"
+            height="297mm"
+            viewBox="0 0 744.09448819 1052.3622047"
+            id="faceSVG"
+            version="1.1"
+            inkscape:version="0.91 r13725"
+            sodipodi:docname="face.svg"
+            class="r-stretch"
+          >
+            <defs id="defs3382" />
+            <sodipodi:namedview
+              id="base"
+              pagecolor="#ffffff"
+              bordercolor="#666666"
+              borderopacity="1.0"
+              inkscape:pageopacity="0.0"
+              inkscape:pageshadow="2"
+              inkscape:zoom="0.58"
+              inkscape:cx="72.413793"
+              inkscape:cy="634.28571"
+              inkscape:document-units="px"
+              inkscape:current-layer="layer1"
+              showgrid="false"
+              inkscape:window-width="2560"
+              inkscape:window-height="1377"
+              inkscape:window-x="-8"
+              inkscape:window-y="-8"
+              inkscape:window-maximized="1"
+            />
+            <metadata id="metadata3385">
+              <rdf:RDF>
+                <cc:Work rdf:about="">
+                  <dc:format>image/svg+xml</dc:format>
+                  <dc:type
+                    rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+                  />
+                  <dc:title></dc:title>
+                </cc:Work>
+              </rdf:RDF>
+            </metadata>
+            <g
+              inkscape:label="Livello 1"
+              inkscape:groupmode="layer"
+              id="layer1"
+            >
+              <ellipse
+                style="
+                  fill: #ffccaa;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.92661422px;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-opacity: 1;
+                "
+                id="path3388"
+                cx="373.27585"
+                cy="564.43115"
+                rx="256.07117"
+                ry="287.96771"
+              />
+              <g id="hat">
+                <rect
+                  y="281.51608"
+                  x="67.084908"
+                  height="81.347412"
+                  width="615.83014"
+                  id="rect3392"
+                  style="
+                    fill: #000000;
+                    fill-rule: evenodd;
+                    stroke: #000000;
+                    stroke-width: 0.6870625px;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-opacity: 1;
+                  "
+                />
+                <rect
+                  y="35.120827"
+                  x="248.27586"
+                  height="263.79309"
+                  width="262.06897"
+                  id="rect3394"
+                  style="
+                    fill: #000000;
+                    fill-rule: evenodd;
+                    stroke: #000000;
+                    stroke-width: 1px;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-opacity: 1;
+                  "
+                />
+              </g>
+              <g id="g3438">
+                <ellipse
+                  ry="56.896553"
+                  rx="48.275864"
+                  cy="493.74152"
+                  cx="291.58621"
+                  id="path3396"
+                  style="fill: #ffffff"
+                />
+                <circle
+                  r="25.862068"
+                  cy="512.70703"
+                  cx="303.65518"
+                  id="path3413"
+                  style="fill: #0000ff"
+                />
+              </g>
+              <g id="g3442">
+                <ellipse
+                  ry="56.896553"
+                  rx="48.275864"
+                  cy="495.46564"
+                  cx="451.93103"
+                  id="path3396-2"
+                  style="fill: #ffffff"
+                />
+                <circle
+                  r="25.862068"
+                  cy="512.70703"
+                  cx="439.86206"
+                  id="path3413-4"
+                  style="fill: #0000ff"
+                />
+              </g>
+              <g id="mouth">
+                <ellipse
+                  style="fill: #ff0000"
+                  id="path3430"
+                  cx="371.55173"
+                  cy="735.98291"
+                  rx="92.241379"
+                  ry="37.068966"
+                />
+              </g>
+              <g id="glasses">
+                <circle
+                  r="77.586205"
+                  cy="495.46567"
+                  cx="279.58621"
+                  id="path4254"
+                  style="
+                    fill: #00ffff;
+                    fill-opacity: 0.47999998;
+                    stroke: #000000;
+                    stroke-width: 10;
+                    stroke-miterlimit: 4;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                />
+                <circle
+                  r="77.586205"
+                  cy="497.18979"
+                  cx="460.6207"
+                  id="path4254-7"
+                  style="
+                    fill: #00ffff;
+                    fill-opacity: 0.47999998;
+                    stroke: #000000;
+                    stroke-width: 10;
+                    stroke-miterlimit: 4;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                />
+                <path
+                  inkscape:connector-curvature="0"
+                  id="path4273"
+                  d="m 124.41379,497.18979 c 74.13793,0 77.58621,0 77.58621,0 l 0,0"
+                  style="
+                    fill: none;
+                    fill-rule: evenodd;
+                    stroke: #000000;
+                    stroke-width: 10;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 4;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                />
+                <path
+                  inkscape:connector-curvature="0"
+                  id="path4273-2"
+                  d="m 544.24138,495.46565 c 74.13793,0 77.58621,0 77.58621,0 l 0,0"
+                  style="
+                    fill: none;
+                    fill-rule: evenodd;
+                    stroke: #000000;
+                    stroke-width: 10;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 4;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                />
+                <path
+                  inkscape:connector-curvature="0"
+                  id="path4290"
+                  d="m 353.44828,493.74152 c 31.03448,0 29.31034,-1.72414 29.31034,-1.72414"
+                  style="
+                    fill: none;
+                    fill-rule: evenodd;
+                    stroke: #000000;
+                    stroke-width: 10;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 4;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                />
+              </g>
+              <path
+                style="
+                  fill: none;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 5;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 4;
+                  stroke-dasharray: none;
+                  stroke-opacity: 1;
+                "
+                d="M 368.96552,538.5691 C 350,623.05186 350,626.50013 350,626.50013 l 36.2069,13.79311"
+                id="path4305"
+                inkscape:connector-curvature="0"
+              />
+              <g id="moustaches">
+                <path
+                  inkscape:connector-curvature="0"
+                  id="path4307"
+                  d="m 376.34483,673.05186 c -74.13793,-50 -144.82759,75.86207 -144.82759,75.86207"
+                  style="
+                    fill: none;
+                    fill-rule: evenodd;
+                    stroke: #000000;
+                    stroke-width: 25;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 4;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                />
+                <path
+                  inkscape:connector-curvature="0"
+                  id="path4307-8"
+                  d="m 365.28667,673.43168 c 74.13793,-50 144.82759,75.86207 144.82759,75.86207"
+                  style="
+                    fill: none;
+                    fill-rule: evenodd;
+                    stroke: #000000;
+                    stroke-width: 25;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 4;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                />
+              </g>
+              <path
+                sodipodi:type="star"
+                style="
+                  fill: #000000;
+                  fill-opacity: 1;
+                  stroke: none;
+                  stroke-width: 25;
+                  stroke-miterlimit: 4;
+                  stroke-dasharray: none;
+                  stroke-opacity: 1;
+                "
+                id="beard"
+                sodipodi:sides="3"
+                sodipodi:cx="372.41379"
+                sodipodi:cy="859.25873"
+                sodipodi:r1="145.12489"
+                sodipodi:r2="72.562447"
+                sodipodi:arg1="-0.52359878"
+                sodipodi:arg2="0.52359878"
+                inkscape:flatsided="false"
+                inkscape:rounded="0"
+                inkscape:randomized="0"
+                d="m 498.09563,786.69628 -62.84092,108.84367 -62.84092,108.84365 -62.84092,-108.84365 -62.84093,-108.84367 125.68185,0 z"
+                inkscape:transform-center-y="36.281225"
+                transform="matrix(1.3566751,0,0,1,-133.65832,-5.7241379)"
+              />
+            </g>
+          </svg>
+        </section>
+        <script>
+          //Identify the object as any other HTML element
+          var svg = document.getElementById("faceSVG");
+          //Identify the output element in the page
+          var feedback = document.getElementById("feedbackFace");
+          //Create an array with the different IDs of the elements
+          var faceElements = ["hat", "glasses", "moustaches", "beard", "mouth"];
+          //Iterate through the elements
+          faceElements.forEach(function (el) {
+            //Identify the current element of the iteration
+            var current = document.getElementById(el);
+            //Associate a mouseover event-listener to change the pointer
+            current.addEventListener("mouseover", function () {
+              current.style.cursor = "pointer";
+            });
+            //Associate a click event-listener to show the feedback
+            current.addEventListener("click", function () {
+              feedback.innerHTML =
+                "<span class='text-success'>You have clicked on the " +
+                el.toUpperCase() +
+                "</span>";
+            });
+          });
+        </script>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a
+              href="https://edutechwiki.unige.ch/fr/Aspects_th%C3%A9oriques_de_la_pens%C3%A9e_computationnelle"
+              >Aspects théoriques de la pensée computationnelle</a
+            >
+            sur EduTechWiki.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/vendor/vuejs/vue.min.js"></script>
+    <script src="js/candle-enigmas.js"></script>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
