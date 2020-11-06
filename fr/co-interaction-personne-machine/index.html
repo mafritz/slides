@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Interaction Personne-Machine (CO 2020)</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur l'interaction personne-machine"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/dist/theme/tecfa.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="images/hci-representation.svg"
+            alt="Logo du projet"
+            title="Je pense, donc JS"
+          />
+          <h3>Interaction Personne-Machine (CO 2020)</h3>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Terrain difficile -->
+        <section>
+          <h3>Difficultés pour l'enseignement</h3>
+          <p>
+            Se trouver entre <strong class="accent">deux</strong> systèmes
+            <em>computationnels</em> complexes et distincts, en plus distribués
+            !
+          </p>
+          <img
+            src="../co-intro-pensee-computationnelle/images/systemes-computationnels.png"
+            class="r-stretch"
+            alt="Cerveau et dispositifs numériques comme systèmes computationnels"
+            title="Interaction personne-machine entre deux systèmes computationnels (distribués)"
+          />
+        </section>
+
+        <!-- Différents parcours possibles -->
+        <section class="align-center">
+          <h3>Différents parcours possibles</h3>
+          <img
+            src="../co-intro-pensee-computationnelle/images/differents-parcours.png"
+            class="r-stretch"
+            alt="Diagramme avec Conceptuel, Technique et Pragmatique"
+            title="Différents parcours basé sur le Conceptuel, le Technique et le Pragmatique"
+          />
+        </section>
+
+        <!-- Rôle de l'informatique (1) -->
+        <section class="align-center">
+          <h3>Quel rôle pour l'informatique ?</h3>
+          <div class="border-light-1 p-1 mr-2 ml-2">
+            <i class="fa fa-quote-left"></i>
+            L'informatique étudie les phénomènes autour des ordinateurs
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Newell, Simon & Perils</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+        </section>
+
+        <!-- Rôle de l'informatique (2) -->
+        <section class="align-center">
+          <h3>Quel rôle pour l'informatique ?</h3>
+          <div class="border-light-1 p-1 mr-2 ml-2">
+            <i class="fa fa-quote-left"></i>
+            L'informatique ne concerne pas plus les ordinateurs que l'astronomie
+            ne concerne les télescopes.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Dijkstra</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+        </section>
+
+        <!-- Rôle de l'informatique (3) -->
+        <section class="align-center">
+          <h3>Quel rôle pour l'informatique ?</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            L'ancienne informatique concerne ce que les ordinateurs peuvent
+            faire, la nouvelle informatique concerne ce que les gens peuvent
+            faire.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Shneiderman, 2002</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+        </section>
+
+        <!-- Définition -->
+        <section class="align-center">
+          <h3>Définition générale</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            L'interaction personne-machine étudie la façon dont les humains
+            utilisent (ou n'utilisent pas) des artefacts, des systèmes et des
+            infrastructures informatiques.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
+        </section>
+
+        <!-- Multi-disciplines -->
+        <section class="align-center">
+          <h3>Approche multidisciplinaire</h3>
+          <img
+            src="./images/hci-diagramme.png"
+            class="r-stretch"
+            alt="Diagramme Venn avec différents disciplines concernées"
+            title="Différentes disciplines concernées par le domaine"
+          />
+        </section>
+
+        <!-- Principe de base I/O - Stimulus-Réponse -->
+        <section class="align-center">
+          <h3>Principe de base</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/1/13/IntroProgrammationt_cycleIO.png"
+            class="r-stretch"
+            alt="I/O machine et Stimulus-Réponse pour la personne"
+            title="Mécanisme de base de l'interaction personne-machine"
+          />
+        </section>
+
+        <!-- Application à différents degrés -->
+        <section class="align-center">
+          <h3>Application à différents niveaux</h3>
+          <p>
+            L'interaction personne-machine couvre un large continuum
+            d'applications qui vont du très technique à l'<em>holistique</em>.
+          </p>
+          <img
+            src="./images/spectrum.svg"
+            style="min-width: 100%"
+            alt="Continuum"
+            title="Continuum entre deux pôles"
+          />
+          <div class="d-flex space-between">
+            <p>Langages de programmation</p>
+            <p><em>Embodied interaction</em></p>
+          </div>
+        </section>
+
+        <!-- Domaines d'application (1) -->
+        <section class="align-center">
+          <h3>Domaines d'application (1)</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/8/81/Introduction_%C3%A0_la_programmation_-_%C3%A9tapes_de_d%C3%A9veloppement.png"
+            class="r-stretch"
+            alt="Cyclde de développement"
+            title="Cycle itératif du développement d'un artefacts informatique"
+          />
+          <p><em>User eXperience</em> (UX), méthode <em>Agile</em>, ...</p>
+        </section>
+
+        <!-- Domaines d'application (2) -->
+        <section class="align-center">
+          <h3>Domaines d'application (2)</h3>
+          <p>
+            Passage à l'interaction distribuée : médiatisation informatique des
+            interactions entre personnes.
+          </p>
+          <img
+            src="./images/hci-to-hhi.png"
+            class="r-stretch mt-5"
+            alt="Passage de l'interaction personne-machine à personne-personne"
+            title="Interaction Personne-Personne à travers l'informatique"
+          />
+          <p><em>Instructional designer</em>, Évangéliste technologique, ...</p>
+        </section>
+
+        <!-- Activités débranchées -->
+        <section>
+          <h3>Deux activités débranchées</h3>
+          <ol>
+            <li class="mb-2 fragment">
+              <strong>Pseudo-code</strong><br />
+              Utiliser un langage <em>intermédiaire</em> entre langage humain et
+              langage de programmation.
+            </li>
+            <li class="fragment">
+              <strong>Prototypage</strong><br />
+              Utiliser le dessin papier pour créer des interfaces et
+              interactions d'applications informatiques.
+            </li>
+          </ol>
+        </section>
+
+        <!-- Pseudo-code-->
+        <section>
+          <h3>Pseudo-code</h3>
+          <p>
+            Le pseudo-code permet d'appliquer et entraîner la pensée
+            computationnelle dans un contexte plus <em>relaxé</em> (e.g. gestion
+            des erreurs).
+          </p>
+          <img
+            src="./images/spectrum.svg"
+            style="min-width: 100%"
+            alt="Continuum"
+            title="Continuum entre deux pôles"
+          />
+          <div class="d-flex space-between">
+            <p>Langue naturelle</p>
+            <p>Langage formalisé</p>
+          </div>
+        </section>
+
+        <!-- Exemple pseudo-code -->
+        <section>
+          <h3>Exemple : jeu du morpion</h3>
+          <ol>
+            <li class="fragment">
+              Demander un input dans l'une des 9 positions possibles.
+            </li>
+            <li class="fragment">
+              Contrôler que la case n'est pas déjà occupée
+              <ul>
+                <li>
+                  Si elle est occupée, demander un nouveau input et recommencer
+                  au point 1
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Contrôler que le symbole appliqué soit différent du précédent
+              (pour garantir l'alternance)
+              <ul>
+                <li>
+                  Si c'est le même, demander un nouveau input et recommencer au
+                  point 1
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">...</li>
+          </ol>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a
+              href="https://edutechwiki.unige.ch/fr/Aspects_th%C3%A9oriques_de_la_pens%C3%A9e_computationnelle"
+              >Aspects théoriques de la pensée computationnelle</a
+            >
+            sur EduTechWiki.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/vendor/vuejs/vue.min.js"></script>
+    <script src="js/candle-enigmas.js"></script>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
