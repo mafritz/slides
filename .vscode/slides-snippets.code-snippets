@@ -1,0 +1,52 @@
+{
+	"New general slide": {
+		"prefix": [
+			"slide",
+		],
+		"body": [
+			"<!-- ${1:comment} -->",
+			"<section>",
+			"\t<h3>${2:title}</h3>",
+			"</section>"
+		],
+		"description": "Add a new slide skeleton with only title"
+	},
+	"New slide with citation": {
+		"prefix": [
+			"slide-citation"
+		],
+		"body": [
+			"<!-- ${1:comment} -->",
+			"<section class=\"align-center\">",
+            "\t<h3>${2:title}</h3>",
+			"\t<div class=\"border-light-1 p-1 ml-2 mr-2\">",
+				"\t<i class=\"fa fa-quote-left\"></i>",
+				"${3:citation}",
+				"<i class=\"fa fa-quote-right\"></i>",
+			"\t</div>",
+			"\t<p class=\"text-right pr-5\">— ${4:author, date, ..}</p>",
+			"</section>"
+		]
+	},
+	"New slide with continuum": {
+		"prefix": [
+			"slide-continuum"
+		],
+		"body": [
+			"<!-- ${1:comment}-->",
+			"<section>",
+			\t"<h3>${2:title}</h3>",
+			"\t<img",
+				"\t\t\"src="./images/spectrum.svg\"",
+				"\t\tstyle=\"min-width: 100%\"",
+				"\t\talt=\"Continuum\"",
+				"\t\ttitle=\"Continuum entre deux pôles\"",
+			"\t/>",
+			"\t<div class=\"d-flex space-between\">",
+				"\t\t<p>${3:pole left}</p>",
+				"\t\t<p>${4:pole right}</p>",
+			"\t</div>",
+			"</section>"
+		]
+	}
+}
