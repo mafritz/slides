@@ -35,9 +35,9 @@
 		"body": [
 			"<!-- ${1:comment}-->",
 			"<section>",
-			\t"<h3>${2:title}</h3>",
+			"\t<h3>${2:title}</h3>",
 			"\t<img",
-				"\t\t\"src="./images/spectrum.svg\"",
+				"\t\tsrc=\"/assets/commons/spectrum.svg\"",
 				"\t\tstyle=\"min-width: 100%\"",
 				"\t\talt=\"Continuum\"",
 				"\t\ttitle=\"Continuum entre deux pôles\"",
