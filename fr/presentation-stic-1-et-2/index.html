@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Présentation cours STIC I et II</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Aperçu des contenus des cours STIC I et II jusqu'à en 2020"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/dist/theme/tecfa.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            style="height: 250px"
+            src="https://tecfa.unige.ch/assets-global/logos/maltt_logo.svg"
+            alt="Logo MALTT"
+            title="Master of Science in Learning and Teaching Technologies"
+          />
+          <h2>STIC I et STIC II</h2>
+          <p>
+            Domaine Sciences et Technologies de l'Information et de la
+            Communication (STIC), cours obligatoires à 6 crédits ECTS.
+          </p>
+        </section>
+
+        <!-- Perspective STIC I -->
+        <section class="align-center">
+          <h3>Perspective du cours STIC I</h3>
+          <img
+            src="./images/stic-1-perspective.png"
+            class="r-stretch"
+            alt="Schéma des concepts principaux impliqués dans le cours"
+            title="Perspective adoptée dans le cours STIC I"
+          />
+          <p>
+            Concevoir et développer des applications en HTML5, CSS et JavaScript
+            qui sous-tendent des processus d'apprentissage.
+          </p>
+        </section>
+
+        <!-- Applications lecture -->
+        <section class="align-center">
+          <h3>Applications pour la lecture</h3>
+          <div class="d-flex space-between r-stretch">
+            <div class="mr-1 fragment">
+              <p>
+                Inhibition voie d'<strong class="accent">assemblage</strong>
+              </p>
+              <button id="blinkBtn">Nouveau mot</button>
+              <div class="mt-4">
+                <span
+                  id="blinkTarget"
+                  class="border-dark-1 p-1"
+                  style="letter-spacing: 2px"
+                  >Le mot s'affiche ici</span
+                >
+              </div>
+            </div>
+            <div class="ml-1 fragment">
+              <p>Inhibition voie d'<strong class="accent">adressage</strong></p>
+              <button id="reverseBtn">Nouveau mot</button>
+              <div class="mt-4">
+                <span
+                  id="reverseTarget"
+                  class="border-dark-1 p-1"
+                  style="letter-spacing: 2px"
+                  >Le mot s'affiche ici</span
+                >
+              </div>
+            </div>
+          </div>
+          <p class="fragment">= interaction mais ≠ computation</p>
+        </section>
+        <script>
+          let words = [
+            "avion",
+            "maison",
+            "cahier",
+            "chat",
+            "fleur",
+            "voiture",
+            "école",
+            "mathématique",
+          ];
+          let blinkTarget = document.getElementById("blinkTarget");
+          let reverseTarget = document.getElementById("reverseTarget");
+
+          // Blink
+          document
+            .getElementById("blinkBtn")
+            .addEventListener("click", function () {
+              blinkTarget.style.display = "inline";
+              blinkTarget.textContent =
+                words[Math.floor(words.length * Math.random())];
+              let blink = setTimeout(function () {
+                blinkTarget.style.display = "none";
+              }, 200);
+            });
+
+          //Reverse
+          document
+            .getElementById("reverseBtn")
+            .addEventListener("click", function () {
+              reverseTarget.textContent = words[
+                Math.floor(words.length * Math.random())
+              ]
+                .split("")
+                .reverse()
+                .join("");
+            });
+        </script>
+
+        <!-- Application chiffres -->
+        <section class="align-center">
+          <h3>Application triage des chiffres</h3>
+          <a
+            href="https://tecfa.unige.ch/perso/mafritz/teaching/stic-1/apps/number-sorting-game/"
+            class="r-stretch"
+          >
+            <img
+              src="./images/app-number-sorting.png"
+              alt="Capture d'écran application"
+              title="Application pour trier de chiffres avec modalités interactives différentes"
+            />
+          </a>
+          <p>= computation mais ≠ interaction</p>
+        </section>
+
+        <!-- Ressources ouvertes -->
+        <section class="align-center">
+          <h3><em>Open Education</em></h3>
+          <img
+            class="r-stretch"
+            src="https://edutechwiki.unige.ch/fmediawiki/images/d/de/JePenseDoncJS-logo.svg"
+            alt="Logo du projet"
+            title="Je pense, donc JS"
+          />
+          <p>
+            <a
+              href="https://edutechwiki.unige.ch/fr/Initiation_%C3%A0_la_pens%C3%A9e_computationnelle_avec_JavaScript"
+              ><i class="fas fa-link"></i> Ressources théoriques, techniques et
+              pratiques d'accompagnement</a
+            >
+            sous licence
+            <em>creative commons.</em>
+          </p>
+        </section>
+
+        <!-- Évaluation du cours -->
+        <section class="align-center">
+          <h3>Évaluation du cours</h3>
+          <img
+            src="images/connaissances-apport.svg"
+            alt="Graphique avec évaluation"
+            title="Évaluation du cours STIC I en 2018/2019"
+          />
+          <p>
+            <small>
+              <strong>N = 11</strong>, intervalles de confiance à 95%. Tiré de
+              Fritz, M. A., & Schneider, D. K. (2019).
+              <a
+                href="https://www.researchgate.net/publication/333632634_Initiation_a_la_pensee_computationnelle_avec_JavaScript_le_Cours_STIC_I"
+                >Pensée computationnelle avec JavaScript: Le cours STIC I</a
+              >. Atelier@EIAH’19. Apprentissage de la pensée informatique de la
+              maternelle à l’Université : retours d’expériences et passage à
+              l’échelle. EIAH’19, Paris, France.
+            </small>
+          </p>
+        </section>
+
+        <!-- Intégration -->
+        <section class="align-center">
+          <h3>Intégration domaines MALTT</h3>
+          <img
+            src="./images/integration-stic-1.png"
+            class="r-stretch"
+            alt="Diagramme avec autres domaines MALTT"
+            title="Intégration avec les autres cours du MALTT"
+          />
+        </section>
+
+        <!-- STIC II -->
+        <section class="align-center">
+          <h3>Perspective du cours STIC II</h3>
+          <img
+            src="/assets/commons/spectrum.svg"
+            style="min-width: 100%"
+            alt="Continuum"
+            title="Continuum entre deux pôles"
+          />
+          <div class="d-flex space-between">
+            <div>
+              <p>XML<br />DTD<br />XSLT<br />XSD</p>
+            </div>
+            <div>
+              <p>IMS Content Package<br />SCORM</p>
+            </div>
+            <div>
+              <p>E-pub</p>
+            </div>
+            <div>
+              <p>Moodle<br />LAMS</p>
+            </div>
+          </div>
+          <p>
+            Découverte et implémentation de formats et formalismes de la
+            pédagogie numérique à différents niveaux de granularité.
+          </p>
+        </section>
+
+        <!-- STIC II intégration -->
+        <section class="align-center">
+          <h3>Scénarisation intégrative</h3>
+          <img
+            src="./images/stic-2-integration.png"
+            class="r-stretch border-light-1"
+            alt="Exemple d'espace Moodle"
+            title="Intégration de plusieurs formats dans un espace Moodle"
+          />
+        </section>
+
+        <!-- Workflow -->
+        <section class="align-center">
+          <h3><em>Workflow</em> pédagogique</h3>
+          <img
+            src="./images/stic-2-workflow.png"
+            class="r-stretch border-light-1"
+            alt="Workflow LAMS"
+            title="Exemple de workflow dans LAMS"
+          />
+        </section>
+
+        <!-- Intégration STIC II -->
+        <section class="align-center">
+          <h3>Intégration domaines MALTT</h3>
+          <img
+            src="./images/integration-stic-2.png"
+            class="r-stretch"
+            alt="Diagramme domaines MALTT"
+            title="Intégration avec les autres domaines du MALTT"
+          />
+        </section>
+
+        <!-- Organisation du cours -->
+        <section>
+          <h3>Organisation générale (I et II)</h3>
+          <p>Pédagogie par 6 projets/livrables :</p>
+          <ol>
+            <li>
+              Développer une application pédagogique avec contraintes techniques
+              mais liberté sur le sujet
+            </li>
+            <li>Produire un rapport qui explique utilité et public cible</li>
+          </ol>
+          <p>
+            Plus participation à un environnement de co-construction de savoir
+            (<a href="https://edutechwiki.unige.ch/fr/Accueil">EduTechWiki</a>),
+            aussi plateforme pédagogique :
+          </p>
+          <ul>
+            <li>
+              Description
+              <a href="https://edutechwiki.unige.ch/fr/STIC:STIC_I_(Aegir)"
+                >STIC I (Aegir)</a
+              >
+              et
+              <a
+                href="https://edutechwiki.unige.ch/fmediawiki/index.php?title=STIC:STIC_II&oldid=135267"
+                >STIC II (Zelda)</a
+              >
+            </li>
+            <li>
+              Exemple de
+              <a
+                href="https://edutechwiki.unige.ch/fr/STIC:STIC_I_-_exercice_3_(Aegir)"
+                >page utilisée pour un cours/projet</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="align-center">
+          <h3>E-portfolio étudiant-es</h3>
+          <a href="https://tecfaetu.unige.ch/etu-maltt/aegir/guillon3/">
+            <img
+              src="./images/portfolio-exemple.png"
+              class="border-light-1"
+              alt="Capture d'écran d'une page e-portfolio"
+              title="Exemple de e-portfolio d'une étudiante"
+              style="height: 400px"
+            />
+          </a>
+          <p>
+            Espaces travaux des étudiant-es :
+            <a href="https://tecfaetu.unige.ch/etu-maltt/zelda/">Zelda</a>,
+            <a href="https://tecfaetu.unige.ch/etu-maltt/aegir/">Aegir</a>,
+            <a href="https://tecfaetu.unige.ch/etu-maltt/">toutes volées</a>.
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
