@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Code réutilisable - 3rd party code</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur le concept de code réutilisable, avec des exemples de bibliothèques JavaScript côté-client."
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+    <style>
+      canvas {
+        border: 20px solid burlywood;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="./images/code-icon.svg"
+            alt="Icône avec tête et code informatique"
+            title="Third Party Code"
+          />
+          <h2><em>Third Party Code</em> pour applications web</h2>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Dans l'idéale -->
+        <section class="align-center">
+          <h3>Idéalement...</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Développer signifie créer quelque chose qui répond à une certaine
+            nécessité, représentant ainsi une solution à une exigence
+            d'utilisateur(s).
+
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Fritz (2015)</p>
+          <p class="fragment">
+            <i class="fas fa-laptop-code"></i> Les développeurs passent leur
+            temps à créer !
+          </p>
+        </section>
+
+        <!-- Répartition du temps -->
+        <section class="align-center">
+          <h3>Répartition du temps (indicative)</h3>
+          <div class="r-stretch">
+            <div id="time-repartition-graph"></div>
+          </div>
+
+          <div class="d-flex space-around" id="you-time-values">
+            <div>
+              Créer/développer
+              <input
+                type="number"
+                value="0"
+                id="you-time-dev"
+                style="width: 50px; text-align: center"
+              />
+            </div>
+            <div>
+              Code/documentation
+              <input
+                type="number"
+                value="0"
+                id="you-time-doc"
+                style="width: 50px; text-align: center"
+              />
+            </div>
+            <div>
+              Test/débug
+              <input
+                type="number"
+                value="0"
+                id="you-time-test"
+                style="width: 50px; text-align: center"
+              />
+            </div>
+          </div>
+        </section>
+        <script src="./vendor/plotly/plotly-latest.min.js"></script>
+        <script src="./js/graph-example.js"></script>
+
+        <!-- Comment optimiser le temps -->
+        <section>
+          <h3>Comment optimiser le temps ?</h3>
+          <ol>
+            <li class="fragment">
+              Utiliser des outils de développement<br />
+              <small>Éditeur de texte, gestionnaire de versions, ...</small>
+            </li>
+            <li class="fragment">
+              Adopter des bonnes pratiques<br />
+              <small
+                >Organisation des fichiers, indentation du code, guides de
+                style, ...</small
+              >
+            </li>
+            <li class="fragment">
+              Suivre une méthodologie de développement<br />
+              <small
+                >Approche centrée utilisateur, méthode <em>Agile</em>, tableau
+                <em>Kanban</em>, ...</small
+              >
+            </li>
+            <li class="fragment">
+              Documenter le projet (e.g. mémoire MALTT)<br />
+              <small
+                >Architecture, <em>blueprint</em>, commentaires dans le code,
+                ...</small
+              >
+            </li>
+            <li class="fragment">
+              Intégrer du code réutilisable<br /><small
+                >Framework, bibliothèques, plug-in, ...</small
+              >
+            </li>
+          </ol>
+        </section>
+
+        <!-- Exemple architecture -->
+        <section class="align-center">
+          <h3>Exemple d'architecture logiciel</h3>
+          <img
+            src="./images/dew-application-architecture.png"
+            class="r-stretch"
+            alt="Exemple de diagramme d'une architecture logiciel"
+            title="Architecture du logiciel Dynamic Emotion Wheel"
+          />
+          <p>
+            Tiré de
+            <a href="http://archive-ouverte.unige.ch/unige:75083"
+              >Fritz (2015)</a
+            >
+          </p>
+        </section>
+
+        <!-- Code réutilisable -->
+        <section class="align-center">
+          <h3><em>Third Party Code</em></h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/f/f7/Reusable_code_principle.png"
+            class="r-stretch"
+            alt="Diagramme du code réutilisable"
+            class="Comparaison code normal et réutilisable"
+          />
+          <p>Code réutilisable par acteurs sans implication directe.</p>
+        </section>
+
+        <!-- Différentes intentions de réusabilité -->
+        <section class="align-center">
+          <h3>Différents degrés d'abstraction</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/5/5f/Reusable-code-funnel.svg"
+            class="r-stretch"
+            alt="Diagramme de spécificité du code réutilisable"
+            title="Termes techniques différents qui se réfèrent à des éléments similaires."
+          />
+        </section>
+
+        <!-- Front-end code -->
+        <section class="align-center">
+          <h3>Code réutilisable côté-client</h3>
+          <p>Il peut s'appliquer à tout élément de la triade</p>
+          <div class="d-flex space-between">
+            <div class="fragment align-center">
+              <p>
+                <img
+                  src="../intro-html5/images/html5-logo.svg"
+                  alt="Logo HTML5"
+                  title="Logo HTML5"
+                  style="height: 200px"
+                />
+              </p>
+              <ul>
+                <li>
+                  <a href="https://html5boilerplate.com/">Boilerplate</a>
+                </li>
+                <li>
+                  <a href="https://html5up.net/">HTML5 UP</a>
+                </li>
+              </ul>
+            </div>
+            <div class="fragment align-center">
+              <p>
+                <img
+                  src="../intro-css/images/css3-logo.svg"
+                  alt="Logo CSS3"
+                  title="Logo CSS3"
+                  style="height: 200px"
+                />
+              </p>
+              <ul>
+                <li>
+                  <a href="http://getbootstrap.com/">Bootstrap</a>
+                </li>
+                <li>
+                  <a href="http://fontawesome.io/">Font Awesome</a>
+                </li>
+              </ul>
+            </div>
+            <div class="fragment align-center">
+              <p>
+                <img
+                  src="https://edutechwiki.unige.ch/fmediawiki/images/c/ce/Unofficial_JavaScript_logo.svg"
+                  alt="JS Logo"
+                  title="Logo de JavaScript"
+                  style="height: 200px"
+                />
+              </p>
+              <ul>
+                <li>
+                  <a href="https://jquery.com/">jQuery</a>
+                </li>
+                <li>
+                  <a href="https://vuejs.org/">Vue.js</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bibliothèques JavaScript -->
+        <section class="align-center">
+          <h3>Bibliothèques JavaScript</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Une bibliothèque JavaScript est un fichier .js – parfois plusieurs –
+            déjà codé qui met à disposition des méthodes et des propriétés pour
+            l’ajout de fonctionnalités dynamiques à une page HTML.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">
+            — Tiré de la
+            <a
+              href="https://edutechwiki.unige.ch/fr/Biblioth%C3%A8ques_JavaScript"
+              >page homonyme</a
+            >
+            sur EduTechWiki
+          </p>
+        </section>
+
+        <!-- Duex options d'incorporation -->
+        <section>
+          <h3>Incorporation dans la page</h3>
+          <p>
+            Le code est incoporé <em>normalement</em> à travers la balise
+            script.
+          </p>
+          <pre><code class="hljs" data-trim
+            >
+            &lt;script src="path/to/file.js"&gt;&lt;/script&gt;
+            &lt;script src="https://link.to/file.js"&gt;&lt;/script&gt;
+            </code
+          ></pre>
+          <p>
+            Deux possibilités d'incorporation qui peuvent se combiner dans la
+            même page pour différents fichiers :
+          </p>
+          <ol>
+            <li>
+              Télécharger le fichier depuis le site officiel ou GitHub et le
+              téléverser ensuite sur son propre serveur.
+            </li>
+            <li>
+              Utiliser une <em>Content Delivery Network</em> (CDN). Les fichiers
+              sont hébergés dans le "cloud".
+            </li>
+          </ol>
+        </section>
+
+        <!-- Incoporation fichiers sur son propre serveur -->
+        <section>
+          <h3>Fichiers sur son propre serveur</h3>
+          <p>
+            Utiliser le chemin relatif à la page qui incopore les fichiers :
+          </p>
+          <pre><code data-trim="" class="mb-2">
+    <!-- 3rd party code -->
+    &lt;script src="./assets/vendor/revealjs/reveal.js"&gt;&lt;/script&gt;
+    &lt;script src="./assets/vendor/revealjs/plugin/zoom/zoom.js"&gt;&lt;/script&gt;
+    &lt;script src="./assets/vendor/revealjs/plugin/notes/notes.js"&gt;&lt;/script&gt;
+    <!-- Vos propres fichiers JS -->
+    &lt;script src="./assets/js/my-app.js"&gt;&lt;/script&gt;
+          </code></pre>
+          <p class="text-center border-light-1 p-1">
+            <i class="fas fa-exclamation-triangle text-danger"></i> L'ordre des
+            fichiers est souvent fondamental !
+          </p>
+          <p>
+            <small>
+              Par exemple les plugins doivent être incorporés après la
+              bibliothèque principale, et si vous utilisez des élément de la
+              bibliothèque dans votre code, vos propres fichiers JavaScript
+              doivent être incorporés plus bas. Ce mécanisme concerne également
+              les fichiers CSS et s'applique même si vous utilisez une CDN.
+            </small>
+          </p>
+        </section>
+
+        <!-- CDN -->
+        <section>
+          <h3><em>Content Delivery Network</em> (CDN)</h3>
+          <p>Utiliser le URL absolu du fichier hébergé dans le cloud :</p>
+          <pre><code data-trim class="mb-2">
+            &lt;script 
+                src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.common.dev.min.js"
+                integrity="sha512-PkyFg1MEb/EwsFAqzqvZqWdMT4ItV+E1NgOtfBC9X8UecJcO9bwirD+v/9tJwci4wTNHdNYBk4ev6ceb1hy73g==" 
+                crossorigin="anonymous"
+            &gt;&lt;/script&gt;
+          </code></pre>
+          <p>
+            <small>
+              L'attribut <code>integrity</code> contrôle que le contenu du
+              fichier n'a pas été modifié. Le moindre changement dans le code du
+              fichier modifie le code d'integrité et, sans correspondance, le
+              navigateur bloque l'incorporation du fichier.
+            </small>
+          </p>
+          <p class="text-center">
+            <i class="fas fa-link"></i> Voir par exemple
+            <a href="https://cdnjs.com/">CDNjs.com</a>
+          </p>
+        </section>
+
+        <!-- Quelques exemples -->
+        <section>
+          <h3>Quelques exemples</h3>
+          <ul>
+            <li>
+              <a href="https://revealjs.com/">Revealjs</a><br />
+              <small
+                >Création de diaporama en HTML5/CSS/JavaScript (c.f. cette
+                présentation).</small
+              >
+            </li>
+            <li>
+              <a href="https://plotly.com/javascript/">Plotly</a><br />
+              <small
+                >Représentation visuelles interactives (c.f. slide sur la
+                répartition du temps).</small
+              >
+            </li>
+            <li>
+              <a href="https://www.graphery.org/svg/">Graphery SVG</a><br />
+              <small>Création de dessins SVG avec fonctions JavaScript.</small>
+            </li>
+            <li>
+              <a href="https://p5js.org/">P5.js</a><br />
+              <small
+                >Utilisation <em>artistique</em> du code, basé sur la
+                philosophie du langage <em>Processing</em>.</small
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- SVG programming -->
+        <section class="align-center">
+          <h3>Graphery SVG : coder du SVG</h3>
+          <div class="r-stretch">
+            <div
+              id="example-clock"
+              style="height: 420px; width: 420px; margin: 30px auto"
+            ></div>
+          </div>
+          <p>
+            Adaptation d'un
+            <a href="https://www.graphery.org/svg/examples/clock.html"
+              >exemple tiré du site officiel</a
+            >.
+          </p>
+        </section>
+        <script src="./vendor/graphery/graphery-svg.js"></script>
+        <script src="./js/svg-clock.js"></script>
+
+        <!-- P5.js -->
+        <section class="align-center">
+          <h3>P5.js : <em>creative coding</em></h3>
+          <div id="p5js-canvas" class="r-stretch"></div>
+          <p>
+            <small
+              >Cliquez sur la toile et trainez la souris pour dessiner des
+              éléments en formes, tailles et couleurs aléatoires. Cliquez la
+              touche <kbd>delete</kbd> pour effacer complétement la
+              toile.</small
+            >
+          </p>
+        </section>
+        <script src="./vendor/p5js/p5.min.js"></script>
+        <script src="./js/creative-coding.js"></script>
+
+        <!-- Choisir une bibliothèque -->
+        <section>
+          <h3>Choisir du <em>3rd party code</em></h3>
+          <ul>
+            <li class="fragment">
+              Définir objectifs, taille et complexité du projet<br />
+              <small
+                >Est-ce que le code réutilisable facilite vraiment le
+                développement ?</small
+              >
+            </li>
+            <li class="fragment">
+              Évaluer la qualité de la documentation<br /><small>
+                Documentation exhaustive et soignée, présence de petits
+                tutoriels <em>Getting started</em>, ...
+              </small>
+            </li>
+            <li class="fragment">
+              Identifier le(s) responsable(s) du code<br />
+              <small
+                >Des projets sont abandonnés rapidement, d'autres sont maintenus
+                par communautés/entreprises.</small
+              >
+            </li>
+            <li class="fragment">
+              Contrôler attentivement la licence d'utilisation<br />
+              <small
+                >Open-source, utilisation personnelle, commerciale, ...</small
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a
+              href="https://edutechwiki.unige.ch/fr/Biblioth%C3%A8ques_JavaScript"
+              >un article sur EduTechWiki</a
+            >.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
