@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Glisser-déposer dans une application web</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur le glisser-déposer (drag&drop) appliqué dans le contexte d'une application web interactive."
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="./images/glisser-deposer-icone.svg"
+            alt="Icône représentant du glisser-déposer"
+            title="Glisser-déposer dans une application web"
+          />
+          <h2>Glisser-déposer dans une application web</h2>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Définition du glisser-déposer -->
+        <section class="align-center">
+          <h3>Définition du glisser-déposer</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Dans les interfaces graphiques, le glisser-déposer est un geste de
+            pointage dans lequel l'utilisateur sélectionne un objet virtuel en
+            le <em>saisissant</em> et en le faisant glisser vers un autre
+            endroit ou sur un autre objet virtuel. En général, il peut être
+            utilisé pour invoquer de nombreux types d'actions, ou créer divers
+            types d'associations entre deux objets abstraits.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
+        </section>
+
+        <!-- Rappel application "Number Sorting Games" -->
+        <section class="align-center">
+          <h3><em>Number Sorting Games</em></h3>
+          <img
+            src="./images/number-sorting-drag-and-drop.png"
+            class="r-stretch border-dark-1"
+            alt="Capture d'écran de l'application Number Sorting Games"
+            title="Trier des chiffres en utilisant le glisser-déposer"
+          />
+          <p>
+            <a
+              href="https://tecfa.unige.ch/perso/mafritz/teaching/stic-1/apps/number-sorting-game/"
+              >Application</a
+            >
+            avec trois modalités interactives différentes, dont le
+            <a
+              href="https://tecfa.unige.ch/perso/mafritz/teaching/stic-1/apps/number-sorting-game/drag-and-drop.html"
+              >glisser-déposer</a
+            >.
+          </p>
+        </section>
+
+        <!-- Problèmes avec glisser-déposer -->
+        <section>
+          <h3>Technique répandue, mais...</h3>
+          <p>
+            Le glisser-déposer existe depuis plusieurs années, mais présentent
+            deux éléments critiques :
+          </p>
+          <ol>
+            <li class="fragment mb-2">
+              Affordance et action exécutée<br />
+              <small
+                >Surtout dans les pages web, le glisser-déposer doit être bien
+                signalé et ses effets indiqués aux utilisateurs.</small
+              >
+            </li>
+            <li class="fragment">
+              Dextérité et motricité fine<br />
+              <small
+                >L'action <em>physique</em> du glisser-déposer implique une
+                planification et une exécution nécessitant d'une certaine
+                précision et risque d'être interrompue.</small
+              >
+            </li>
+          </ol>
+        </section>
+
+        <!-- Affordance et action exécutée -->
+        <section class="align-center">
+          <h3>Affordance et action exécutée</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            La fonction "glisser-déposer" n'est pas présente dans toutes les
+            applications, bien qu'elle soit parfois une technique rapide et
+            facile à apprendre. Cependant, il n'est pas toujours évident pour
+            les utilisateurs qu'un objet puisse être glissé et déposé, ou quelle
+            est la commande exécutée par le glisser-déposer, ce qui peut
+            diminuer l'usabilité.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
+        </section>
+
+        <!-- Fitts's Law -->
+        <section class="align-center">
+          <h3>Dextérité et motricité fine</h3>
+          $$\text{ID} = \log_2 \Bigg(\frac{2D} {W}\Bigg)$$
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            La
+            <a href="https://en.wikipedia.org/wiki/Fitts%27s_law"
+              >loi de Fitts</a
+            >
+            prédit que le temps nécessaire pour déplacer rapidement un objet
+            vers une zone cible est une fonction définie par le rapport entre la
+            distance à la cible et la largeur de celle-ci.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
+        </section>
+
+        <!-- Exemple target petit -->
+        <section>
+          <h3>Exemple avec petite cible</h3>
+          <p>
+            <strong class="accent">Glissez le robot</strong> dans le carré jaune
+            à l'autre côté de l'écran.
+          </p>
+          <div class="r-stretch d-flex space-between">
+            <div>
+              <i class="fa fa-robot" id="drag-robot-small" data-draggable></i>
+            </div>
+            <div
+              class="bg-danger border-dark-1"
+              style="width: 55px; height: 55px; align-self: flex-end"
+              id="drop-robot-small"
+              data-droppable
+            ></div>
+          </div>
+          <p
+            class="text-center"
+            id="drag-robot-small-feedback"
+            style="visibility: hidden"
+          >
+            <span class="text-success" id="drag-robot-small-time"></span>
+            <button id="drag-robot-small-reset-btn" class="bg-dark">
+              Reset
+            </button>
+          </p>
+        </section>
+
+        <!-- Exemple target grand -->
+        <section>
+          <h3>Exemple avec grande cible</h3>
+          <p>
+            <strong class="accent">Glissez le robot</strong> dans le carré jaune
+            à l'autre côté de l'écran.
+          </p>
+          <div class="r-stretch d-flex space-between">
+            <div>
+              <i
+                class="fa fa-robot fa-2x"
+                id="drag-robot-big"
+                data-draggable
+              ></i>
+            </div>
+            <div
+              class="bg-danger border-dark-1"
+              style="width: 250px; height: 250px; align-self: flex-end"
+              id="drop-robot-big"
+              data-droppable
+            ></div>
+          </div>
+          <p
+            class="text-center"
+            id="drag-robot-big-feedback"
+            style="visibility: hidden"
+          >
+            <span class="text-success" id="drag-robot-big-time"></span>
+            <button id="drag-robot-big-reset-btn" class="bg-dark">Reset</button>
+          </p>
+        </section>
+
+        <!-- Utilisations pédagogiques -->
+        <section>
+          <h3>Utilisations pédagogiques</h3>
+          <ol>
+            <li class="mb-2">
+              Rélation item-conteneur<br />
+              <small
+                >Déposer un item dans un <em>conteneur</em> avec une relation
+                sémantique, par exemple les éléments d'une même
+                catégorie.</small
+              >
+            </li>
+            <li class="mb-2">
+              Degrés d'approximation spatiale ou temporelle<br />
+              <small
+                >Placer un élément <em>le plus proche possible</em> dans une
+                relation spatiale ou sur une
+                <em>timeline</em> temporelle.</small
+              >
+            </li>
+            <li class="mb-2">
+              Correspondance visuo-spatiale <em>physique</em> ou conceptuelle<br />
+              <small
+                >Le positionnement absolu et/ou relatif des éléments dans
+                l'espace véhicule de l'information utile au niveau
+                <em>physique</em> ou conceptuel.</small
+              >
+            </li>
+          </ol>
+          <p class="text-center">
+            <small
+              ><i class="fas fa-exclamation-triangle"></i> Liste non exhaustive
+              et items non mutuellement exclusifs.</small
+            >
+          </p>
+        </section>
+
+        <!-- Relation item-conteneur -->
+        <section>
+          <h3>Relation item-conteneur</h3>
+          <p>
+            <strong class="accent">Glissez les verbs</strong> en anglais dans le
+            temps verbal.
+          </p>
+          <div class="d-flex space-evenly" data-draggable-items>
+            <div class="border-light-1 p-1" data-tense="past">drove</div>
+            <div class="border-light-1 p-1" data-tense="present">fly</div>
+            <div class="border-light-1 p-1" data-tense="present">talk</div>
+            <div class="border-light-1 p-1" data-tense="past">woke</div>
+            <div class="border-light-1 p-1" data-tense="past">stood</div>
+            <div class="border-light-1 p-1" data-tense="present">see</div>
+          </div>
+          <div class="d-flex space-between mt-2">
+            <div
+              style="height: 300px; width: 420px"
+              class="border-dark-2 p-1 text-center"
+              data-accept-tense="present"
+            >
+              <p>Present tense</p>
+            </div>
+            <div
+              style="height: 300px; width: 420px"
+              class="border-dark-2 p-1 text-center"
+              data-accept-tense="past"
+            >
+              <p>Past tense</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Approximation -->
+        <section>
+          <h3>Degrés d'approximation</h3>
+          <p>
+            <strong class="accent">Glissez les villes</strong> selon leur
+            distance autoroutière de Genève.
+          </p>
+          <div class="d-flex space-between">
+            <p
+              style="
+                width: 150px;
+                border-left: 5px solid #000;
+                padding-left: 5px;
+              "
+            >
+              0km
+            </p>
+            <p
+              style="
+                width: 150px;
+                border-left: 5px solid #000;
+                padding-left: 5px;
+              "
+            >
+              100km
+            </p>
+            <p
+              style="
+                width: 150px;
+                border-left: 5px solid #000;
+                padding-left: 5px;
+              "
+            >
+              200km
+            </p>
+            <p
+              style="
+                width: 150px;
+                border-left: 5px solid #000;
+                padding-left: 5px;
+              "
+            >
+              300km
+            </p>
+            <p
+              style="
+                width: 150px;
+                border-left: 5px solid #000;
+                padding-left: 5px;
+              "
+            >
+              400km
+            </p>
+            <p
+              style="
+                width: 150px;
+                border-left: 5px solid #000;
+                padding-left: 5px;
+              "
+            >
+              500km
+            </p>
+          </div>
+          <div id="cities-drag-drop">
+            <ul data-cities>
+              <li
+                class="mb-1"
+                data-true-distance="159"
+                data-current-distance="0"
+              >
+                Bern <span data-current-distance class="text-danger">0</span>
+                <span data-diff-distance="" class="text-error"></span>
+              </li>
+              <li
+                class="mb-1"
+                data-true-distance="63"
+                data-current-distance="0"
+              >
+                Lausanne
+                <span data-current-distance class="text-danger">0</span>
+                <span data-diff-distance="" class="text-error"></span>
+              </li>
+              <li
+                class="mb-1"
+                data-true-distance="360"
+                data-current-distance="0"
+              >
+                Saint Gallen
+                <span data-current-distance class="text-danger">0</span>
+                <span data-diff-distance="" class="text-error"></span>
+              </li>
+              <li
+                class="mb-1"
+                data-true-distance="277"
+                data-current-distance="0"
+              >
+                Zürich
+                <span data-current-distance class="text-danger">0</span>
+                <span data-diff-distance=""></span>
+              </li>
+            </ul>
+          </div>
+          <p class="text-center">
+            <button id="cities-verify-btn" class="bg-success">
+              Vérifier les distances
+            </button>
+            <button id="cities-reset-btn" class="bg-dark">Reset</button>
+          </p>
+        </section>
+
+        <!-- Correspondance visuo-spatiale -->
+        <section id="hockey-whiteboard" class="align-center">
+          <h3>Correspondance visuo-spatiale</h3>
+          <div class="d-flex space-around" id="hockey-schema-objects">
+            <div class="text-center">
+              <img
+                src="./images/player-swe.svg"
+                alt="Sweden Player"
+                title="Sweden Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                LD
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swe.svg"
+                alt="Sweden Player"
+                title="Sweden Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                RD
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swe.svg"
+                alt="Sweden Player"
+                title="Sweden Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                LW
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swe.svg"
+                alt="Sweden Player"
+                title="Sweden Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                C
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swe.svg"
+                alt="Sweden Player"
+                title="Sweden Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                RW
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swe.svg"
+                alt="Sweden Player"
+                title="Sweden Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                +1
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="./images/puck.svg"
+                alt="Puck"
+                title="Puck"
+                style="height: 30px"
+              />
+            </div>
+
+            <div class="text-center">
+              <img
+                src="./images/player-swi.svg"
+                alt="Switzerland Player"
+                title="Switzerland Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                +1
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swi.svg"
+                alt="Switzerland Player"
+                title="Switzerland Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                RW
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swi.svg"
+                alt="Switzerland Player"
+                title="Switzerland Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                C
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swi.svg"
+                alt="Switzerland Player"
+                title="Switzerland Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                LW
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swi.svg"
+                alt="Switzerland Player"
+                title="Switzerland Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                RD
+              </div>
+            </div>
+            <div class="text-center">
+              <img
+                src="./images/player-swi.svg"
+                alt="Switzerland Player"
+                title="Switzerland Player"
+                style="height: 50px; margin: 0"
+              />
+              <div
+                class="bg-dark text-white"
+                style="
+                  font-size: 17px;
+                  border: 1px solid #000;
+                  padding: 2px 5px;
+                  margin: -10px 0px;
+                "
+              >
+                LD
+              </div>
+            </div>
+          </div>
+          <div
+            class="r-stretch"
+            style="
+              background-image: url('./images/hockey-rink.svg');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center center;
+            "
+            id="hockey-schema-rink"
+          ></div>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <!-- jQuery and jQuery UI -->
+    <script src="./vendor/jquery/jquery.js"></script>
+    <script src="./vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./js/drag-drop-examples.js"></script>
+
+    <!-- Reveal.js -->
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
