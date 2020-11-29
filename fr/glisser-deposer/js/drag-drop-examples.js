@@ -163,7 +163,7 @@ document
  */
 $("#hockey-schema-objects > div").draggable({
   cursor: "move",
-  containment: "#hockey-whiteboard",
+  containment: "[data-container='hockey-whiteboard']",
 });
 
 $("#hockey-schema-rink").droppable({

@@ -148,7 +148,6 @@
         <!-- Fitts's Law -->
         <section class="align-center">
           <h3>Dextérité et motricité fine</h3>
-          $$\text{ID} = \log_2 \Bigg(\frac{2D} {W}\Bigg)$$
           <div class="border-light-1 p-1 ml-2 mr-2">
             <i class="fa fa-quote-left"></i>
             La
@@ -159,6 +158,7 @@
             vers une zone cible est une fonction définie par le rapport entre la
             distance à la cible et la largeur de celle-ci.
             <i class="fa fa-quote-right"></i>
+            $$\text{ID} = \log_2 \Bigg(\frac{2D} {W}\Bigg)$$
           </div>
           <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
         </section>
@@ -188,7 +188,7 @@
           >
             <span class="text-success" id="drag-robot-small-time"></span>
             <button id="drag-robot-small-reset-btn" class="bg-dark">
-              Reset
+              <i class="fas fa-redo"></i> Refaire
             </button>
           </p>
         </section>
@@ -221,7 +221,9 @@
             style="visibility: hidden"
           >
             <span class="text-success" id="drag-robot-big-time"></span>
-            <button id="drag-robot-big-reset-btn" class="bg-dark">Reset</button>
+            <button id="drag-robot-big-reset-btn" class="bg-dark">
+              <i class="fas fa-redo"></i> Refaire
+            </button>
           </p>
         </section>
 
@@ -399,14 +401,16 @@
           </div>
           <p class="text-center">
             <button id="cities-verify-btn" class="bg-success">
-              Vérifier les distances
+              <i class="fas fa-flag-checkered"></i> Vérifier les distances
             </button>
-            <button id="cities-reset-btn" class="bg-dark">Reset</button>
+            <button id="cities-reset-btn" class="bg-dark">
+              <i class="fas fa-redo"></i> Refaire
+            </button>
           </p>
         </section>
 
         <!-- Correspondance visuo-spatiale -->
-        <section id="hockey-whiteboard" class="align-center">
+        <section data-container="hockey-whiteboard" class="align-center">
           <h3>Correspondance visuo-spatiale</h3>
           <div class="d-flex space-around" id="hockey-schema-objects">
             <div class="text-center">
@@ -658,6 +662,27 @@
             "
             id="hockey-schema-rink"
           ></div>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus technique dans
+            <a href="https://edutechwiki.unige.ch/fr/JQuery_UI"
+              >un article sur EduTechWiki</a
+            >.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
         </section>
 
         <!-- Merci -->
