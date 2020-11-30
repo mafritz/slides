@@ -1,4 +1,59 @@
 /**
+ * All draggable
+ */
+$("section[data-all-draggable] *:not([data-not-draggable])").draggable({
+  revert: "invalid",
+  cursor: "move",
+  start: function (event, ui) {
+    let currentObject = ui.helper;
+
+    //Laptop
+    if (currentObject.hasClass("fa-laptop-code")) {
+      currentObject.addClass("text-danger");
+    }
+
+    // User secret
+    if (currentObject.hasClass("fa-user-secret")) {
+      currentObject.css({ opacity: 0.1 });
+    }
+  },
+  stop: function (event, ui) {
+    let currentObject = ui.helper;
+
+    // Title
+    if (currentObject[0].nodeName == "H3") {
+      currentObject[0].innerHTML = "Oui, ça aussi !";
+    }
+
+    // Laptop
+    if (currentObject.hasClass("fa-laptop-code")) {
+      currentObject.removeClass("text-danger");
+    }
+
+    // Cat/dog
+    if (currentObject.hasClass("fa-cat") || currentObject.hasClass("fa-dog")) {
+      currentObject.toggleClass("fa-cat");
+      currentObject.toggleClass("fa-dog");
+    }
+
+    // User secret
+    if (currentObject.hasClass("fa-user-secret")) {
+      currentObject.css({ opacity: 1 });
+    }
+  },
+});
+
+$("div[data-why-droppable").droppable({
+  accept: ".fa-bath, h3",
+  drop: function (event, ui) {
+    console.log(event);
+    event.target.classList.add("bg-success");
+    event.target.innerHTML = `<p class="text-white">You won!!! (...but why???)</p>`;
+    ui.draggable.css({ color: "#FFFFFF" });
+  },
+});
+
+/**
  * Small target example
  */
 var startTime;

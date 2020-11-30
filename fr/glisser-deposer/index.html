@@ -115,15 +115,20 @@
               Affordance et action exécutée<br />
               <small
                 >Surtout dans les pages web, le glisser-déposer doit être bien
-                signalé et ses effets indiqués aux utilisateurs.</small
+                signalé (c.f. concept d'<a
+                  href="https://www.interaction-design.org/literature/topics/affordances"
+                  >affordance</a
+                >) et ses effets indiqués aux utilisateurs, afin que le résultat
+                de l'action soit perçu correctement.</small
               >
             </li>
             <li class="fragment">
               Dextérité et motricité fine<br />
               <small
-                >L'action <em>physique</em> du glisser-déposer implique une
-                planification et une exécution nécessitant d'une certaine
-                précision et risque d'être interrompue.</small
+                >L'action <em>physique</em> du glisser-déposer implique (1) la
+                planification et (2) l'exécution. L'éxecution nécessite une
+                certaine précision ou elle risque d'être interrompue (e.g. perte
+                de contact avec l'objet).</small
               >
             </li>
           </ol>
@@ -145,6 +150,32 @@
           <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
         </section>
 
+        <!-- Exemple avec plusieurs éléments -->
+        <section class="align-center" data-all-draggable>
+          <h3>Que peut-on glisser-déposer ?</h3>
+          <p data-not-draggable="">
+            Essayez de glisser-déposer les éléments de la slide.
+          </p>
+          <div class="d-flex space-evenly" data-not-draggable>
+            <i class="fas fa-thumbs-up fa-2x fa-fw"></i>
+            <i class="fas fa-laptop-code fa-2x fa-fw"></i>
+            <i class="fas fa-cat fa-2x fa-fw"></i>
+            <i class="fas fa-user-secret fa-2x fa-fw"></i>
+            <i class="fas fa-bath fa-2x fa-fw"></i>
+          </div>
+
+          <div
+            class="border-dark-1 r-stretch mt-3 mb-3"
+            data-not-draggable=""
+            data-why-droppable
+          ></div>
+
+          <p class="fragment">
+            Vous avez essayé de glisser le titre de la slide ?
+            <i class="far fa-grin-tongue-wink"></i>
+          </p>
+        </section>
+
         <!-- Fitts's Law -->
         <section class="align-center">
           <h3>Dextérité et motricité fine</h3>
@@ -159,6 +190,11 @@
             distance à la cible et la largeur de celle-ci.
             <i class="fa fa-quote-right"></i>
             $$\text{ID} = \log_2 \Bigg(\frac{2D} {W}\Bigg)$$
+            <small
+              ><strong>ID</strong> = indice de difficulté | <strong>D</strong> =
+              distance du centre de la cible | <strong>W</strong> = largeur de
+              la cible</small
+            >
           </div>
           <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
         </section>
@@ -202,11 +238,7 @@
           </p>
           <div class="r-stretch d-flex space-between">
             <div>
-              <i
-                class="fa fa-robot fa-2x"
-                id="drag-robot-big"
-                data-draggable
-              ></i>
+              <i class="fa fa-robot" id="drag-robot-big" data-draggable></i>
             </div>
             <div
               class="bg-danger border-dark-1"
