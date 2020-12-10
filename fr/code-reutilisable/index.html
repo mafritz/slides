@@ -409,14 +409,26 @@
           <div class="r-stretch">
             <div
               id="example-clock"
-              style="height: 420px; width: 420px; margin: 30px auto"
+              style="height: 360px; width: 360px; margin: 30px auto 0px auto"
             ></div>
           </div>
           <p>
-            Adaptation d'un
-            <a href="https://www.graphery.org/svg/examples/clock.html"
-              >exemple tiré du site officiel</a
-            >.
+            Voir l'horaire de
+            <select id="cities-timezone">
+              <option value="-9">Vancouver, Canada (-9h)</option>
+              <option value="-6">New York, USA (-6h)</option>
+              <option value="0" selected>Genève, Suisse</option>
+              <option value="7">Pékin, Chine (+7h)</option>
+              <option value="10">Sydney, Australie (+10h)</option>
+            </select>
+          </p>
+          <p>
+            <small>
+              Décalage relatif à l'horaire de Genève, Suisse. Adaptation d'un
+              <a href="https://www.graphery.org/svg/examples/clock.html"
+                >exemple tiré du site officiel</a
+              >.
+            </small>
           </p>
         </section>
         <script src="./vendor/graphery/graphery-svg.js"></script>

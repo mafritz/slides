@@ -63,15 +63,22 @@ seconds.add("circle").cx(125).cy(50).r(10);
 
 svg.attachTo("#example-clock");
 
+var cities = document.getElementById("cities-timezone");
+var timeDifference = 0;
+cities.addEventListener("change", function () {
+  timeDifference = Number(cities.value);
+});
+
 setInterval(
   (function update() {
     const d = new Date();
     seconds.transform(`rotate(${d.getSeconds() * 6}, 125, 125)`);
     minutes.transform(`rotate(${d.getMinutes() * 6}, 125, 125)`);
     hours.transform(
-      `rotate(${(d.getHours() % 12) * 30 + d.getMinutes() * 0.5}, 125, 125)`
+      `rotate(${((d.getHours() + timeDifference) % 12) * 30 + d.getMinutes() * 0.5}, 125, 125)`
     );
     return update;
   })(),
   1000
 );
+
