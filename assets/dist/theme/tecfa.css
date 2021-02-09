@@ -46,28 +46,22 @@ section.align-center {
   border-radius: 0.2rem;
 }
 
-.reveal ul,
-.reveal ul li {
-  padding: 0 !important;
-  margin: 0 !important;
-  list-style: none;
-}
-
 .reveal ul {
-  margin: 0 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
 }
 
 .reveal ul li {
-  margin: 0 !important;
-  margin-left: 3rem !important;
+  padding-left: 2.3rem;
+  text-indent: -2.2rem;
 }
 
-.reveal ul li:before {
-  content: "\f054";
+ul li:before {
   font-family: "FontAwesome";
-  float: left;
-  margin-left: -3rem !important;
+  content: "\f054";
   color: #44546a;
+  padding: 0 0 0 0;
 }
 
 ul.times li:before {
