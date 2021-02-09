@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>UX pour la conception et évaluation de UI pour le web</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur l'expérience utilisateur appliquée à la conception et évaluation d'interfaces utilisateurs pour le web"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link rel="stylesheet" href="../../assets/dist/theme/maf.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="images/hci-representation.svg"
+            alt="Interaction Personne-Machine et UX"
+            title="Interaction Personne-Machine et UX"
+          />
+          <h3>
+            <abbr title="User Experience">UX</abbr> pour la conception et
+            évaluation de
+            <abbr title="User Interface">UI</abbr>
+            pour le web
+          </h3>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Big Picture -->
+        <section class="align-center">
+          <h3>Le <em>big picture</em></h3>
+          <img
+            src="./images/hci-ux-ui.png"
+            alt="Articulation HCI-UX-UI"
+            title="Articulation HCI-UX-UI"
+            class="r-stretch"
+          />
+          <p>
+            <small
+              >Human-Computer Interaction | User eXperience | User
+              Interface</small
+            >
+          </p>
+        </section>
+
+        <!-- HCI -->
+        <section class="align-center">
+          <h3>Interaction Personne-Machine</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            L'ancienne informatique concerne ce que les ordinateurs peuvent
+            faire, la nouvelle informatique concerne ce que les gens peuvent
+            faire.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Shneiderman, 2002</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+        </section>
+
+        <!-- UX-->
+        <section>
+          <h3>Expérience utilisateur</h3>
+          <p>
+            L'<abbr title="User eXperience">UX</abbr> couvre un large domaine
+            d'application, avec
+            <a href="http://www.allaboutux.org/ux-definitions"
+              >plusieurs définitions possibles</a
+            >.
+          </p>
+          <img
+            src="/assets/commons/spectrum.svg"
+            style="min-width: 100%"
+            alt="Continuum"
+            title="Continuum entre deux pôles"
+          />
+          <div class="d-flex space-between">
+            <div>
+              <p>Micro UX</p>
+              <button>Cliquez ici !</button>
+            </div>
+            <div style="width: 400px">
+              <p class="text-right">Macro UX</p>
+              <p class="text-center">
+                <small>
+                  <em>
+                    UX encompasses all aspects of the end-user's interaction
+                    with the company, its services, and its products.</em
+                  >
+                  <br />— Nielsen-Norman Group
+                </small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- UI -->
+        <section class="align-center">
+          <h3>Interface Utilisateur</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Une interface utilisateur est en fin de compte une conversation
+            entre les utilisateurs et la technologie
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— McKay, 2013</p>
+          <p>
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Traduction
+              libre</small
+            >
+          </p>
+          <div class="d-flex space-between mt-4">
+            <p style="width: 300px">
+              <i class="fa fa-desktop"></i>
+              <small>Technologie : <br />"Voulez-vous cliquer ici ?"</small>
+            </p>
+            <div>
+              <button>Cliquez ici !</button>
+            </div>
+            <p style="width: 300px">
+              <i class="fa fa-user"></i>
+              <small
+                >Utilisateur : <br />"Oui, je veux bien cliquer ici, merci
+                !"</small
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Ambivalence web -->
+        <section class="align-center">
+          <h3>Ambivalence du UX dans le web</h3>
+          <img
+            src="./images/ux-web.png"
+            class="r-stretch"
+            alt="UX dans le web"
+            title="UX dans le web"
+          />
+          <p>
+            <small>
+              Adapté depuis
+              <em
+                ><a href="http://www.jjg.net/elements/pdf/elements.pdf"
+                  >The Elements of User Experience</a
+                ></em
+              >
+              par Jesse James Garrett (2000)
+            </small>
+          </p>
+        </section>
+
+        <!-- Conception-Évaluation -->
+        <section class="align-center">
+          <h3>Deux grandes fonctions</h3>
+          <img
+            src="./images/conception-evalution.png"
+            class="r-stretch"
+            alt="Conception et évaluation"
+            title="Conception et évaluation"
+          />
+          <p>
+            <small>
+              Un team/professionel/projet de UX peut s'occuper
+              exclusivement/principalement de l'une ou de l'autre, ou proposer
+              les deux en même temps.
+            </small>
+          </p>
+        </section>
+
+        <!-- Conception -->
+        <section class="align-center">
+          <h3>Conception</h3>
+          <p class="border-light-1 p-1 ml-2 mr-2">
+            L'objectif principal de la conception est d'implémenter seulement
+            les fonctionnalités nécessaires pour atteindre les objectifs
+            identifiés/souhaités.
+          </p>
+          <img
+            src="../../assets/commons/spectrum.svg"
+            style="min-width: 100%"
+            alt="Continuum"
+            title="Continuum entre deux pôles"
+          />
+          <div class="d-flex space-between">
+            <div class="text-left">
+              <p>
+                Abstraite<br />
+                <small>Analayse des besoins, prototype low-fi, ...</small>
+              </p>
+            </div>
+            <div class="text-right">
+              <p>
+                Détaillée<br />
+                <small>Prototype high-fi, maquette interactive, ...</small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Évaluation -->
+        <section class="align-center">
+          <h3>Évaluation</h3>
+          <p class="border-light-1 p-1 ml-2 mr-2">
+            L'évaluation mesure l'adéquation entre les attentes des
+            concepteurs/stakeholders d'une part, et l'utilisation et perception
+            du public cible de l'autre.
+          </p>
+          <img
+            src="../../assets/commons/spectrum.svg"
+            style="min-width: 100%"
+            alt="Continuum"
+            title="Continuum entre deux pôles"
+          />
+          <div class="d-flex space-between">
+            <div class="text-left">
+              <p>
+                Performance<br />
+                <small>Test utilisateur, oculométrie, ...</small>
+              </p>
+            </div>
+            <div class="text-right">
+              <p>
+                Perception<br />
+                <small>Questionnaires usabilités, audit expert, ...</small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Principes -->
+        <section>
+          <h3>Principes appliqués à l'UX</h3>
+          <p>
+            L'UX utilise plusieurs principes appliqués à la conception et/ou
+            l'évaluation :
+          </p>
+          <ul>
+            <li class="mb-1">
+              Principes <em>comportementaux</em><br />
+              <small
+                >Principes qui expliquent le comportement des utilisateurs,
+                souvent en lien avec de la recherche
+                <em>fondamentale</em>.</small
+              >
+            </li>
+            <li class="mb-1">
+              Principes <em>productifs</em><br />
+              <small>
+                Principes de gestion et organisation du cycle de vie d'un
+                dispositif qui essayent de maximiser les résultats en minimisant
+                l'utilisation de ressources.
+              </small>
+            </li>
+            <li class="mb-1">
+              Principes de <em>design</em><br />
+              <small>
+                Principes ou langages visuels qui déterminent le
+                <em>look-and-feel</em>
+                (e.g. couleurs, formes, ...) d'éléments graphiques de manière
+                homogène et instrumentale.
+              </small>
+            </li>
+          </ul>
+          <p class="text-center">
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Liste non exhaustive
+              et non mutuellement exclusive.</small
+            >
+          </p>
+        </section>
+
+        <!-- Principes comportementaux -->
+        <section class="align-center">
+          <h3>Principes comportementaux</h3>
+          <img
+            src="./images/model-comportement.png"
+            title="Principes comportementaux basés sur plusieurs aspects"
+            alt="Intersection entre cognitif, social et affectif"
+            class="r-stretch"
+          />
+          <p>
+            <small
+              >L'UX couvre différents aspects du comportement dans une
+              perspective temporelle.</small
+            >
+          </p>
+        </section>
+
+        <!-- Tension éthique -->
+        <section class="align-center">
+          <h3>Tension éthique dans l'UX</h3>
+          <img
+            src="./images/tension-ethique.png"
+            alt="Tension éthique dans l'UX"
+            title="Tension entre intérêts de l'utilisateur et de l'application"
+            class="r-stretch"
+          />
+          <div class="d-flex space-evenly">
+            <div class="text-center" style="width: 430px">
+              Autonomie, créativité, socialité, collaboration, ...
+            </div>
+            <div class="text-center" style="width: 430px">
+              Neccessité, habitude, fidélité, concurrence, ...
+            </div>
+          </div>
+        </section>
+
+        <!-- Principe de conception -->
+        <section>
+          <h3>Principes productifs</h3>
+          <p>Quelques exemples :</p>
+          <ul>
+            <li><em>User-Centered Design</em></li>
+            <li><em>Interaction Design</em></li>
+            <li><em>Design Thinking</em></li>
+            <li>...</li>
+          </ul>
+          <p>
+            Les Principes présentent plusieurs recouvrements, dont le plus
+            important concerne le caractère
+            <strong class="accent">itératif</strong> du processus.
+          </p>
+        </section>
+
+        <!-- User-Centered Design -->
+        <section class="align-center">
+          <h3><em>User-Centered Design</em></h3>
+          <img
+            src="./images/user-centered-design.png"
+            class="r-stretch"
+            alt="Schéma du User-Centered Design"
+            title="Schéma du User-Centered Design"
+          />
+          <p>
+            <small>Adapté depuis Wikipedia</small>
+          </p>
+        </section>
+
+        <!-- Interaction Design -->
+        <section class="align-center">
+          <h3><em>Interaction Design</em></h3>
+          <img
+            src="./images/interaction-design.png"
+            class="r-stretch"
+            alt="Schéma du Interaction Design"
+            title="Schéma du Interaction Design"
+          />
+          <p>
+            <small>Adapté depuis Sharp, Rogers & Preece 2011</small>
+          </p>
+        </section>
+
+        <!-- Design thinking -->
+        <section class="align-center">
+          <h3><em>Design Thinking</em></h3>
+          <img
+            src="./images/design-thinking.png"
+            class="r-stretch"
+            alt="Schéma du Design Thinking"
+            title="Le prototypage comme étape du Design Thinking"
+          />
+          <p>
+            <small
+              >Adapté depuis Hasso-Plattner Institute of Design at Stanford
+              (d.school)</small
+            >
+          </p>
+        </section>
+
+        <!-- Principes de design -->
+        <section>
+          <h3>Principes de design</h3>
+          <p>Quelques exemples :</p>
+          <ul>
+            <li>Philosophie de design</li>
+            <li>Accessibilité</li>
+            <li><em>Mobile-First</em></li>
+          </ul>
+          <div class="text-center mt-5">
+            <i class="fa fa-exclamation-triangle"></i><br />
+            <small
+              >Le professionnel UX n'est ni un développeur, ni un
+              <em>graphiste</em>, mais les tendances/techniques de design
+              influencent la conception d'interfaces. Un utilisateur a des
+              expériences et des attentes construites aussi sur la base d'autres
+              interfaces utilisées dans le quotidien.</small
+            >
+          </div>
+        </section>
+
+        <!-- Philosophies de design -->
+        <section class="align-center">
+          <h3>Philosophies de design</h3>
+          <div class="d-flex space-between">
+            <div class="ml-1 text-center">
+              <p>Flat design</p>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Material_Design.svg"
+                alt="Exemple de flat design"
+                style="height: 350px"
+              />
+              <small>
+                <a
+                  href="https://commons.wikimedia.org/wiki/File:Material_Design.svg"
+                  >Google Inc.</a
+                >, Public domain, via Wikimedia Commons
+              </small>
+            </div>
+            <div class="mr-1 text-center">
+              <p>Skeumorphic design</p>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/67/Redstair_GEARcompressor.png"
+                style="width: 400px"
+              />
+              <small
+                ><a
+                  href="https://commons.wikimedia.org/wiki/File:Redstair_GEARcompressor.png"
+                  >Klaus Göttling</a
+                >,
+                <a href="https://creativecommons.org/licenses/by-sa/3.0"
+                  >CC BY-SA 3.0</a
+                >, via Wikimedia Commons</small
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Accessibility -->
+        <section class="align-center">
+          <h3>Accessibilité</h3>
+          <iframe
+            width="100%"
+            height="480"
+            class="border-dark-1"
+            src="https://www.youtube-nocookie.com/embed/C4GIqWeywiI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p>
+            <small>
+              Principes de
+              <a href="https://www.w3.org/WAI/tips/designing/">conception</a> et
+              d'<a href="https://www.w3.org/WAI/test-evaluate/">évaluation</a>
+              de l'accessibilité d'interfaces web.
+            </small>
+          </p>
+        </section>
+
+        <!-- Mobile-First Design -->
+        <section class="align-center">
+          <h3><em>Mobile-First</em> Design</h3>
+          <img
+            src="./images/mobile-first-design.png"
+            alt="Mobile-First Design"
+            title="Application du Mobile-First Design au site de Tecfa"
+            class="r-stretch"
+          />
+          <p>
+            <small
+              >Concevoir d'abord la version mobile et seulement ensuite la
+              version desktop.</small
+            >
+          </p>
+        </section>
+
+        <!-- Beyond UX-UI -->
+        <section>
+          <h3>Au-délà du binôme UX-UI</h3>
+          <p>
+            UX et UI représentent un binôme soudé, surtout dans les interfaces
+            web, mais il y d'autres applications :
+          </p>
+          <ul>
+            <li class="mb-1">
+              Autres manières de communiquer<br />
+              <small
+                >Il existe d'autres possibilités pour interagir avec la
+                technologie (e.g., voix, mouvement, activité cérébrale, ...) et
+                plusieurs principes UX peuvent s'appliquer également à ces
+                contextes.</small
+              >
+            </li>
+            <li class="mb-1">
+              Intégration avec cycles de développement<br />
+              <small>
+                Il existe différentes méthodologies de développement (e.g.
+                Scrum, Agile, ...) qui sont compatibles avec des cycles
+                itératifs du UX.
+              </small>
+            </li>
+            <li>
+              Principes UX appliqués à l'entreprise<br />
+              <small
+                >Plusieurs concepts liés à l'UX sont appliqués à la création ou
+                au fonctionnement d'entreprises, notamment des start-up (e.g.
+                philosohipe <em>Lean</em>)</small
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/vendor/vuejs/vue.min.js"></script>
+    <script src="js/candle-enigmas.js"></script>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
