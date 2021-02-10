@@ -77,8 +77,10 @@
           />
           <p>
             <small
-              >Human-Computer Interaction | User eXperience | User
-              Interface</small
+              ><em>Human-Computer Interaction</em> = Interaction
+              Personne-Machine<br />
+              <em>User eXperience</em> = Expérience Utilisateur<br />
+              <em>User Interface</em> = Interface Utilisateur</small
             >
           </p>
         </section>
@@ -102,6 +104,17 @@
           </p>
         </section>
 
+        <!-- Principe de base HCI -->
+        <section class="align-center">
+          <h3>Principe de base HCI</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/1/13/IntroProgrammationt_cycleIO.png"
+            class="r-stretch"
+            alt="I/O machine et Stimulus-Réponse pour la personne"
+            title="Mécanisme de base de l'interaction personne-machine"
+          />
+        </section>
+
         <!-- UX-->
         <section>
           <h3>Expérience utilisateur</h3>
@@ -121,7 +134,9 @@
           <div class="d-flex space-between">
             <div>
               <p>Micro UX</p>
-              <button>Cliquez ici !</button>
+              <button onclick="Reveal.togglePause()">
+                Ne cliquez pas ici !
+              </button>
             </div>
             <div style="width: 400px">
               <p class="text-right">Macro UX</p>
@@ -154,19 +169,24 @@
               libre</small
             >
           </p>
-          <div class="d-flex space-between mt-4">
-            <p style="width: 300px">
+          <div class="d-flex space-between mt-3 fragment">
+            <p style="width: 280px">
               <i class="fa fa-desktop"></i>
-              <small>Technologie : <br />"Voulez-vous cliquer ici ?"</small>
+              <small
+                >Technologie : <br />"Voulez-vous aller à la prochaine slide
+                ?"</small
+              >
             </p>
-            <div>
-              <button>Cliquez ici !</button>
+            <i class="fa fa-arrow-right mt-4"></i>
+            <div class="m-3">
+              <button onclick="Reveal.next()">Prochaine slide</button>
             </div>
-            <p style="width: 300px">
+            <i class="fa fa-arrow-left mt-4"></i>
+            <p style="width: 280px">
               <i class="fa fa-user"></i>
               <small
-                >Utilisateur : <br />"Oui, je veux bien cliquer ici, merci
-                !"</small
+                >Utilisateur : <br />"Oui, je veux bien aller à la prochaine
+                slide, merci !"</small
               >
             </p>
           </div>
@@ -280,7 +300,7 @@
             l'évaluation :
           </p>
           <ul>
-            <li class="mb-1">
+            <li class="mb-1 fragment">
               Principes <em>comportementaux</em><br />
               <small
                 >Principes qui expliquent le comportement des utilisateurs,
@@ -288,7 +308,7 @@
                 <em>fondamentale</em>.</small
               >
             </li>
-            <li class="mb-1">
+            <li class="mb-1 fragment">
               Principes <em>productifs</em><br />
               <small>
                 Principes de gestion et organisation du cycle de vie d'un
@@ -296,7 +316,7 @@
                 l'utilisation de ressources.
               </small>
             </li>
-            <li class="mb-1">
+            <li class="mb-1 fragment">
               Principes de <em>design</em><br />
               <small>
                 Principes ou langages visuels qui déterminent le
@@ -306,7 +326,7 @@
               </small>
             </li>
           </ul>
-          <p class="text-center">
+          <p class="text-center fragment">
             <small
               ><i class="fa fa-exclamation-triangle"></i> Liste non exhaustive
               et non mutuellement exclusive.</small
@@ -361,7 +381,7 @@
             <li>...</li>
           </ul>
           <p>
-            Les Principes présentent plusieurs recouvrements, dont le plus
+            Les modèles présentent plusieurs recouvrements, dont le plus
             important concerne le caractère
             <strong class="accent">itératif</strong> du processus.
           </p>
@@ -412,6 +432,23 @@
           </p>
         </section>
 
+        <!-- Plusieurs sources -->
+        <section class="align-center">
+          <h3>Mais pas que les utilisateurs</h3>
+          <img
+            src="./images/plusieurs-sources.png"
+            alt="Utilisateurs, parties prenantes, génies/gurus et designers/développeurs"
+            title="Plusieurs sources d'information et de tensions."
+            class="r-stretch"
+          />
+          <p>
+            <small>
+              L'utilisation d'un modèle centré-utilisateur n'exclut pas d'autres
+              sources d'infos... et de tensions.
+            </small>
+          </p>
+        </section>
+
         <!-- Principes de design -->
         <section>
           <h3>Principes de design</h3>
@@ -419,7 +456,8 @@
           <ul>
             <li>Philosophie de design</li>
             <li>Accessibilité</li>
-            <li><em>Mobile-First</em></li>
+            <li><em>Mobile-First</em> design</li>
+            <li>...</li>
           </ul>
           <div class="text-center mt-5">
             <i class="fa fa-exclamation-triangle"></i><br />
@@ -517,24 +555,24 @@
             web, mais il y d'autres applications :
           </p>
           <ul>
-            <li class="mb-1">
-              Autres manières de communiquer<br />
+            <li class="mb-2 fragment">
+              Autres manières d'intéragirr<br />
               <small
-                >Il existe d'autres possibilités pour interagir avec la
-                technologie (e.g., voix, mouvement, activité cérébrale, ...) et
-                plusieurs principes UX peuvent s'appliquer également à ces
+                >Il existe d'autres possibilités pour <em>communiquer</em> avec
+                la technologie (e.g., voix, mouvement, activité cérébrale, ...)
+                et plusieurs principes UX peuvent s'appliquer également à ces
                 contextes.</small
               >
             </li>
-            <li class="mb-1">
-              Intégration avec cycles de développement<br />
+            <li class="mb-2 fragment">
+              Intégration avec des méthodes/cycles de développement<br />
               <small>
                 Il existe différentes méthodologies de développement (e.g.
                 Scrum, Agile, ...) qui sont compatibles avec des cycles
                 itératifs du UX.
               </small>
             </li>
-            <li>
+            <li class="fragment">
               Principes UX appliqués à l'entreprise<br />
               <small
                 >Plusieurs concepts liés à l'UX sont appliqués à la création ou
