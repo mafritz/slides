@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>UX - Prototypage high-fi</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur le prototypage high fidelity dans l'UX"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link rel="stylesheet" href="../../assets/dist/theme/maf.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="./images/hd-icon.svg"
+            alt="Prototypage high-fi"
+            title="Prototypage high-fi"
+          />
+          <h3>
+            Prototypage <em>high fidelity</em> dans l'<abbr
+              title="User Experience"
+              >UX</abbr
+            >
+          </h3>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Définition de prototype -->
+        <section class="align-center">
+          <h3>Définition de prototype</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Un prototype est un échantillon, un modèle ou une version
+            préliminaire d'un produit construit pour tester un concept ou un
+            processus. Le prototypage sert à fournir des spécifications pour un
+            système réel et fonctionnel plutôt que théorique.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Adapté depuis Wikipedia</p>
+        </section>
+
+        <!-- Abstraction -->
+        <section class="align-center">
+          <h3>Prototypes low-fi et high-fi</h3>
+          <div class="d-flex space-between">
+            <img
+              src="../ux-ui-web/images/wireframe-paper.png"
+              alt="Prototype dessin"
+              title="Prototype essentiel"
+              style="height: 350px"
+              class="border-dark-2 fragment"
+            />
+            <img
+              src="../ux-ui-web/images/wireframe-low.png"
+              alt="Prototype dessin"
+              title="Prototype essentiel"
+              style="height: 350px"
+              class="border-dark-2 fragment"
+            />
+            <img
+              src="../ux-ui-web/images/wireframe-middle.png"
+              alt="Prototype moyen"
+              title="Prototype avec quelques détails"
+              style="height: 350px"
+              class="border-dark-2 fragment"
+            />
+            <img
+              src="../ux-ui-web/images/wireframe-high.png"
+              alt="Prototype élevé"
+              title="Prototype presque finit"
+              style="height: 350px"
+              class="border-dark-2 fragment"
+            />
+          </div>
+          <img
+            src="../../assets/commons/spectrum.svg"
+            alt="Continuum"
+            title="Continuum"
+            style="min-width: 100%"
+          />
+          <div class="d-flex space-between">
+            <div><a href="../ux-prototypage-low-fi/">Low fidelity</a></div>
+            <div><strong class="accent">High fidelity</strong></div>
+          </div>
+        </section>
+
+        <!-- Mockup vs Interactive prototype -->
+        <section class="align-center">
+          <h3>2 types de prototypes high-fi</h3>
+          <div class="d-flex space-between">
+            <div style="width: 48%">
+              <img
+                src="../ux-ui-web/images/wireframe-high.png"
+                alt="Wireframe high-fi"
+                title="Wireframe high-fi"
+                style="height: 400px"
+                class="border-dark-2"
+              />
+              <p><i class="fas fa-eye"></i> Wireframe high-fi</p>
+            </div>
+            <div style="width: 48%">
+              <img
+                src="./images/interactive-prototype.png"
+                alt="Maquette interactive"
+                title="Maquette interactive"
+                style="height: 400px"
+                class="border-dark-2"
+              />
+              <p><i class="fas fa-hand-pointer"></i> Maquette interactive</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Prototypage high-fi -->
+        <section>
+          <h3>Prototypage high-fi</h3>
+          <p>Utilisé surtout, mais pas exclusivement, dans ces contextes :</p>
+          <ul>
+            <li class="mb-3 fragment">
+              Définir les propriétés graphiques du produit<br />
+              <small
+                >Les éléments esquissés dans les prototypes low-fi sont définis
+                au détail prêt (i.e. <em>camera ready</em>)</small
+              >
+            </li>
+            <li class="mb-3 fragment">
+              Véhiculer l'identité visuelle du produit<br />
+              <small
+                >Les éléments identitaires du produit sont en général le logo,
+                les couleurs du site, les images, etc.</small
+              >
+            </li>
+            <li class="fragment">
+              Simuler/tester la réaction <em>émotionnelle</em> au produit<br />
+              <small>
+                Selon le type de produit, la première impréssion peut être
+                déterminante et un prototype high-fi permet d'avoir un retour
+                sur cet aspect.
+              </small>
+            </li>
+          </ul>
+
+          <div class="text-center mt-3 fragment">
+            <small
+              ><i class="fa fa-exclamation-triangle"></i><br />Selon l'ampleur
+              du projet et de l'équipe, ce type de travail est souvent effectué
+              par des professionnels du design.</small
+            >
+          </div>
+        </section>
+
+        <!-- Logo -->
+        <section class="align-center">
+          <h3>Logo et identité graphique</h3>
+          <img
+            src="./images/logo-identity.png"
+            alt="Utilisation des couleurs du logo dans le site"
+            title="Les couleurs des deux sites de TECFA inspirés par les couleurs du logo"
+            class="r-stretch"
+          />
+          <small
+            >Le logo définit souvent l'identité graphique de l'ensemble du site
+            (couleurs, polices, ...).</small
+          >
+        </section>
+
+        <!-- Palette des couleurs -->
+        <section class="align-center">
+          <h3>Palette des couleurs</h3>
+          <p>
+            Définir une palette des couleurs avec des finalités esthétiques et
+            fonctionnelles.
+          </p>
+          <img
+            src="./images/color-palette.png"
+            alt="Palette des couleurs"
+            title="Définir les couleurs du site de manière fonctionnelle"
+            class="r-stretch"
+          />
+
+          <div class="mt-2">
+            <small>
+              <i class="fa fa-exclamation-triangle"></i><br />
+              Évitez d'identifier les couleurs avec leur noms et utilisez plutôt
+              une fonction générique, car les parties prenantes peuvent décider
+              de changer dans un deuxième temps.
+            </small>
+          </div>
+        </section>
+
+        <!-- Saillance visuelle -->
+        <section class="align-center">
+          <h3>Saillance visuelle</h3>
+          <img
+            src="./images/saillance-visuelle-site-tecfa.png"
+            alt="Trois niveaux de saillance visuelle"
+            title="Utiliser les couleurs pour définir l'importance des éléments dans la page"
+            class="r-stretch border-dark-2"
+          />
+          <small
+            >Utiliser les couleurs pour définir/guider l'importance des éléments
+            dans la page.</small
+          >
+        </section>
+
+        <!-- Maquette interactive -->
+        <section>
+          <h3>Maquette interactive</h3>
+          <p>Utilisé surtout, mais pas exclusivement, dans ces contextes :</p>
+          <ul>
+            <li>
+              Tester les fonctionnalités du produit<br />
+              <small
+                >Lier les éléments interactifs ou les pages dans une navigation
+                pour les évaluer par rapport aux besoins/objectifs.</small
+              >
+            </li>
+            <li>
+              Simuler une expérience <em>réelle</em><br />
+              <small
+                >Induire une expérience aussi proche que possible à
+                l'utilisation effective du produit dans un contexte et sur le(s)
+                dispositif(s) envisagé(s).</small
+              >
+            </li>
+            <li>
+              Déterminer la distance d'un
+              <em>minimum viable product</em><br />
+              <small
+                >Établir les fonctionnalités manquantes ou de trop par rapport à
+                une version minimale du produit qu'on peut
+                déployer/commercialiser.</small
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Diagramme activité -->
+        <section class="align-center">
+          <h3>Diagramme d'activité</h3>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Sch%C3%A9ma_d%27un_groupe_d%27activit%C3%A9s_repr%C3%A9sentant_le_fonctionnement_d%27une_borne_bancaire.PNG"
+            alt="Exemple de diagramme"
+            alt="Diagramme de l'activité pour un distributeur d'argent"
+            class="r-stretch"
+          />
+          <small
+            ><a
+              href="https://commons.wikimedia.org/wiki/File:Sch%C3%A9ma_d%27un_groupe_d%27activit%C3%A9s_repr%C3%A9sentant_le_fonctionnement_d%27une_borne_bancaire.PNG"
+              >Itcrew</a
+            >,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0"
+              >CC BY-SA 4.0</a
+            >, via Wikimedia Commons</small
+          >
+        </section>
+
+        <!-- Site map -->
+        <section class="align-center">
+          <h3>Plan de site</h3>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/8/83/Main_Page_Usability.png"
+            alt="Représentation graphique d'un plan de site"
+            title="Plan de site de Wikipedia"
+            class="r-stretch"
+          />
+          <small
+            ><a
+              href="https://commons.wikimedia.org/wiki/File:Main_Page_Usability.png"
+              >Trevor MacInnis at the English-language Wikipedia</a
+            >,
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/"
+              >CC BY-SA 3.0</a
+            >, via Wikimedia Commons</small
+          >
+        </section>
+
+        <!-- Kanban board -->
+        <section class="align-center">
+          <h3>Kanban board</h3>
+          <img
+            src="./images/kanban-board.png"
+            alt="Exemple de Kanban board"
+            title="Organiser les fonctionnalités en 4 étapes"
+            class="r-stretch"
+          />
+          <small
+            >Démarche similaire au <em>vrai</em> développement, mais sans encore
+            écrire du code source.</small
+          >
+        </section>
+
+        <!-- Interactivité -->
+        <section class="align-center">
+          <h3>Interactivité : liens entre écrans</h3>
+          <img
+            src="../ux-ui-web/images/interactive-prototype-screens.png"
+            class="r-stretch border-dark-1"
+            alt="Écrans d'une application fictive"
+            title="L'interactivité est créée à travers le passage entre écrans"
+          />
+        </section>
+
+        <!-- Exemple maquette -->
+        <section class="align-center">
+          <h3>Vers un <em>minimum viable product</em></h3>
+          <iframe
+            style="border: 1px solid rgba(0, 0, 0, 0.1)"
+            width="100%"
+            height="490"
+            data-src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FwdVLFygOghvw8FwYdWcSkt%2FNice-places-mobile-app%3Fnode-id%3D2%253A3%26viewport%3D-326%252C364%252C0.9180096387863159%26scaling%3Dscale-down"
+            allowfullscreen
+          ></iframe>
+          <p>
+            <small>
+              Cliquez une fois sur la maquette pour pouvoir l'utiliser et
+              l'ouvrir en plein écran avec la touche <kbd>F</kbd>. Pour passer à
+              la slide suivante cliquez d'abord hors du cadre noir.
+            </small>
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/vendor/vuejs/vue.min.js"></script>
+    <script src="js/candle-enigmas.js"></script>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
