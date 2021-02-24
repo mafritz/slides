@@ -110,33 +110,53 @@
         <section>
           <h3>Quelques méthodes</h3>
           <ul>
-            <li>
-              Oculométrie<br />
+            <li class="fragment">
+              Oculométrie (<em>Eye-tracking</em>)<br />
               <small>Mesure physiologique de type performance.</small>
             </li>
-            <li>
+            <li class="fragment">
               Test A/B<br /><small>
                 Mesure statistique (souvent) de type performance.
               </small>
             </li>
-            <li>
+            <li class="fragment">
               Test des 5 seconds<br /><small>
                 Mesure perceptive de la première impréssion.</small
               >
             </li>
-            <li>
+            <li class="fragment">
               Échelles utilisabilité/UX<br />
               <small
                 >Mesures perceptives standardisées et validées
                 empiriquement.</small
               >
             </li>
-            <li>
+            <li class="fragment">
               <strong>Test utilisateur</strong><br />
               <small>
                 Technique d'évaluation holistique combinant performance et
                 perception.</small
               >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Eye-tracking -->
+        <section>
+          <h3>Oculométrie</h3>
+          <p>Mesure la position et le mouvement des yeux :</p>
+          <ul>
+            <li>
+              Fixations<br /><small>
+                Temps pendant lequel la pupille <em>ne bouge pas</em> (en
+                réalité elle bouge toujours).
+              </small>
+            </li>
+            <li>
+              Saccades<br /><small>
+                Temps pendant lequel la pupille se déplace grâce aux mouvements
+                oculaires.
+              </small>
             </li>
           </ul>
         </section>
@@ -180,6 +200,270 @@
           </small>
         </section>
 
+        <!-- Test A/B -->
+        <section class="align-center">
+          <h3>Test A/B</h3>
+          <p>Répartition aléatoire à une version de l'interface différente.</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2e/A-B_testing_example.png"
+            class="r-stretch"
+            alt="Deux versions différentes d'un bouton"
+            title="Exemple de test A/B"
+          />
+          <small
+            ><a
+              href="https://commons.wikimedia.org/wiki/File:A-B_testing_example.png"
+              >Maxime Lorant</a
+            >,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0"
+              >CC BY-SA 4.0</a
+            >, via Wikimedia Commons</small
+          >
+        </section>
+
+        <!-- Test statistique -->
+        <section class="align-center">
+          <h3>Parfois avec test statistique</h3>
+          <table class="mt-5 mb-5">
+            <thead>
+              <tr class="header">
+                <th style="text-align: center">Version</th>
+                <th style="text-align: center">Utilisateurs</th>
+                <th style="text-align: center">Oui</th>
+                <th style="text-align: center">Non</th>
+                <th style="text-align: center">Taux de clic</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd">
+                <td style="text-align: center">A</td>
+                <td style="text-align: center">500</td>
+                <td style="text-align: center">91</td>
+                <td style="text-align: center">409</td>
+                <td style="text-align: center">18.20%</td>
+              </tr>
+              <tr class="even">
+                <td style="text-align: center">B</td>
+                <td style="text-align: center">500</td>
+                <td style="text-align: center">119</td>
+                <td style="text-align: center">381</td>
+                <td style="text-align: center">23.80%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="border-dark-1 p-2">
+            $\chi^2$(1, N = 1000) = 4.39, <em>p</em> = .036
+          </p>
+        </section>
+
+        <!-- Test des 5 seconds -->
+        <section class="align-center">
+          <h3>Test des 5 seconds</h3>
+          <img
+            src="./images/5-seconds-test.png"
+            class="r-stretch ml-2"
+            alt="Canvas de page web"
+            title="Demander de dessiner l'interface"
+          />
+          <p>
+            Demander de dessiner l'interface et de deviner les objectifs du site
+            après une brève exposition.
+          </p>
+        </section>
+
+        <!-- Échelles -->
+        <section>
+          <h3>Échelles utilisabilité/UX</h3>
+          <p>Questionnaires standardisés et/ou validés empiriquement.</p>
+          <ul>
+            <li class="mb-3 fragment">
+              Échelles utilisabilité<br />
+              <small
+                >En général plus anciennes, limitées plutôt à évaluer
+                l'efficacité, l'efficience et la satisfaction perçues.</small
+              >
+            </li>
+            <li class="mb-3 fragment">
+              Échelles UX<br />
+              <small
+                >En général plus récentes, elles utilisent une approche
+                holistique, en intégrant les dimensions cognitive, sociale et
+                affective.</small
+              >
+            </li>
+          </ul>
+          <p class="fragment">
+            Elles permettent la comparaison entre versions ou systèmes
+            différents.
+          </p>
+        </section>
+
+        <!-- SUS -->
+        <section class="align-center">
+          <h3>System Usability Scale</h3>
+          <img
+            src="./images/sus-french-translation.png"
+            class="r-stretch"
+            alt="SUS items"
+            title="Traduction libre de la SUS"
+          />
+          <small>Traduction libre depuis l'échelle de Brooke (1996).</small>
+        </section>
+
+        <!-- UEQ -->
+        <section class="align-center">
+          <h3>User Experience Questionnaire</h3>
+          <img
+            src="./images/ueq-french-translation.png"
+            class="r-stretch"
+            alt="UEQ items"
+            title="Traduction de la UEQ"
+          />
+          <small
+            >Traduction non validée pour le moment de Laugwitz, Held & Schrepp
+            (2008)</small
+          >
+        </section>
+
+        <!-- Test utilisateur -->
+        <section>
+          <h3>Test utilisateur</h3>
+          <p>Technique qui combine performance et perception :</p>
+          <ol>
+            <li class="fragment">
+              Accueil<br />
+              <small
+                >De manière similaire à une recherche scientifique, on met les
+                participant-es dans les meilleures conditions (i.e. on teste le
+                dispositif et non pas leurs capacités)</small
+              >
+            </li>
+            <li class="fragment">
+              Scénarisation/Mise en situation<br />
+              <small
+                >Le test s'adresse à des <em>persona</em> (profils
+                d'utilisateurs issues de l'analyse exploratoire) qu'il faut
+                activer/simuler.</small
+              >
+            </li>
+            <li class="fragment">
+              Exécution de tâches en lien avec le scénario<br />
+              <small
+                >Les participant-es effectuent une série de tâches authentiques
+                en lien avec le scénario. Les passations sont en général
+                encodées, e.g. avec enregistrement audio/vidéo et/ou
+                oculométrie.</small
+              >
+            </li>
+            <li class="fragment">
+              Évaluation post-test et débriefing<br />
+              <small
+                >Après les tâches, les participants répondent à des questions
+                fermées (e.g. échelles UX), sémi-directifs et/ou ouvertes qui
+                complémentent les tâches.</small
+              >
+            </li>
+          </ol>
+        </section>
+
+        <!-- Tâches scénarisées -->
+        <section>
+          <h3>Tâches scénarisées</h3>
+          <div class="text-center fragment border-light-1 p-2 mb-2">
+            <i class="fa fa-thumbs-down text-error"></i><br />
+            Trouvez les prix des tickets d'entrée au musée.
+          </div>
+          <div class="text-center fragment border-light-1 p-2">
+            <i class="fa fa-thumbs-up text-success"></i><br />
+            Vous souhaitez visiter le musée le dimanche, avec votre partenaire
+            et vos deux enfants de 15 et 8 ans. Combien va vous coûter l’entrée
+            au total ?
+          </div>
+          <p class="fragment text-center">
+            <small
+              >Les tâches conduisent très souvent à des réponses spécifiques,
+              qui permettent de déterminer si la tâche est réussite.</small
+            >
+          </p>
+        </section>
+
+        <!-- Synthèse tâches -->
+        <section class="align-center">
+          <h3>Synthèse des tâches</h3>
+          <p>
+            Agrégation des passations pour avoir un aperçu général des tâches
+            scénarisées.
+          </p>
+          <img
+            src="./images/task-synthesis.png"
+            class="r-stretch"
+            alt="Table"
+            title="Exemple de synthèse"
+          />
+        </section>
+
+        <!-- Analyse des problèmes -->
+        <section class="align-center">
+          <h3>Analyse des problèmes</h3>
+          <p>
+            Identification des problèmes majeurs, souvent avec utilisation de
+            grilles/héuristiques pour effectuer un diagnostic (e.g. Bastien &
+            Scapin, 1993).
+          </p>
+          <img
+            src="./images/problems-synthesis.png"
+            class="r-stretch"
+            alt="Table de problèmes"
+            title="Exemple d'analyse des problèmes majeurs"
+          />
+        </section>
+
+        <!-- Proposition de remédiation -->
+        <section class="align-center">
+          <h3>Proposition de remédiation</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Suite aux résultats du test utilisateur, lors de la prochaine
+            itération, nous conseillons d'ajouter l'adresse complète, les
+            horaires d'ouverture et les coordonnées de contacts du musée en bas
+            de chaque page du site.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Votre team UX</p>
+        </section>
+
+        <!-- Évaluer les évaluateurs -->
+        <section>
+          <h3>Évaluer les évaluateurs</h3>
+          <p>Critères de sélections pour des utilisateurs :</p>
+          <ol>
+            <li class="fragment">
+              Disponibilité de temps<br />
+              <small
+                >Si le feedback/tâche à faire est trop simple et rapide, les
+                gens ont tendance à donner des avis trop positifs ("Oui,
+                super... allez-y!")</small
+              >
+            </li>
+            <li class="fragment">
+              Disponibilité à mettre en jeu sa propre réputation<br />
+              <small
+                >Actions concrètes qui témoignent <em>attachement</em>, par
+                exemple retweet d'un message de l'entreprise qui lance le
+                produit.</small
+              >
+            </li>
+            <li class="fragment">
+              Disponibilité en termes d'argent<br />
+              <small>
+                De manière paradoxale, on peut demander aux utilisateurs de
+                payer pour participer à un test, ou les engager à achéter le
+                produit à la fin de la conception.
+              </small>
+            </li>
+          </ol>
+        </section>
+
         <!-- Importance perspective (1) -->
         <section>
           <h3>Importance de la perspective</h3>
@@ -189,6 +473,7 @@
             <li>Quel est le contexte d'utilisation ?</li>
             <li>Qui est le public cible ?</li>
             <li>Quelles sont les conséquences envisageables ?</li>
+            <li>Qu'est-ce qu'on ne pourra pas savoir à cette étape ?</li>
           </ul>
         </section>
 
