@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Introduction à EduTechWiki</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta name="description" content="Slides" />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/maf.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img class="r-stretch" src="./images/network.svg" />
+          <h2>Introduction à EduTechWiki</h2>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Qu'est-ce qu'EduTechWiki -->
+        <section class="align-center">
+          <h3>Qu'est-ce qu'EduTechWiki</h3>
+          <div class="r-stretch">
+            <div class="border-light-1 p-1 ml-2 mr-2">
+              <i class="fa fa-quote-left"></i>
+              EduTechWiki est un wiki sur la technologie éducative et domaines
+              annexes hébergé et maintenu à TECFA depuis 2006.
+              <i class="fa fa-quote-right"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <small>
+              <i class="fas fa-info-circle"></i> EduTechWiki est un projet lancé
+              par Daniel K. Schneider, ancien professeur à TECFA.
+            </small>
+          </div>
+        </section>
+
+        <!-- Versions -->
+        <section>
+          <h3>Deux versions d'EduTechWiki</h3>
+          <div class="d-flex space-between">
+            <div class="mr-1 fragment">
+              <img
+                src="./images/edutechwiki_en.png"
+                alt="Version anglais"
+                title="version anglais"
+              />
+              <div>
+                <a href="http://edutechwiki.unige.ch/en/">
+                  <i class="fa fa-chevron-circle-right"></i> Version en
+                  anglais</a
+                ><br />
+                <small
+                  >Plus d'articles, mais moins de contributeurs.
+                  <br />Utilisation du wiki assez <em>standard</em>.</small
+                >
+              </div>
+            </div>
+            <div class="ml-1 fragment">
+              <img
+                src="./images/edutechwiki_fr.png"
+                alt="Version français"
+                title="version français"
+              />
+              <div>
+                <a href="http://edutechwiki.unige.ch/fr/"
+                  ><i class="fa fa-chevron-circle-right"></i> Version en
+                  français</a
+                ><br />
+                <small
+                  >Moins d'articles, mais plus de contributeurs.
+                  <br />Utilisation du wiki plus variée.<br />
+                  <strong
+                    >Traitée davantage dans cette présentation</strong
+                  ></small
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Visites -->
+        <section>
+          <h3>Trafic global généré</h3>
+          <p>Nombre de visiteurs par année sur les deux versions :</p>
+          <div class="d-flex space-around text-center">
+            <div class="border border-dark-1 p-1">
+              1.2 mio<br /><small>2016</small>
+            </div>
+            <div class="border border-dark-1 p-1">
+              1.3 mio<br /><small>2017</small>
+            </div>
+            <div class="border border-dark-1 p-1">
+              1.5 mio<br /><small>2018</small>
+            </div>
+            <div class="border border-dark-1 p-1">
+              1.4 mio<br /><small>2019</small>
+            </div>
+            <div class="border border-dark-1 p-1">
+              1.2 mio<br /><small>2020</small>
+            </div>
+          </div>
+          <div class="text-center mt-3 fragment">
+            <i class="fa fa-thumbs-up"></i>
+            Souvent parmi les premiers résultats des moteurs de recherche grâce
+            à sa stabilité dans le temps.
+          </div>
+        </section>
+
+        <!-- Utilisations -->
+        <section>
+          <h3>Utilisations d'EduTechWiki (fr)</h3>
+          <ul>
+            <li class="fragment">
+              Base de connaissance<br />
+              <small
+                >Articles/pages/portails à propos de la technologie éducative et
+                domaines annexes</small
+              >
+            </li>
+            <li class="fragment">
+              Plateforme pédagogique<br />
+              <small>
+                Pilotage et support de cours,
+                <em>écrire pour apprendre</em>, productions/portfolio travaux
+                étudiant-es, ...
+              </small>
+            </li>
+
+            <li class="fragment">
+              <em>Open Education</em><br />
+              <small
+                >Matériel pédagogique ouvert et participatif, organisé en
+                <em>parcours</em>/thématiques</small
+              >
+            </li>
+
+            <li class="fragment">
+              <em>Mémoire historique</em><br />
+              <small
+                >Durabilité des ressources dans le temps : trace de séminaires,
+                événements, ...</small
+              >
+            </li>
+          </ul>
+
+          <div class="mt-2 fragment text-center">
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Dans l'esprit
+              <em>réseau</em> d'un wiki, plusieurs recouvrements/liens entre
+              utilisations</small
+            >
+          </div>
+        </section>
+
+        <!-- Définition wiki -->
+        <section class="align-center">
+          <h3>Définition d'un wiki</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            Un wiki est une publication
+            <strong class="accent">hypertexte</strong> éditée et gérée en
+            collaboration par son propre public, directement à l'aide d'un
+            navigateur Web.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Traduit depuis Wikipedia anglais</p>
+          <div class="fragment mt-4">
+            <small>
+              Le mot <em>wiki</em>, qui signifie <em>rapide</em> ou
+              <em>informel</em> en hawaïen, se réfère à la fois aux principes ou
+              pratiques d'édition/gestion <strong>et</strong> aux technologies
+              sous-jacentes.
+            </small>
+          </div>
+        </section>
+
+        <!-- Caractéristiques -->
+        <section>
+          <h3>Caractéristiques <em>habituelles</em></h3>
+          <ul>
+            <li class="fragment">
+              Pas ou peu de hiérarchie éditoriale<br />
+              <small>
+                En principe, tous les utilisateurs peuvent ajouter, éditer,
+                déplacer, effacer, ... du contenu sans processus de validation
+                préalable.
+                <strong
+                  ><em>Si jamais quelqu'un d'autre va corriger...</em></strong
+                ></small
+              >
+            </li>
+            <li class="fragment">
+              La <em>page</em> comme unité informationnelle<br />
+              <small
+                >Tout dans un wiki est une <em>page</em> (articles, fichiers,
+                profils utilisateurs, ...) : le wiki émerge de la relation des
+                <em>pages</em> entre elles.</small
+              >
+            </li>
+
+            <li class="fragment">
+              <em>Page</em> = contenu + discussion<br />
+              <small
+                >Chaque unité informationnelle dispose d'un contenu et d'un
+                onglet discussion qui sert à la gestion de ce contenu.</small
+              >
+            </li>
+            <li class="fragment">
+              Mise à jour rapide et <em>potentiellement</em> en continu<br />
+              <small
+                >Équilibre entre évolution permanente et <em>tradition</em> avec
+                l'historique des versions.</small
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Comparaison -->
+        <section>
+          <h3>Comparaison indicative</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Outil</th>
+                <th>Auteurs</th>
+                <th><abbr title="Mise à jour">M-à-j</abbr></th>
+                <th>Relation <em>pages</em></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Site</td>
+                <td>Entreprise, institution, ...</td>
+                <td>Ponctuelle</td>
+                <td>Navigation</td>
+              </tr>
+              <tr>
+                <td>Blog</td>
+                <td>Personne(s) spécifique(s)</td>
+                <td>Régulière</td>
+                <td>Chronologique</td>
+              </tr>
+              <tr>
+                <td>Wiki</td>
+                <td>Public/collectif</td>
+                <td>Fréquente</td>
+                <td>Sémantique</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="fragment text-center mt-3">
+            <i class="fa fa-exclamation-triangle"></i>
+            <small
+              >Mais on peut utiliser un wiki comme site ou blog et on peut avoir
+              un wiki dans une autre application.</small
+            >
+          </div>
+        </section>
+
+        <!-- Fonctionnement de EduTechWiki -->
+        <section class="align-center">
+          <h3>Fonctionnement technique</h3>
+          <img
+            src="./images/mediawiki-engine.png"
+            class="r-stretch"
+            alt="Basé sur l'application MediaWiki"
+            title="Utilisation du moteur MediaWiki"
+          />
+          <div>
+            <small
+              >EduTechWiki utilise l'application/logiciel MediaWiki, le même
+              <em>moteur</em> de Wikipedia, dont le code est open-source et
+              utilisable librement (compétences techniques et hébergement
+              nécessaires).</small
+            >
+          </div>
+        </section>
+
+        <!-- MediaWiki -->
+        <section>
+          <h3>MediaWiki fourni de base</h3>
+          <ul>
+            <li class="fragment">
+              Gestion des utilisateurs et droits d'éditions<br />
+              <small
+                >Système d'authentification (qui est qui ?) et authorization
+                (qui fait quoi ?)</small
+              >
+            </li>
+            <li class="fragment">
+              Stockage des pages/articles/éléments multimédia<br />
+              <small
+                >Chaque unité informationnelle est identifiée par un titre
+                unique et non ambigu.</small
+              >
+            </li>
+            <li class="fragment">
+              Syntaxe Wiki<br /><small>
+                Mise en page avec titres, paragraphes, italiques, etc., mais
+                également fonctions plus avancées.
+              </small>
+            </li>
+            <li class="fragment">
+              Système hypermédia<br /><small>
+                Les liens internes sont le
+                <em>coeur</em> d'un wiki et utilisent le titre de l'unité
+                informationnelle.
+              </small>
+            </li>
+            <li class="fragment">
+              Historique des versions<br />
+              <small
+                >Traçage des modifications (qui a changé quoi et quand ?) avec
+                mécanisme de <em>roll-back</em></small
+              >
+            </li>
+          </ul>
+          <div class="text-center fragment">
+            <small
+              ><i class="fa fa-exclamation-triangle"></i> Liste non
+              exhaustive</small
+            >
+          </div>
+        </section>
+
+        <!-- Extensions -->
+        <section class="align-center">
+          <h3>Écosystème d'extensions</h3>
+          <img
+            src="./images/extensions.png"
+            alt="Ajouter des extensions pour fonctionnalités spécifiques"
+            title="Exemples d'extensions"
+            class="r-stretch"
+          />
+          <div>
+            <small
+              >Des extensions permettent d'ajouter davantage des fonctionnalités
+              spécifiques. Certaines sont maintenues par MediaWiki, d'autres par
+              des particuliers/passionnés.</small
+            >
+          </div>
+        </section>
+
+        <!-- Intersections -->
+        <section class="align-center">
+          <h3>EduTechWiki est le résultat de...</h3>
+          <img
+            src="./images/intersections-plusieurs-elements.png"
+            class="r-stretch"
+            alt="Intersections entre plusieurs éléments"
+            title="Composantes qui s'influencent mutuellement"
+          />
+          <div>
+            <small
+              >Les aspects techniques, communautaires et
+              <em>philosophiques/sémantiques</em> sont interdépendants et
+              s'influencent mutuellement. Tous sont nécessaires à la survie et
+              au succès d'un Wiki.</small
+            >
+          </div>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Présentation créée avec
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
