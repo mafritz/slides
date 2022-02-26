@@ -11,6 +11,18 @@
 		],
 		"description": "Add a new slide skeleton with only title"
 	},
+	"New centered slide": {
+		"prefix": [
+			"slide-centered",
+		],
+		"body": [
+			"<!-- ${1:comment} -->",
+			"<section class=\"align-center\">",
+			"\t<h3>${2:title}</h3>",
+			"</section>"
+		],
+		"description": "Add a new centered slide with only title"
+	},
 	"New slide with citation": {
 		"prefix": [
 			"slide-citation"
@@ -48,5 +60,14 @@
 			"\t</div>",
 			"</section>"
 		]
+	},
+	"New image r-stretch": {
+		"prefix": [
+			"image-r-stretch",
+		],
+		"body": [
+			"<img src=\"${1:url}\" class=\"r-stretch\" alt=\"${2:alt}\" title=\"${3:title}\" />"
+		],
+		"description": "Add an image with remaining height"
 	}
 }
