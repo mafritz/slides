@@ -84,12 +84,12 @@
             :
           </p>
           <ol>
-            <li>
+            <li class="fragment">
               <strong>Parsing</strong> : création du
               <abbr title="Document Object Model">DOM</abbr> à travers la
               hiérarchie des balises.
             </li>
-            <li>
+            <li class="fragment">
               <strong class="accent">Rendering</strong> : application des
               propriétés graphiques aux éléments du
               <abbr title="Document Object Model">DOM</abbr>.
@@ -135,21 +135,21 @@
             <div class="mr-1">
               <p>Il existe ~3 types de boîtes :</p>
               <ol>
-                <li>
+                <li class="fragment">
                   <strong>Block</strong> : l'élément occupe la largeur
                   disponible.
                 </li>
-                <li>
+                <li class="fragment">
                   <strong>Inline</strong> : l'élément occupe seulement la place
                   nécessaire à son contenu.
                 </li>
-                <li>
+                <li class="fragment">
                   <strong>None</strong> : l'élément n'occupe pas de place
                   <em>physique</em>.
                 </li>
               </ol>
             </div>
-            <div class="ml-1">
+            <div class="ml-1 fragment">
               <img
                 src="https://edutechwiki.unige.ch/fmediawiki/images/b/bf/CSS_block_vs_inline_elements.png"
                 alt="Types de boîtes"
@@ -190,15 +190,15 @@
                 HTML5. Il s'occupe de :
               </p>
               <ol>
-                <li>
+                <li class="fragment">
                   Identifier les éléments à styliser avec un
                   <strong style="color: #ba4642">sélecteur</strong>
                 </li>
-                <li>
+                <li class="fragment">
                   Déclarer une ou plusieurs
                   <strong style="color: #ff0000">propriétés</strong> à modifier
                 </li>
-                <li>
+                <li class="fragment">
                   Spécifier les
                   <strong style="color: #2f3699">valeurs</strong> à appliquer
                   parmi les choix possibles
@@ -206,7 +206,7 @@
               </ol>
             </div>
 
-            <div class="ml-1 text-center">
+            <div class="ml-1 text-center fragment">
               <img
                 src="https://edutechwiki.unige.ch/fmediawiki/images/5/56/CSS_d%C3%A9claration_avec_labels.png"
                 alt="Exemple de CSS"
@@ -229,18 +229,18 @@
           <h3>Trois niveaux de CSS</h3>
           <p>On retrouve du CSS à trois niveaux hiérarchiques différents :</p>
           <ol>
-            <li>
+            <li class="fragment">
               <strong><em>Agent-defined</em></strong> : chaque navigateur
               possède un fichier CSS qui applique des propriétés par
               <em>default</em>. Indispensable pour retro-compatibilité avec
               anciennes pages sans CSS.
             </li>
-            <li>
+            <li class="fragment">
               <strong><em>User-defined</em></strong> : certains navigateurs
               laissent les utilisateurs choisir quelques paramètres, comme la
               taille de la police.
             </li>
-            <li>
+            <li class="fragment">
               <strong class="accent"><em>Code-defined</em></strong> : le code
               CSS est téléchargé avec la page. Ce le niveau qu'on peut définir
               en tant que créateurs de pages.
@@ -253,22 +253,24 @@
           <h3>Ajouter du CSS à une page</h3>
           <p>On peut ajouter du CSS de différentes manières :</p>
           <ol>
-            <li>
+            <li class="fragment">
               À l'intérieur de l'<strong class="accent">attribut</strong>
               <code>style=""</code> des balises HTML5
             </li>
-            <li>
+            <li class="fragment">
               À l'intérieur d'une <strong class="accent">balise</strong>
               <code>&lt;style&gt;...&lt;/style&gt;</code> dans le
               <code>head</code> du document
             </li>
-            <li>
+            <li class="fragment">
               En utilisant un
               <strong class="accent">fichier .css externe</strong>, qu'on
               incorpore par référence dans le <code>head</code> du document
             </li>
           </ol>
-          <p>Les trois manières peuvent se combiner dans la même page.</p>
+          <p class="fragment">
+            Les trois manières peuvent se combiner dans la même page.
+          </p>
         </section>
 
         <!-- Attribut style -->
@@ -286,8 +288,10 @@ par exemple <span style="color: blue">bleu</span>,
 mais avec la police d'une autre couleur, 
 par exemple <span style="color: yellow">bleu</span>.</code></pre>
           <p>
-            Modalité adéquate pour une utilisation ponctuelle, e.g. un élément
-            spécifique dans une page.
+            <small
+              >Modalité adéquate pour une utilisation ponctuelle, e.g. un
+              élément spécifique dans une page.</small
+            >
           </p>
         </section>
 
@@ -311,7 +315,10 @@ par exemple <span style="color: yellow">bleu</span>.</code></pre>
   &lt;/style&gt;
 &lt;/head&gt;</code></pre>
           <p>
-            Modalité adéquate si vous n'avez qu'une seule page et peu de code.
+            <small
+              >Modalité adéquate si vous n'avez qu'une seule page et peu de
+              code.</small
+            >
           </p>
         </section>
 
@@ -320,27 +327,30 @@ par exemple <span style="color: yellow">bleu</span>.</code></pre>
           <h3>Fichiers .css externe</h3>
           <p>Pour placer le code dans un fichier externe il faut :</p>
           <ol>
-            <li>
+            <li class="fragment">
               Créer un fichier avec extension <strong>.css</strong>, par exemple
               <strong>style.css</strong>. Un fichier .css accepte seulement des
               déclarations de style CSS, pas du HTML5 ou d'autres notations.
             </li>
-            <li>
+            <li class="fragment">
               L'incorporer par référence à l'intérieur du <code>head</code> de
               la page de cette manière :
+              <pre><code>&lt;link rel="stylesheet" href="style.css" /&gt;</code></pre>
             </li>
           </ol>
-          <pre><code>&lt;link rel="stylesheet" href="style.css" /&gt;</code></pre>
-          <p>
-            Modalité adéquate pour appliquer le même style à plusieurs page
-            et/ou beaucoup de code.
+
+          <p class="fragment">
+            <small
+              >Modalité adéquate pour appliquer le même style à plusieurs page
+              et/ou beaucoup de code.</small
+            >
           </p>
         </section>
 
         <!-- Exemple HTML5 pour fichier externe -->
         <section>
           <h3>Exemple de code HTML5</h3>
-          <pre><code data-line-numbers="7">&lt;!DOCTYPE html&gt;
+          <pre><code data-line-numbers="|7">&lt;!DOCTYPE html&gt;
 &lt;html lang="fr"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -405,7 +415,7 @@ p {
         <!-- Nom de la balise -->
         <section>
           <h3>Nom de la balise</h3>
-          <pre><code data-line-numbers>/* Balises "simple" */
+          <pre><code data-line-numbers="|1-4|6-9|11-14">/* Balises "simple" */
 p {
   color: red;
 }
@@ -432,7 +442,7 @@ h1, h2, h3, h4 {
             Choisir le nom d'une classe avec notation
             <strong>.nom-classe</strong> :
           </p>
-          <pre><code data-line-numbers>/* Classe "générale", peut s'appliquer à tout élément */
+          <pre><code data-line-numbers="|1-4|5-8|">/* Classe "générale", peut s'appliquer à tout élément */
 .important {
   color: darkorange;
 }
@@ -446,7 +456,7 @@ span.error {
               >sans le . initiale) :</strong
             >
           </p>
-          <pre><code data-line-numbers><p class="important">Information importante...</p>
+          <pre><code data-line-numbers="|1|2"><p class="important">Information importante...</p>
 <p>Test : <span class="error">failed</span></p></code></pre>
         </section>
 
@@ -484,11 +494,14 @@ span.error {
   <h1>Texte blanc sur fond noir</h1>
   <p>Texte blanc sur fond noir</p>
 </div></code></pre>
-          <p>
+          <p class="fragment" data-fragment-index="2">
             Sauf si l'élément emboîté a une déclaration qui <em>écrase</em> la
             propriété du parent.
           </p>
-          <pre><code data-line-numbers><div style="background-color:black; color:white;">
+          <pre
+            class="fragment"
+            data-fragment-index="2"
+          ><code data-line-numbers="|3"><div style="background-color:black; color:white;">
   <h1>Texte blanc sur fond noir</h1>
   <p style="color: yellow">Texte jaune sur fond noir</p>
 </div></code></pre>
