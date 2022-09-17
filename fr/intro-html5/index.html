@@ -65,17 +65,17 @@
           <div class="r-hstack space-between">
             <div class="mr-4">
               <p>
-                Internet est un réseau de dispositifs qui échangent de
-                l'information/des données.
+                Internet est un <strong class="accent">réseau</strong> de
+                dispositifs qui échangent de l'information/des données.
               </p>
-              <p>
+              <p class="fragment" data-fragment-index="1">
                 <small>
                   À l'image, une vue partielle de internet en 2005. Chaque ligne
                   connecte deux adresses IP.
                 </small>
               </p>
             </div>
-            <figure class="r-stretch ml-4">
+            <figure class="r-stretch ml-4 fragment" data-fragment-index="1">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Internet_map_1024_-_transparent%2C_inverted.png"
                 alt="Partial map of the Internet based on the January 15, 2005"
@@ -109,18 +109,20 @@
                 éléments principaux :
               </p>
               <ol>
-                <li>
+                <li class="fragment">
                   <abbr title="Uniform Resource Locator">URL</abbr> (adresse
                   web)
                 </li>
-                <li>
+                <li class="fragment">
                   Protocole
                   <abbr title="HyperText Transfer Protocol">HTTP</abbr>
                 </li>
-                <li class="accent">HyperText Mark-up Language (HTML)</li>
+                <li class="accent fragment">
+                  HyperText Mark-up Language (HTML)
+                </li>
               </ol>
             </div>
-            <figure class="ml-4">
+            <figure class="ml-4 fragment">
               <img
                 src="./images/request-response.png"
                 alt="Web Architecture"
@@ -203,8 +205,16 @@ vous devez absolument visiter
 <a href="https://edutechwiki.unige.ch">EduTechWiki</a> 
 au plus vite !</p></code></pre>
           <p>
-            Un lien hypertextuel qui permet de passer d'une page à l'autre est
-            inséré à l'intérieur d'un paragraphe.
+            <small>
+              Un lien hypertextuel qui permet de passer d'une page à l'autre est
+              inséré à l'intérieur d'un paragraphe.
+            </small>
+          </p>
+          <p>
+            Si vous êtes intéressé-e-s par la technologie éducative, vous devez
+            absolument visiter
+            <a href="https://edutechwiki.unige.ch">EduTechWiki</a>
+            au plus vite !
           </p>
         </section>
 
@@ -228,11 +238,15 @@ au plus vite !</p></code></pre>
           <h3>Contenu d'une balise</h3>
           <p>Une balise HTML5 peut contenir :</p>
           <ul>
-            <li>Du texte</li>
-            <li>Une ou plusieurs autres balises</li>
-            <li>Du texte combiné avec une ou plusieurs autres balises</li>
-            <li>Rien (balise vide)</li>
-            <li>Une référence à un fichier multi-média externe</li>
+            <li class="fragment">Du texte</li>
+            <li class="fragment">Une ou plusieurs autres balises</li>
+            <li class="fragment">
+              Du texte combiné avec une ou plusieurs autres balises
+            </li>
+            <li class="fragment">Rien (balise vide)</li>
+            <li class="fragment">
+              Une référence à un fichier multi-média externe
+            </li>
           </ul>
         </section>
 
@@ -244,6 +258,7 @@ au plus vite !</p></code></pre>
             sans aucun marquage ultérieur.
           </p>
           <pre><code><p>Voici du contenu textuel simple dans un paragraphe.</p></code></pre>
+          <p>Voici du contenu textuel simple dans un paragraphe.</p>
         </section>
 
         <!-- Plusieurs balises -->
@@ -272,6 +287,7 @@ au plus vite !</p></code></pre>
           <pre><code>
 <p>Hello <strong>World</strong>! How are <em>you</em>?</p>
           </code></pre>
+          <p>Hello <strong>World</strong>! How are <em>you</em>?</p>
         </section>
 
         <!-- Balises vides -->
@@ -300,7 +316,7 @@ au plus vite !</p></code></pre>
 <!-- URL absolu -->
 &lt;img src="https://mafritz.ch/slides/fr/intro-html5/images/html5-logo.svg" alt="HTML5 Logo" title="Logo de HTML5" /&gt;
 </code></pre>
-          <div class="r-frame p-1 text-center">
+          <div class="r-frame p-1 text-center fragment">
             <i class="fas fa-exclamation-triangle text-danger"></i><br />
             Il faut avoir le droit d'utiliser et/ou pointer vers les éléments
             externes !
@@ -406,16 +422,19 @@ au plus vite !</p></code></pre>
             Tout comme un <em>vrai</em> langage, HTML5 a des règles syntaxiques
             qui sont souvent d'ordre <em>logique</em>. Par exemple :
           </p>
-          <ul class="times">
-            <li>
-              Le head ne peut pas contenir des éléments du body et vice-versa
+          <ul>
+            <li class="fragment">
+              Le <code>head</code> ne peut pas contenir des éléments du
+              <code>body</code> et vice-versa
             </li>
-            <li>
-              Un titre ne peut pas être inséré dans un paragraphe et vice-versa
+            <li class="fragment">
+              Un <code>titre</code> ne peut pas être inséré dans un
+              <code>paragraphe</code> et vice-versa
             </li>
-            <li>
-              Un paragraphe peut contenir un ou plusieurs liens, mais un lien ne
-              peut pas contenir un paragraphe
+            <li class="fragment">
+              Un <code>paragraphe</code> peut contenir un ou plusieurs
+              <code>liens</code>, mais un <code>lien</code> ne peut pas contenir
+              un <code>paragraphe</code>
             </li>
           </ul>
         </section>
@@ -425,16 +444,18 @@ au plus vite !</p></code></pre>
           <h3>Qui décide balises et règles ?</h3>
 
           <div class="d-flex">
-            <div>
+            <div class="fragment">
               <p><i class="fas fa-book fa-2x"></i></p>
               <p>
                 <em>Formellement</em>, un organisme appelé
-                <abbr title="World Wide Web Consortium">W3C</abbr> qui détermine
-                plusieurs standard du web.
+                <a href="https://www.w3.org/"
+                  ><abbr title="World Wide Web Consortium">W3C</abbr></a
+                >
+                qui détermine plusieurs standard du web.
               </p>
             </div>
 
-            <div>
+            <div class="fragment">
               <p>
                 <i class="fab fa-edge fa-2x"></i>
                 <i class="fab fa-chrome fa-2x"></i>
@@ -445,8 +466,11 @@ au plus vite !</p></code></pre>
               <p>
                 <em>De facto</em>, un groupe de travail composé par les
                 producteurs des navigateurs web, le
-                <abbr title="Web Hypertext Application Technology Working Group"
-                  >WHATWG</abbr
+                <a href="https://whatwg.org/"
+                  ><abbr
+                    title="Web Hypertext Application Technology Working Group"
+                    >WHATWG</abbr
+                  ></a
                 >.
               </p>
             </div>
