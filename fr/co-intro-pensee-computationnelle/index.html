@@ -68,11 +68,12 @@
         <!-- Plan -->
         <section>
           <h3>Plan de la présentation</h3>
-          <ul>
+          <ol>
             <li>Perspective adoptée</li>
             <li>Qu'est-ce que la pensée computationnelle ?</li>
             <li>Approches pour enseigner la pensée computationnelle</li>
-          </ul>
+            <li>Enjeux et difficultés</li>
+          </ol>
         </section>
 
         <!-- Perspective -->
@@ -160,38 +161,43 @@
               <table class="table text-center">
                 <thead>
                   <tr>
-                    <th scope="col">PostID</th>
-                    <th scope="col">Thumb</th>
+                    <th scope="col">post_id</th>
+                    <th scope="col">thumb</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">6272</th>
-                    <td>0</td>
+                    <td class="text-center">0</td>
                   </tr>
                   <tr>
                     <th scope="row">6272</th>
-                    <td>1</td>
+                    <td class="text-center">1</td>
                   </tr>
                   <tr>
                     <th scope="row">6272</th>
-                    <td>1</td>
+                    <td class="text-center">1</td>
                   </tr>
                   <tr>
                     <th scope="row">6272</th>
-                    <td>0</td>
+                    <td class="text-center">0</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div class="fragment">
               <h4>Interaction</h4>
-              <button>
-                <i class="fas fa-thumbs-up"></i>
-              </button>
-              <button>
-                <i class="fas fa-thumbs-down"></i>
-              </button>
+              <p>Un simple clique...</p>
+              <p>
+                <button onclick="countUp()">
+                  <span id="countUpValue">97</span>
+                  <i class="fas fa-thumbs-up"></i>
+                </button>
+                <button onclick="countDown()">
+                  <span id="countDownValue">61</span>
+                  <i class="fas fa-thumbs-down"></i>
+                </button>
+              </p>
             </div>
             <div class="fragment">
               <h4>Implications</h4>
@@ -207,6 +213,15 @@
             >Voir par exemple <em>The Social Dilemma</em> (2020)</small
           >
         </section>
+        <script>
+          function countUp() {
+            document.getElementById("countUpValue").innerHTML++;
+          }
+
+          function countDown() {
+            document.getElementById("countDownValue").innerHTML++;
+          }
+        </script>
 
         <!-- Partie sur la définition -->
         <section class="align-center">
@@ -803,6 +818,23 @@
           <p>
             <small class="fragment" data-fragment-index="2"
               >* Pas dans toutes les filières</small
+            >
+          </p>
+        </section>
+
+        <!-- Example -->
+        <section class="align-center">
+          <h3>Exemple langage</h3>
+          <img
+            class="r-stretch"
+            src="https://edutechwiki.unige.ch/fmediawiki/images/d/de/JePenseDoncJS-logo.svg"
+            alt="Logo du projet"
+            title="Je pense, donc JS"
+          />
+          <p>
+            Pensée computationnelle avec JavaScript.<br /><small
+              >Collection de ressources en relation avec la technologie
+              éducative.</small
             >
           </p>
         </section>
