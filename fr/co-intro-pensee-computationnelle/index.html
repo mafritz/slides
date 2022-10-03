@@ -65,6 +65,22 @@
           </p>
         </section>
 
+        <!-- Plan -->
+        <section>
+          <h3>Plan de la présentation</h3>
+          <ul>
+            <li>Perspective adoptée</li>
+            <li>Qu'est-ce que la pensée computationnelle ?</li>
+            <li>Approches pour enseigner la pensée computationnelle</li>
+          </ul>
+        </section>
+
+        <!-- Perspective -->
+        <section class="align-center">
+          <p class="accent pt-5"><i class="fas fa-glasses fa-5x"></i></p>
+          <h3>Perspective adoptée</h3>
+        </section>
+
         <!-- Débat RTS -->
         <section class="align-center">
           <h3>Sujet qui crée du débat</h3>
@@ -116,6 +132,88 @@
             alt="Approche integrative"
             title="Approche integrative à l'enseignement de la pensée computationnelle"
           />
+        </section>
+
+        <!-- Articulation numérique -->
+        <section class="align-center">
+          <h3>Lien avec l'éducation numérique</h3>
+          <img
+            src="./images/articulation-ct-ednum.png"
+            class="r-stretch"
+            alt="Articulation avec l'éducation numérique"
+            title="Articulation avec l'éducation numérique"
+          />
+          <p>
+            La pensée computationnelle est une composante de l'éducation
+            numérique, mais dont l'étendu dans la sphère sociale est plus
+            limitée, <strong>quoi que fondamentale !</strong>
+          </p>
+        </section>
+
+        <!-- Example thumbs up/down -->
+        <section class="align-center">
+          <h3>Exemple du <em>thumbs-up/down</em></h3>
+          <p>Différents niveaux d'analyse pour une fonctionnalité.</p>
+          <div class="d-flex space-between mt-2 r-stretch">
+            <div class="fragment">
+              <h4>Ingénierie</h4>
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">PostID</th>
+                    <th scope="col">Thumb</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fragment">
+              <h4>Interaction</h4>
+              <button>
+                <i class="fas fa-thumbs-up"></i>
+              </button>
+              <button>
+                <i class="fas fa-thumbs-down"></i>
+              </button>
+            </div>
+            <div class="fragment">
+              <h4>Implications</h4>
+              <ul>
+                <li>Désirabilité</li>
+                <li>Exclusion</li>
+                <li>Depression</li>
+                <li>...</li>
+              </ul>
+            </div>
+          </div>
+          <small class="fragment"
+            >Voir par exemple <em>The Social Dilemma</em> (2020)</small
+          >
+        </section>
+
+        <!-- Partie sur la définition -->
+        <section class="align-center">
+          <p class="accent pt-5">
+            <i class="fas fa-question-circle fa-5x"></i>
+          </p>
+          <h3>Qu'est-ce que la pensée computationnelle</h3>
         </section>
 
         <!-- Problème sur les cierges -->
@@ -384,6 +482,26 @@
           </p>
         </section>
 
+        <!-- Mouvement bi-directionnel -->
+        <section>
+          <h3>Mouvement bi-directionnel</h3>
+          <p>
+            L'informatique s'oriente vers les sciences sociales, et les sciences
+            sociales utilisent de plus en plus l'informatique.
+          </p>
+          <div class="d-flex space-between mt-4" style="align-items: center">
+            <div class="text-center border-dark-2 p-2">
+              <h4 style="margin: 0">Informatique</h4>
+            </div>
+            <div class="text-center text-danger">
+              <i class="fas fa-sync-alt fa-3x"></i>
+            </div>
+            <div class="text-center border-dark-2 p-2">
+              <h4 style="margin: 0">Sciences sociales</h4>
+            </div>
+          </div>
+        </section>
+
         <!-- Computation en sciences sociales -->
         <section class="align-center">
           <h3>Informatique : science sociale ?</h3>
@@ -428,26 +546,6 @@
           <script src="https://player.vimeo.com/api/player.js"></script>
         </section>
 
-        <!-- Mouvement bi-directionnel -->
-        <section>
-          <h3>Mouvement bi-directionnel</h3>
-          <p>
-            L'informatique s'oriente vers les sciences sociales, et les sciences
-            sociales utilisent de plus en plus l'informatique.
-          </p>
-          <div class="d-flex space-between mt-4" style="align-items: center">
-            <div class="text-center border-dark-2 p-2">
-              <h4 style="margin: 0">Informatique</h4>
-            </div>
-            <div class="text-center text-danger">
-              <i class="fas fa-sync-alt fa-3x"></i>
-            </div>
-            <div class="text-center border-dark-2 p-2">
-              <h4 style="margin: 0">Sciences sociales</h4>
-            </div>
-          </div>
-        </section>
-
         <!-- Définition pragmatique -->
         <section class="align-center">
           <h3>Définition pragmatique</h3>
@@ -475,104 +573,37 @@
 
         <!-- Décomposition -->
         <section>
-          <h3>Décomposition</h3>
-          <p>
-            Diviser un problème complexe ou un système en petites parties plus
-            simples à gérer.
-          </p>
-          <div class="text-center fragment">
-            <div class="border-light-1 mr-1 ml-1 p-1">
-              <i class="fa fa-quote-left"></i>
-              S'il y a un problème que vous ne pouvez pas résoudre, alors il y a
-              un problème plus facile que vous ne pouvez pas résoudre :
-              trouvez-le.
-              <i class="fa fa-quote-right"></i>
-            </div>
-            <p class="text-right pr-5">— Polya, 1945/2014</p>
-            <p>
-              <small
-                ><i class="fa fa-exclamation-triangle"></i> Traduction
-                libre</small
-              >
-            </p>
-          </div>
-        </section>
-
-        <!-- Pattern -->
-        <section>
-          <h3>Reconnaissance de pattern</h3>
-          <p>
-            Identifier des similarités entre problèmes ou à l’intérieur du même
-            problème donné.
-          </p>
-
-          <div class="text-center fragment">
-            <div class="border-light-1 mr-1 ml-1 p-1">
-              <i class="fa fa-quote-left"></i>
-              Chaque élément de connaissance doit avoir une représentation
-              unique, non ambiguë et faisant autorité au sein d'un système.
-              <i class="fa fa-quote-right"></i>
-            </div>
-            <p class="text-right pr-5">— Hunt & Thomas, 1999</p>
-            <p>
-              <small
-                ><i class="fa fa-exclamation-triangle"></i> Traduction
-                libre</small
-              >
-            </p>
-          </div>
-        </section>
-
-        <!-- Abstraction -->
-        <section>
-          <h3>Abstraction</h3>
-          <p>
-            Se focaliser exclusivement sur les parties importantes du problème.
-          </p>
-
-          <div class="text-center fragment">
-            <div class="border-light-1 mr-1 ml-1 p-1">
-              <i class="fa fa-quote-left"></i>
-              Le processus d'abstraction — qui consiste à décider quels détails
-              nous devons mettre en évidence et quels détails nous pouvons
-              ignorer — est à la base de la pensée computationnelle.
-              <i class="fa fa-quote-right"></i>
-            </div>
-            <p class="text-right pr-5">— Wing, 2008, p. 3718</p>
-            <p>
-              <small
-                ><i class="fa fa-exclamation-triangle"></i> Traduction
-                libre</small
-              >
-            </p>
-          </div>
-        </section>
-
-        <!-- Algorithmes -->
-        <section>
-          <h3>Algorithmes</h3>
-          <p>
-            Trouver une solution à travers une règle composée par une série
-            d’étapes.
-          </p>
-          <div class="text-center fragment">
-            <div class="border-light-1 mr-1 ml-1 p-1">
-              <i class="fa fa-quote-left"></i>
-              Un algorithme est une procédure de calcul bien définie qui prend
-              une valeur, ou un ensemble de valeurs, comme entrée et produit une
-              valeur, ou un ensemble de valeurs, comme sortie.
-              <i class="fa fa-quote-right"></i>
-            </div>
-            <p class="text-right pr-5">
-              — Cormen, Leiserson, Rivest, & Stein, 2009, p. 5
-            </p>
-            <p>
-              <small
-                ><i class="fa fa-exclamation-triangle"></i> Traduction
-                libre</small
-              >
-            </p>
-          </div>
+          <h3>Composantes</h3>
+          <ul>
+            <li class="fragment">
+              <strong>Décomposition</strong><br />
+              <small>
+                Diviser un problème complexe ou un système en petites parties
+                plus simples à gérer.
+              </small>
+            </li>
+            <li class="fragment">
+              <strong>Reconnaissance de pattern</strong><br />
+              <small>
+                Identifier des similarités entre problèmes ou à l’intérieur du
+                même problème donné.
+              </small>
+            </li>
+            <li class="fragment">
+              <strong>Abstraction</strong><br />
+              <small>
+                Se focaliser exclusivement sur les parties importantes du
+                problème.
+              </small>
+            </li>
+            <li class="fragment">
+              <strong>Algorithmes</strong><br />
+              <small>
+                Trouver une solution à travers une règle composée par une série
+                d’étapes.
+              </small>
+            </li>
+          </ul>
         </section>
 
         <!-- Déclarative / Procédurale -->
@@ -593,9 +624,17 @@
           />
         </section>
 
+        <!-- Perspective enseignement -->
+        <section class="align-center">
+          <p class="accent pt-5">
+            <i class="fas fa-chalkboard-teacher fa-5x"></i>
+          </p>
+          <h3>Comment enseigner la pensée computationnelle</h3>
+        </section>
+
         <!-- Trois manières -->
         <section>
-          <h3>Comment ?</h3>
+          <h3>Trois approches principales</h3>
           <p>
             Il existe principalement trois modalités d'enseignement de la pensée
             computationnelle qui peuvent être combinées :
@@ -633,6 +672,34 @@
           >
         </section>
 
+        <!-- Exemples débranchés -->
+        <section>
+          <h3>Exemples <em>débranchés</em></h3>
+          <ul>
+            <li class="fragment">
+              Simulation par l'humain<br /><small>
+                Une personne joue le rôle de <em>l'ordinateur</em>, en exécutant
+                des instructions données par une autre personne.
+              </small>
+            </li>
+            <li class="fragment">
+              Pseudo-code<br /><small>
+                Création d'instructions dans un <em>méta-langage</em> qui
+                s'approchent des standards d'un <em>vrai</em> langage de
+                programmation.</small
+              >
+            </li>
+            <li class="fragment">
+              Jeu symbolique<br /><small>
+                Utilisation d'actions symboliques qui implémentent des principes
+                informatiques (e.g. écrire un e-mail en écrivant sur un papier
+                qui est ensuite divisé en petites parties et envoyé dans
+                différentes directions).</small
+              >
+            </li>
+          </ul>
+        </section>
+
         <!-- Bloc de code -->
         <section class="align-center">
           <h3 class="text-left">Blocs de code</h3>
@@ -659,6 +726,46 @@
               >CC BY-SA</a
             ></small
           >
+        </section>
+
+        <!-- Exemples blocs de code -->
+        <section>
+          <h3>Exemples blocs de code</h3>
+          <ul>
+            <li class="fragment">
+              <a href="https://edutechwiki.unige.ch/fr/Scratch_3.0">Scratch</a
+              ><br /><small>
+                Création de jeux/histoires/animations interactives basés sur une
+                interface utilisateur.</small
+              >
+            </li>
+            <li class="fragment">
+              <a href="http://www.turtlestitch.org/">TurtleStitch</a
+              ><br /><small>
+                Création computationnelle de dessins techniques pour la broderie
+                numérique.</small
+              >
+            </li>
+            <li class="fragment">
+              <a href="https://www.blockscad3d.com/">BlockSCAD</a><br /><small>
+                Création computationnelle d'objets tridimensionnels pour
+                l'impression 3D.</small
+              >
+            </li>
+            <li class="fragment">
+              <a href="https://arcade.makecode.com/">MakeCode Arcade</a
+              ><br /><small>
+                Création de jeux vidéos avec un style <em>rétro</em>.</small
+              >
+            </li>
+            <li class="fragment">
+              <a href="https://makecode.adafruit.com/">MakeCode Adafruit </a
+              ><br />
+              <small>
+                Programmation d'objets connectés/robots électroniques.</small
+              >
+            </li>
+          </ul>
         </section>
 
         <!-- Langages de programmation -->
