@@ -12,7 +12,7 @@
 
     <meta
       name="description"
-      content="Présentation sur le fonctionnement de JavaScript dans un navigatuer"
+      content="Présentation sur le fonctionnement de JavaScript dans un navigateur"
     />
     <meta name="author" content="Mattia A. Fritz" />
 
@@ -65,7 +65,7 @@
           </p>
         </section>
 
-        <!-- Rappel tride pages web -->
+        <!-- Rappel triade pages web -->
         <section class="align-center">
           <h3>Composantes des pages web</h3>
           <img
@@ -232,13 +232,20 @@
             base :
           </p>
           <ol>
-            <li>
-              Les instructions sont codées en amont et téléchargées avec la page
+            <li class="fragment">
+              Les <strong>instructions</strong> sont codées en amont et
+              téléchargées avec la page
             </li>
-            <li>
+            <li class="fragment">
               Elles sont ensuite déclenchées par des
               <strong class="accent">événements</strong>, comme par exemple le
               clique sur un bouton
+            </li>
+            <li class="fragment">
+              Elles comportent enfin des <strong>changements</strong> à l'état
+              de l'application, par exemple des modifications perceptibles à
+              l'interface à travers des modifications du
+              <abbr title="Document Object Model">DOM</abbr>.
             </li>
           </ol>
         </section>
@@ -645,27 +652,29 @@
           <h3>En synthèse</h3>
           <p>Pour créer une interaction il faut :</p>
           <ol>
-            <li>
+            <li class="fragment">
               <strong class="accent">Identifier</strong> l'élément interactif
               dans le
               <abbr title="Document Object Model">DOM</abbr>
             </li>
-            <li>
+            <li class="fragment">
               Lui appliquer un
               <strong class="accent">gestionnaire d'événement</strong> associé à
               un type d'événement spécifique
             </li>
-            <li>
+            <li class="fragment">
               Définir une
               <strong class="accent">règle de comportement</strong> (i.e. une
               fonction) qui est déclenchée par l'événement
             </li>
           </ol>
-          <p>
-            Ce processus peut se complexifier avec la programmation. Par
-            exemple, identifier plusieurs éléments ou événements à la fois, ou
-            déclencher plusieurs règles de comportements.
-          </p>
+          <div class="fragment mt-5">
+            <small>
+              Ce processus peut se complexifier avec la programmation. Par
+              exemple, identifier plusieurs éléments ou événements à la fois, ou
+              déclencher plusieurs règles de comportements.
+            </small>
+          </div>
         </section>
 
         <!-- Plus loin -->
