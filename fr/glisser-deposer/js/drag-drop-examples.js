@@ -56,10 +56,73 @@ $("div[data-why-droppable").droppable({
 /**
  * Small target example
  */
+
+/**
+ * Try to correct the scale problem
+ */
+
+(function ($) {
+  var __dx, __dy;
+  var __recoupLeft, __recoupTop;
+
+  var parseIntSafe = function (value) {
+    return (function (n) {
+      return isNaN(n) ? 0 : n;
+    })(parseInt(value, 10));
+  };
+
+  $.fn.draggablePatched = function (options) {
+    options = options || {};
+    return this.draggable({
+      cursor: options.cursor || "move",
+      zIndex: 100,
+      drag: function (event, ui) {
+        __dx = ui.position.left - ui.originalPosition.left;
+        __dy = ui.position.top - ui.originalPosition.top;
+        ui.position.left = ui.originalPosition.left + __dx + __recoupLeft;
+        ui.position.top = ui.originalPosition.top + __dy + __recoupTop;
+        if (options.drag) {
+          options.drag(event, ui);
+        }
+      },
+      start: function (event, ui) {
+        var left = parseIntSafe($(this).css("left"));
+        var top = parseIntSafe($(this).css("top"));
+        __recoupLeft = left - ui.position.left;
+        __recoupTop = top - ui.position.top;
+        if (options.start) {
+          options.start(event, ui);
+        }
+      },
+      stop: function (event, ui) {
+        $(this).animate(
+          {
+            left: $(this).data("oriLeft"),
+            top: $(this).data("oriTop"),
+          },
+          1000
+        );
+        if (options.stop) {
+          options.stop(event, ui);
+        }
+      },
+      create: function (event, ui) {
+        $(this).data({
+          oriLeft: $(this).css("left"),
+          oriTop: $(this).css("top"),
+        });
+        if (options.create) {
+          options.create(event, ui);
+        }
+      },
+    });
+  };
+})(jQuery);
+
 var startTime;
 var endTime;
 
-$("#drag-robot-small").draggable({
+$("#drag-robot-small").draggablePatched({
   revert: "invalid",
   cursor: "move",
   snap: true,
@@ -69,7 +132,7 @@ $("#drag-robot-small").draggable({
 });
 $("#drop-robot-small").droppable({
   accept: "#drag-robot-small",
-  tolerance: "fit",
+  tolerance: "intersect",
   drop: function (event, ui) {
     endTime = new Date();
     let diffTime = Math.abs(endTime - startTime) / 1000;
@@ -102,7 +165,7 @@ document
  */
 var startTime;
 var endTime;
-$("#drag-robot-big").draggable({
+$("#drag-robot-big").draggablePatched({
   revert: "invalid",
   cursor: "move",
   snap: true,
@@ -112,7 +175,7 @@ $("#drag-robot-big").draggable({
 });
 $("#drop-robot-big").droppable({
   accept: "#drag-robot-big",
-  tolerance: "fit",
+  tolerance: "pointer",
   drop: function (event, ui) {
     endTime = new Date();
     let diffTime = Math.abs(endTime - startTime) / 1000;
