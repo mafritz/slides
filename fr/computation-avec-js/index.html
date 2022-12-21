@@ -282,6 +282,124 @@
           </ul>
         </section>
 
+        <!-- Facteurs principaux dans la computation -->
+        <section>
+          <h3>Facteurs principaux</h3>
+          <p>
+            En combinant éléments littéraux et symboliques, la computation
+            s'appuie principalement sur trois processus :
+          </p>
+          <ul>
+            <li class="fragment">
+              <strong>Identifier et stocker les données</strong><br />
+              <small
+                >Surtout lorsque la computation se fait progressivement et/ou
+                sur beaucoup de données, il est nécessaire de pouvoir y faire
+                référence de manière unique et précise.</small
+              >
+            </li>
+            <li class="fragment">
+              <strong
+                >Exploiter ou créer des procédures pour traiter les
+                données</strong
+              ><br />
+              <small
+                >Les données sont censées évoluer dans la logique de la
+                computation vers des états plus intéressants/utiles (e.g. le
+                score à un quiz, une photo améliorée, ...)</small
+              >
+            </li>
+            <li class="fragment">
+              <strong
+                >Insérer des méta-éléments pour diriger la computation</strong
+              ><br />
+              <small
+                >La computation doit souvent s'adapter à des conditions qui
+                déterminent si, quand et quel code exécuter.</small
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Identification et stockage -->
+        <section>
+          <h3>Identification et stockage</h3>
+          <ul>
+            <li class="fragment">
+              Affecter une valeur à une variable<br />
+              <pre><code data-trim>
+          var score_actuelle = 156;
+          </code></pre>
+            </li>
+
+            <li class="fragment">
+              Affecter une liste à une variable et identifier un élément<br />
+              <pre><code data-trim>
+          var countries = ["France", "Italy", "Switzerland", "Canada"];
+          countries[2];
+          </code></pre>
+            </li>
+
+            <li class="fragment">
+              Affecter un objet à une variable et identifier une propriété<br />
+              <pre><code data-trim>
+          var cours = {
+            name: "Introduction to psychology",
+            professor: "M. Dupont",
+            students: ["John", "Jane", "Jack", "Jill"]
+          };
+          cours.professor;
+          </code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Procédure de traitement -->
+        <section>
+          <h3>Procédure de traitement</h3>
+          <ul>
+            <li class="fragment">
+              Exemple générique pour déclarer une fonction<br />
+              <pre><code data-trim>
+              function myProcedure(input) {
+                //Do something
+                var output = input + " transformation";
+                return output;
+              }
+              </code></pre>
+            </li>
+            <li class="fragment">
+              Inverser l'ordre des lettres dans une suite de caractères<br />
+              <pre><code data-trim data-line-numbers="">
+              function reverseWord(word) {
+                return word.split('').reverse().join('');
+              }
+
+              reverseWord("Hello"); //Donne "olleH"
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Diriger la computation -->
+        <section>
+          <h3>Diriger la computation</h3>
+          <ul>
+            <li class="fragment">
+              Exemple d'une structure de contrôle qui évalue une condition
+              composite<br />
+              <pre><code data-trim>
+              if (test_status == "complete" && score < 4) {
+                takeTestAgain("easy");
+              } else {
+                congratulateStudent(score);
+                takeTestAgain("hard");
+              }
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+
         <!-- Lettre/Nombre/Binaire -->
         <section class="align-center">
           <h3>Computation des lettres</h3>
