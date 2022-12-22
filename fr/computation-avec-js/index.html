@@ -73,12 +73,37 @@
         <!-- Citation Hamming -->
         <section class="align-center">
           <h3>Pourquoi ?</h3>
+          <div class="mb-3">
+            En technologie éducative on s'intéresse beaucoup aux aspects
+            multimédia/interactifs et beaucoup moins aux aspects computationnel.
+            Cependant...
+          </div>
           <div class="border-light-1 p-1 ml-2 mr-2">
             <i class="fa fa-quote-left"></i>
             The purpose of computation is insight, not numbers.
             <i class="fa fa-quote-right"></i>
           </div>
           <p class="text-right pr-5">— Hamming, 1962</p>
+        </section>
+
+        <!-- Lettre/Nombre/Binaire -->
+        <section class="align-center">
+          <h3>...mais tout est numérisé</h3>
+          <p>
+            Même les lettres sont associées à des chiffres qui deviennent
+            ensuite du code binaire.
+          </p>
+          <div class="mt-2 mb-3">
+            <h3 id="letterToNumberEquivalence" style="color: black"></h3>
+          </div>
+
+          <div class="d-flex space-evenly" id="power-of-two-container"></div>
+
+          <div class="mt-2">
+            <button class="btn" onclick="letterToDecimalToBinary()">
+              <i class="fa fa-random"></i> Autre lettre random
+            </button>
+          </div>
         </section>
 
         <!-- Interactivité et computation -->
@@ -98,6 +123,13 @@
               suite.</small
             >
           </div>
+          <p class="fragment border border-accent-2 p-1 d-flex">
+            <i class="fas fa-bullseye fa-3x"></i>
+            <span
+              >L'enjeu est de déclencher de la computation qui soutient un
+              processus d'apprentissage</span
+            >
+          </p>
         </section>
 
         <!-- Définition de computation -->
@@ -263,8 +295,8 @@
             <li class="fragment">
               Éléments symboliques <strong>conventionnels</strong><br />
               <small
-                >Il s'agit de <em>mots</em> réservés par le langage qui sont
-                déjà associés à un rôle ou une fonction spécifiques. Par
+                >Ce sont des <em>mots clés</em> réservés et par le langage qui
+                sont déjà associés à un rôle ou une fonction spécifiques. Par
                 exemple:</small
               ><br />
               <pre><code data-trim>let, if, function, while, do, typeof, Math.PI, Math.random(), ...</code></pre>
@@ -273,9 +305,9 @@
               Éléments symboliques <strong>arbitraires/personnalisés</strong
               ><br />
               <small
-                >Il s'agit du code qui est écrit spécifiquement pour accomplir
-                les intentions du développeur, qui peut créer ses propres
-                éléments (e.g. variables et fonctions). Par exemple :</small
+                >Ce sont des <em>créations</em> ad hoc pour accomplir les
+                intentions du développeur qui peut définir ses propres éléments
+                (e.g. variables et fonctions). Par exemple :</small
               ><br />
               <pre><code data-trim>giveStudentFeedback(), shuffleMemoryCards(), checkAnswer(), ...</code></pre>
             </li>
@@ -294,8 +326,8 @@
               <strong>Identifier et stocker les données</strong><br />
               <small
                 >Surtout lorsque la computation se fait progressivement et/ou
-                sur beaucoup de données, il est nécessaire de pouvoir y faire
-                référence de manière unique et précise.</small
+                sur beaucoup de données, il est nécessaire de pouvoir faire
+                référence aux données de manière unique et précise.</small
               >
             </li>
             <li class="fragment">
@@ -315,7 +347,8 @@
               ><br />
               <small
                 >La computation doit souvent s'adapter à des conditions qui
-                déterminent si, quand et quel code exécuter.</small
+                déterminent si, quand et quel code exécuter (e.g. selon le
+                résultat d'autres computations précédentes).</small
               >
             </li>
           </ul>
@@ -386,35 +419,28 @@
           <h3>Diriger la computation</h3>
           <ul>
             <li class="fragment">
-              Exemple d'une structure de contrôle qui évalue une condition
-              composite<br />
-              <pre><code data-trim>
-              if (test_status == "complete" && score < 4) {
+              Exemple d'une structure simple<br />
+              <pre><code data-trim data-line-numbers="|1,3|2">
+              if (score > 4) {
+                congratulateStudent(score);
+              }
+              </code></pre>
+            </li>
+            <li class="fragment">
+              Exemple d'une structure de contrôle composite<br />
+              <pre><code data-trim data-line-numbers="|1-3|4-6|7-9">
+              if (testStatus == "complete" && score < 4) {
+                randomComfortingMessage();
                 takeTestAgain("easy");
-              } else {
+              } else if (testStatus == "complete" && score >= 4) {
                 congratulateStudent(score);
                 takeTestAgain("hard");
+              } else {
+                nextQuestion();
               }
               </code></pre>
             </li>
           </ul>
-        </section>
-
-        <!-- Lettre/Nombre/Binaire -->
-        <section class="align-center">
-          <h3>Computation des lettres</h3>
-
-          <div class="mt-2 mb-5">
-            <h3 id="letterToNumberEquivalence" style="color: black"></h3>
-          </div>
-
-          <div class="d-flex space-evenly" id="power-of-two-container"></div>
-
-          <div class="mt-5">
-            <button class="btn" onclick="letterToDecimalToBinary()">
-              Autre lettre
-            </button>
-          </div>
         </section>
 
         <!-- Plus loin -->
