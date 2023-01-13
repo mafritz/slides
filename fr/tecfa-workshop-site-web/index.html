@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>TECFA et HTML5, une longue histoire</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+    <meta
+      name="description"
+      content="Workshop tenu à TECFA sur HTML5 et le site TECFA"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/tecfa.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="./images/html5-logo.svg"
+            alt="HTML5 Logo"
+            title="Logo de HTML5"
+          />
+          <h2>TECFA <i class="fas fa-heart"></i> HTML5</h2>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- Plan -->
+        <section>
+          <h3>Plan du Workshop</h3>
+          <ol>
+            <li class="fragment">
+              HTML5 et TECFA<br />
+              <small
+                >Une histoire d'indépendance et décentralisation du
+                pouvoir</small
+              >
+            </li>
+            <li class="fragment">
+              Philosophie web du site TECFA<br />
+              <small><em>UX meets opinionated web development</em></small>
+            </li>
+
+            <li class="fragment">
+              Potentiel techno-pédagogique d'HTML5<br />
+              <small>Quelques exemples d'applications <em>simples</em></small>
+            </li>
+            <li class="fragment">
+              Hands-on !<br />
+              <small>Éditeur de texte, logiciel SFTP, templates, ...</small>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Première page web -->
+        <section class="align-center">
+          <h3>Première page web</h3>
+          <img
+            src="https://edutechwiki.unige.ch/fmediawiki/images/7/76/HTML_premi%C3%A8re_page_web.png"
+            alt="Capture de la première page web"
+            title="Capture d'écran et code source de la première page du web"
+            class="r-stretch"
+          />
+          <div>
+            <small>
+              Apparence et code source HTML de la
+              <a href="http://info.cern.ch/hypertext/WWW/TheProject.html"
+                >première page web</a
+              >
+              publiée par le CERN en 1990. <br />TECFA est parmi les premières
+              unités universitaires à adopter le web. Voir par exemple ce
+              <a href="https://tecfa.unige.ch/guides/beginners-guide.html"
+                >Beginner's guide to HTML</a
+              >
+              publiée déjà en 1995.
+            </small>
+          </div>
+        </section>
+
+        <!-- Fonctionnement philosophique -->
+        <section>
+          <h3>Philosophie du web</h3>
+          <p>
+            Les trois composantes du web peuvent être vue dans une perspective
+            philosophique :
+          </p>
+          <ol>
+            <li class="fragment">
+              <strong>Uniform Resource Locator (URL)</strong><br />
+              <small
+                >Maximiser les routes hypermédia et garantir la stabilité de la
+                cartographie de l'information</small
+              >
+            </li>
+
+            <li class="fragment">
+              <strong>HyperText Transfer Protocole (HTTP)</strong><br />
+              <small
+                >Minimiser le contact entre le chercheur et le fournisseur de
+                l'information</small
+              >
+            </li>
+
+            <li class="fragment">
+              <strong>HyperText Markup Language (HTML)</strong><br />
+              <small
+                >Fournir un langage universel machine-machine, personne-machine
+                et personne-personne.</small
+              >
+            </li>
+          </ol>
+        </section>
+
+        <!-- Décentralisation -->
+        <section class="align-center">
+          <h3>Décentraliser le pouvoir</h3>
+          <p>
+            Distribuer l'information est une manière de se protéger des
+            monopoles, un thème très actuel.
+          </p>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            <a href="https://fr.wikipedia.org/wiki/Fediverse">Fediverse</a>
+            désigne une assez large fédération de serveurs formant un réseau
+            social. Elle est construite autour de logiciels libres, [...] la
+            volonté étant de fournir une alternative ouverte et résiliente aux
+            réseaux sociaux captifs, propriétés d'une unique entité.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Adapté de Wikipedia</p>
+        </section>
+
+        <!-- Creative process -->
+        <section class="align-center">
+          <h3>Processus de création du site</h3>
+          <img
+            src="./images/creative-process.png"
+            alt="Processus de création"
+            title="Processus de création"
+            class="r-stretch"
+          />
+          <p>Travail mené par le groupe du site web en 2019/2020.</p>
+        </section>
+
+        <!-- Approche UX -->
+        <section class="align-center">
+          <h3>Approche centrée utilisateur</h3>
+          <div class="d-flex space-between">
+            <div class="mr-2 fragment">
+              <img
+                src="./images/card-sorting.jpg"
+                class="r-frame"
+                alt="Tri de cartes"
+                title="Tri de cartes"
+                style="width: 350px"
+              />
+              <small>Tri de cartes pour l'organisation des contenus.</small>
+            </div>
+            <div class="ml-2 fragment">
+              <img
+                src="./images/saillance-visualle-site-tecfa.png"
+                class="r-frame"
+                alt="Design system"
+                title="Design system"
+                style="width: 350px"
+              />
+              <small>Design system avec principes de saillance visuelle</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technical distributions -->
+        <section class="align-center">
+          <h3>Perspective technique</h3>
+          <div class="d-flex space-between">
+            <div class="mr-2 fragment" style="width: 300px">
+              <p>Développement</p>
+              <img
+                src="./images/experience-code-complexity.svg"
+                alt="Rapport entre expérience et complexité du code"
+                title="Rapport entre expérience et complexité du code"
+              />
+              <small
+                >Ne pas sous-estimer l'entropie même de systèmes simples.</small
+              >
+            </div>
+            <div class="mr-1 ml-1 fragment" style="width: 300px">
+              <p>
+                Site avec <abbr title="Content Management System">CMS</abbr>
+              </p>
+              <img
+                src="./images/maintenance-time-cms.svg"
+                alt="Rapport entre maintenance et temps dans un CMS"
+                title="Rapport entre maintenance et temps dans un CMS"
+              />
+              <small
+                >Fantastique au début, un cauchemar avant la refonte ou
+                l'abandon.</small
+              >
+            </div>
+            <div class="ml-2 fragment" style="width: 300px">
+              <p>Site avec HTML5</p>
+              <img
+                src="./images/maintenance-time-html5.svg"
+                alt="Rapport entre maintenance et temps dans un site HTML5"
+                title="Rapport entre maintenance et temps dans un site HTML5"
+              />
+              <small>
+                Une cauchemar au début, mais ensuite on peut l'oublier sans
+                soucis.
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sitemap -->
+        <section class="align-center">
+          <h3>
+            Site TECFA = <em>kernel</em> <i class="fas fa-plus"></i>
+            <em>network</em>
+          </h3>
+          <img
+            src="./images/sitemap-decentralized.png"
+            alt="Décentralisation du site TECFA"
+            title="Décentralisation du site TECFA"
+            class="r-stretch"
+          />
+        </section>
+
+        <!-- Potentiel techno-pédagogique -->
+        <section>
+          <h3>Potentiel techno-pédagogique</h3>
+          <ul>
+            <li class="fragment">
+              <strong>Articles scientifiques</strong><br />
+              <small
+                >Meilleur adaptation aux écrans, interactivité, abbreviations,
+                ...
+              </small>
+            </li>
+            <li class="fragment">
+              <strong>Utiliser un site pour piloter un cours</strong><br />
+              <small
+                >Example du
+                <a href="https://mafritz.ch/ergo-ii-2122/"
+                  >site du cours ERGO II</a
+                >, avec portfolio des étudiant-es.</small
+              >
+            </li>
+            <li class="fragment">
+              <strong>
+                Hacker des
+                <abbr title="Content Management Systems">CMS</abbr> comme Moodle
+                ou Wordpress </strong
+              ><br />
+              <small
+                >À l'acronyme
+                <abbr title="What You See Is What You Get">WYSIWYG</abbr>
+                il faut souvent ajouter
+                <abbr title="But Is Not What I Want">BINWIW</abbr> !</small
+              >
+            </li>
+            <li class="fragment">
+              <strong>Slides interactives</strong><br /><small>
+                Combiner le support traditionnel avec des principaux
+                multimédias. Voir par exemple
+                <a href="https://mafritz.ch/slides">certaines de mes slides</a>.
+              </small>
+            </li>
+            <li class="fragment">
+              <strong>Matériel expérimental</strong><br /><small>
+                Créer des contenus ad hoc selon besoins spécifiques. Voir par
+                exemple le matériel de Julien Venni.
+              </small>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Hands-on ! -->
+        <section>
+          <h3>Hands-on !</h3>
+        </section>
+
+        <!-- Plus loin -->
+        <section>
+          <h3>Pour aller plus loin</h3>
+          <p>
+            Les concepts abordés dans cette présentation sont traités de manière
+            plus exhaustive dans
+            <a href="https://edutechwiki.unige.ch/fr/Introduction_%C3%A0_HTML5"
+              >un article sur EduTechWiki</a
+            >.
+          </p>
+          <p>
+            EduTechWiki est un wiki sur la technologie éducative hébergé est
+            maintenu par
+            <a href="https://tecfa.unige.ch"
+              ><abbr title="Technologies de Formation et Apprentissage"
+                >TECFA</abbr
+              ></a
+            >, une unité de l'Université de Genève, depuis 2006.
+          </p>
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <div>
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a
+            ><br />
+            <small
+              >Présentation créée avec
+              <a href="https://revealjs.com/">Reveal.js</a>.</small
+            >
+          </div>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
