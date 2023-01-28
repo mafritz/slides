@@ -55,4 +55,4 @@ Slides utilisés pendant une formation à l'intention des enseignant-es du cycle
 
 - **[Introduction à la pensée computationnelle](./fr/co-intro-pensee-computationnelle/)** : introduction générale au concept de pensée computationnelle et aux différentes positions et manières de l'enseigner
 - **[Introduction à l'interaction personne machine](./fr/co-interaction-personne-machine/)** : la pensée computationnelle peut être intégrée dans le domaine plus large de l'interaction avec des dispositifs numériques
-- **[Introduction aux technologies web](./fr/co-intro-technologies-web/)** : les technologies du web appliquent elle-mêmes de principes computationnels 
+- **[Introduction aux technologies web](./fr/co-intro-technologies-web/)** : les technologies du web appliquent elle-mêmes de principes computationnels
