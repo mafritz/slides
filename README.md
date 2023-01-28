@@ -47,7 +47,7 @@ Slides utilisés pendant des workshop.
 
 Workshops données au sein de l'Unité Technologies de Formation et Apprentissage ([TECFA](https://tecfa.unige.ch)) de l'Université de Genève.
 
-- **[Workshop HTML5 et site web TECFA](./fr/tecfa-workshop-site-web/** : présentation des principes à la base de la création du site web de TECFA.
+- **[Workshop HTML5 et site web TECFA](./fr/tecfa-workshop-site-web/)** : présentation des principes à la base de la création du site web de TECFA.
 
 #### Pensée computationnelle pour les enseignant-es du cycle d'orientation
 
