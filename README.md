@@ -25,7 +25,7 @@ Slides en relation avec des technologies du web, destinées à un public sans co
 Slides d'accompagnement au parcours [Pensée computationnelle avec JavaScript](https://edutechwiki.unige.ch/fr/Initiation_%C3%A0_la_pens%C3%A9e_computationnelle_avec_JavaScript) disponible sur EduTechWiki. Elles sont également utilisées dans le cours Sciences et Technologies de l'Information et de la Communication I (STIC I) du Master MALTT à l'Université de Genève.
 
 - **[Pensée computationnelle avec JavaScript](./fr/pensee-computationnelle-js)** : utilisation de JavaScript comme outil cognitif pour apprendre, exercer et consolider la pensée computationnelle
-- **[Computation avec JavaScript](./fr/computation-avec-javascript)** : fondements de la computation et d'un langage de programmation expliqués avec JavaScript
+- **[Computation avec JavaScript](./fr/computation-avec-jst)** : fondements de la computation et d'un langage de programmation expliqués avec JavaScript
 - **[Interactivité avec JavaScript](./fr/interactivite-avec-js)** : présentation interactive sur le fonctionnement de JavaScript dans un navigateur web
 - **[Glisser/déposer dans une application web](./fr/glisser-deposer)** : informations théoriques et techniques sur l'utilisation du glisser/déposer dans des applications web
 - **[Code réutilisable](./fr/code-reutilisable)** : informations théoriques et techniques sur l'utilisation du _third party code_
