@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>
+      Implementation and Assessment of a Multipurpose Appraisal-Driven Emotion
+      Awareness Tool Based on Self-Report. With an Application to
+      Computer-Mediated Learning Environments
+    </title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta name="description" content="Slides" />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/theme/tecfa.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            src="https://tecfa.unige.ch/assets-global/logos/unige_logo.svg"
+            title="Université de Genève"
+            style="height: 150px"
+          />
+          <h2 style="font-size: 3rem" class="mx-5">
+            Implementation and Assessment of a Multipurpose Appraisal-Driven
+            Emotion Awareness Tool Based on Self-Report<br />
+            <small
+              >With an Application to Computer-Mediated Learning
+              Environments</small
+            >
+          </h2>
+          <p>
+            <strong>Mattia A. Fritz</strong><br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+          <small style="font-size: 0.97rem"
+            >PhD thesis in psychology presented on the 28th of June 2023
+          </small>
+        </section>
+
+        <!-- The rise of affectivism -->
+        <section class="align-center">
+          <h3>The rise of affectivism</h3>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
+            [...] given the undeniable impact of affective sciences on our
+            models of brain, mind, and behaviour, it seems relevant to ask today
+            whether we are now in the era of affectivism.
+            <i class="fa fa-quote-right"></i>
+          </div>
+          <p class="text-right pr-5">— Dukes et al., 2021</p>
+        </section>
+
+        <!-- In Learning Sciences -->
+        <section class="align-center">
+          <h3>In the Learning Sciences</h3>
+          <img
+            src="./images/affect-and-learning.png"
+            class="r-stretch"
+            title="In the learning sciences"
+          />
+          <div>
+            <ol>
+              <li class="fragment">
+                The effects of learning on affect<br />
+                <small
+                  >D'Mello, 2013; Pekrun & Linnenbrink-Garcia, 2014; Reis et
+                  al., 2018</small
+                >
+              </li>
+              <li class="fragment">
+                The effects of affect on learning<br />
+                <small
+                  >D’Mello et al., 2014; Harley et al., 2017; Rowe & Fitness,
+                  2018; Ruiz et al., 2016</small
+                >
+              </li>
+              <li class="fragment">
+                Socio-affective competences in learning<br />
+                <small
+                  >Brackett et al., 2019; Järvelä et al., 2016; Miller & Hadwin,
+                  2015</small
+                >
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- In Computer-Mediated Learning Environments -->
+        <section class="align-center">
+          <h3>Computer-Mediated Learning</h3>
+          <div class="d-flex fragment">
+            <!-- Face-to-Face -->
+            <div class="mr-2" style="width: 450px">
+              <img
+                src="./images/face-to-face.svg"
+                title="Face-to-face"
+                style="height: 100px"
+              />
+              <div>
+                <small>
+                  Lack of para-verbal cues, which are normally available in
+                  face-to-face interactions.
+                </small>
+              </div>
+            </div>
+            <!-- Information Technology -->
+            <div class="ml-2 fragment" style="width: 450px">
+              <img
+                src="./images/information-technology.svg"
+                title="Information and Communication Technology"
+                style="height: 100px"
+              />
+              <div>
+                <small>
+                  <abbr title="Information and Communication Technologies"
+                    >ICT</abbr
+                  >
+                  to capture, store, process, and/or visualize affect-related
+                  information.
+                </small>
+              </div>
+            </div>
+          </div>
+          <!-- Face-to-Face is not the gold standard to recreate -->
+          <div class="fragment mt-4 border border-accent-1">
+            Face-to-face may <strong class="accent">not</strong> be the gold
+            standard to recreate.<br />
+            <small
+              >Buder, 2011; Cernea & Kerren, 2015; Harley et al., 2017; Janssen
+              & Bodemer, 2013; Van Kleef, 2017</small
+            >
+          </div>
+        </section>
+
+        <!-- Emotion Awareness Tool -->
+        <section class="align-center">
+          <h3>Affect-related awareness</h3>
+          <img
+            src="./images/affect-aware-vs-awareness-tool.png"
+            style="height: 250px"
+            title="An EAT shares features with affect-aware and awareness tools"
+          />
+          <div class="d-flex space-between mt-5 text-left">
+            <!-- Affect aware -->
+            <div style="width: 450px" class="ml-2 text-right">
+              <small>
+                Stem from affective computing<br />
+                Reactive or proactive <em>intelligence</em><br />
+                Tailor-made to <em>ad hoc</em> environments
+              </small>
+            </div>
+
+            <!-- Awareness tool -->
+            <div style="width: 450px" class="ml-2">
+              <small>
+                Stem from CMC and CSCL<br />
+                Bestow learners the locus of control<br />
+                Knowledge, social, and affective information
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Thank you -->
+        <section class="align-center">
+          <h3>Thank you for your attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <p>
+            Presentation created with
+            <a href="https://revealjs.com/">Reveal.js</a>.<br />
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            /></a>
+          </p>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ac5eb0c407.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
