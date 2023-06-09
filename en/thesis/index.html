@@ -85,7 +85,9 @@
             whether we are now in the era of affectivism.
             <i class="fa fa-quote-right"></i>
           </div>
-          <p class="text-right pr-5">— Dukes et al., 2021</p>
+          <p class="text-right pr-5">
+            — Dukes et [<strong class="accent">63</strong>] al., 2021
+          </p>
         </section>
 
         <!-- In Learning Sciences -->
@@ -96,7 +98,7 @@
             class="r-stretch"
             title="In the learning sciences"
           />
-          <div>
+          <div class="pl-5">
             <ol>
               <li class="fragment">
                 The effects of learning on affect<br />
@@ -179,21 +181,21 @@
         <section>
           <h3>Why affect-related information?</h3>
           <ul>
-            <li>
+            <li class="fragment">
               Contributes to self-, co- and social-regulation<br />
               <small
                 >Järvelä et al., 2015; Lavoué et al., 2020; Miller & Hadwin,
                 2015</small
               >
             </li>
-            <li>
+            <li class="fragment">
               Sustains social presence<br />
               <small
                 >Jézégou, 2010; Kirschner et al., 2015; Lowenthal & Snelson,
                 2017</small
               >
             </li>
-            <li>
+            <li class="fragment">
               Improves partner- and mutual-modeling<br />
               <small
                 >Dillenbourg et al., 2016; Molinari et al., 2009; Sangin et al.,
@@ -440,13 +442,16 @@
           <ul>
             <li class="fragment">
               <kbd>S1</kbd> Randomized controlled trial<br />
-              <small>Different access to and use of emotional awareness</small>
+              <small
+                >Different access to and use of emotional awareness in
+                <strong class="accent">synch./collab.</strong></small
+              >
             </li>
             <li class="fragment">
               <kbd>S2</kbd> Longitudinal quasi-experimental plan<br />
               <small
                 >Use and perception over time in a blended course over a few
-                weeks</small
+                weeks in <strong class="accent">asynch./indiv.</strong></small
               >
             </li>
             <li class="fragment">
@@ -519,12 +524,16 @@
             <ol>
               <li>
                 Express emotions<br />
-                <small>Number of emotions expressed through the EAT</small>
+                <small
+                  >Number of emotions expressed through the EAT
+                  (<strong>DV1</strong>)</small
+                >
               </li>
               <li>
                 Peruse emotions<br />
                 <small
-                  >Information seeking and processing with eye-tracking
+                  >Information seeking (<strong>DV2</strong>) and information
+                  processing (<strong>DV3</strong>) with eye-tracking
                   measures</small
                 >
               </li>
@@ -556,6 +565,159 @@
             title="Interface of the task"
             class="r-stretch"
           />
+        </section>
+
+        <!-- S1 Results Emotion Expressed -->
+        <section class="align-center">
+          <h3><kbd>S1</kbd> Emotion expression</h3>
+          <div>
+            N = 35, M = 13.8 (5.7) expressed emotions<br />
+            <small
+              >Self M = 12.5 (5.3) | Partner M = 12.7 (6.0) | Mutual M = 15.6
+              (5.7)</small
+            >
+          </div>
+          <img
+            src="./images/s1-expressed-emotions.svg"
+            class="r-stretch"
+            title="Results for emotion expression"
+          />
+          <div class="fragment pb-2">
+            <small>
+              <span data-markdown
+                >`$F(2, 32) = 1.25$, $p = .300$, $\hat{\eta}^2_G = .07$, 90% CI
+                $[.00, .22]$`</span
+              ></small
+            >
+            <table style="font-size: 1rem">
+              <thead>
+                <tr class="header">
+                  <th style="text-align: left">contrast</th>
+                  <th style="text-align: left">estimate</th>
+                  <th style="text-align: right">p.value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td style="text-align: left">Self - Partner</td>
+                  <td style="text-align: left">-0.17 [-6.28, 5.95]</td>
+                  <td style="text-align: right">1.00</td>
+                </tr>
+                <tr class="even">
+                  <td style="text-align: left">Self - Mutual</td>
+                  <td style="text-align: left">-3.14 [-8.60, 2.31]</td>
+                  <td style="text-align: right">0.34</td>
+                </tr>
+                <tr class="odd">
+                  <td style="text-align: left">Partner - Mutual</td>
+                  <td style="text-align: left">-2.98 [-8.90, 2.95]</td>
+                  <td style="text-align: right">0.44</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- S1 Results Information Seeking-->
+        <section class="align-center">
+          <h3><kbd>S1</kbd> Information seeking</h3>
+          <div>
+            N = 35, M = 67.3 (34.9) visits in perceiving AOI<br />
+            <small
+              >Self M = 40.9 (16.8) | Partner M = 75.4 (47.3) | Mutual M = 84.6
+              (23.8)</small
+            >
+          </div>
+          <img
+            src="./images/s1-information-seeking.svg"
+            class="r-stretch"
+            title="Results for information seeking"
+          />
+          <div class="fragment pb-2">
+            <small>
+              <span data-markdown
+                >`$F(2, 32) = 7.42$, $p = .002$, $\hat{\eta}^2_G = .317$, 90% CI
+                $[.09, .49]$`</span
+              ></small
+            >
+            <table style="font-size: 1rem">
+              <thead>
+                <tr class="header">
+                  <th style="text-align: left">contrast</th>
+                  <th style="text-align: left">estimate</th>
+                  <th style="text-align: right">p.value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd text-success">
+                  <td style="text-align: left">Self - Partner</td>
+                  <td style="text-align: left">-34.53 [-66.80, -2.26]</td>
+                  <td style="text-align: right">0.03</td>
+                </tr>
+                <tr class="even text-success">
+                  <td style="text-align: left">Self - Mutual</td>
+                  <td style="text-align: left">-43.73 [-72.51, -14.94]</td>
+                  <td style="text-align: right">&lt; 0.01</td>
+                </tr>
+                <tr class="odd">
+                  <td style="text-align: left">Partner - Mutual</td>
+                  <td style="text-align: left">-9.20 [-40.46, 22.07]</td>
+                  <td style="text-align: right">0.75</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- S1 Results Information Processing-->
+        <section class="align-center">
+          <h3><kbd>S1</kbd> Information processing</h3>
+          <div>
+            N = 35, M = 51.4 (32.5) seconds looking at perceiving AOI<br />
+            <small
+              >Self M = 28.2 (17.2) | Partner M = M = 68.5 (39.8) | Mutual M =
+              60.1 (27.7)</small
+            >
+          </div>
+          <img
+            src="./images/s1-information-processing.svg"
+            class="r-stretch"
+            title="Results for information processing"
+          />
+          <div class="fragment pb-2">
+            <small>
+              <span data-markdown
+                >`$F(2, 32) = 6.24$, $p = .005$, $\hat{\eta}^2_G = .281$, 90% CI
+                $[.064, .457]$`</span
+              ></small
+            >
+            <table style="font-size: 1rem">
+              <thead>
+                <tr class="header">
+                  <th style="text-align: left">contrast</th>
+                  <th style="text-align: left">estimate</th>
+                  <th style="text-align: right">p.value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd text-success">
+                  <td style="text-align: left">Self - Partner</td>
+                  <td style="text-align: left">-40.20 [-71.03, -9.37]</td>
+                  <td style="text-align: right">0.01</td>
+                </tr>
+                <tr class="even text-success">
+                  <td style="text-align: left">Self - Mutual</td>
+                  <td style="text-align: left">-31.81 [-59.31, -4.31]</td>
+                  <td style="text-align: right">0.02</td>
+                </tr>
+                <tr class="odd">
+                  <td style="text-align: left">Partner - Mutual</td>
+                  <td style="text-align: left">8.39 [-21.47, 38.26]</td>
+                  <td style="text-align: right">0.77</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <!-- Conclusion -->
