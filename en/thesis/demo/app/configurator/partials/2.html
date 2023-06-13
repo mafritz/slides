@@ -1,0 +1,268 @@
+<h4>Define the underlying circumplex</h4>
+<p class="lead">
+  <button
+    type="button"
+    class="btn btn-primary btn-lg"
+    data-toggle="modal"
+    data-target="#existingCircumplexesModal"
+  >
+    Load from an existing Affective space
+  </button>
+  or start from scratch.
+</p>
+<label>GRID paradigm</label>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="config.circumplex.isGrid" /> The position
+    of the feelings has been defined using the GRID instrument.
+    <span id="helpBlock" class="help-block"
+      >Tick if the disposition of the feelings is based on the GRID paradigm
+      (important for public configurations, in doubt leave unchecked).</span
+    >
+  </label>
+</div>
+<div class="form-group">
+  <label for="confAlgorithm">Choose the underlying Algorithm type: </label>
+  <div class="radio">
+    <label>
+      <input
+        type="radio"
+        name="confAlgorithm"
+        id="confAlgorithm"
+        value="radial"
+        ng-model="config.circumplex.algorithmType"
+      />Radial
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input
+        type="radio"
+        name="confAlgorithm"
+        id="confAlgorithm2"
+        value="vector"
+        ng-model="config.circumplex.algorithmType"
+      />Vector
+    </label>
+  </div>
+</div>
+<div class="form-group">
+  <label for="confDimX">Dimension X:</label>
+  <input
+    type="text"
+    class="form-control"
+    id="confDimX"
+    ng-model="config.circumplex.dimX"
+  />
+</div>
+<div class="form-group">
+  <label for="confDimY">Dimension Y:</label>
+  <input
+    type="text"
+    class="form-control"
+    id="confDimY"
+    ng-model="config.circumplex.dimY"
+  />
+</div>
+<hr />
+<label
+  >Define the subjective feelings and arrange them on the Affective
+  space.</label
+>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th class="text-center">#</th>
+      <th>Emotion label</th>
+      <th ng-if="config.circumplex.algorithmType == 'vector'">
+        {{config.circumplex.dimX}}
+      </th>
+      <th ng-if="config.circumplex.algorithmType == 'vector'">
+        {{config.circumplex.dimY}}
+      </th>
+      <th ng-if="config.circumplex.algorithmType == 'radial'">Angle</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="em in $parent.config.circumplex.emotions">
+      <td class="text-center">{{ $index + 1 }}</td>
+      <td>
+        <input
+          ng-model="$parent.config.circumplex.emotions[$index].name"
+          class="form-control"
+          ng-model-options="{ debounce: 500 }"
+        />
+      </td>
+      <td ng-if="config.circumplex.algorithmType == 'vector'">
+        <input
+          ng-model="$parent.config.circumplex.emotions[$index].valueX"
+          class="form-control"
+          ng-model-options="{ debounce: 500 }"
+        />
+      </td>
+      <td ng-if="config.circumplex.algorithmType == 'vector'">
+        <input
+          ng-model="$parent.config.circumplex.emotions[$index].valueY"
+          class="form-control"
+          ng-model-options="{ debounce: 500 }"
+        />
+      </td>
+      <td ng-if="config.circumplex.algorithmType == 'radial'">
+        <input
+          ng-model="$parent.config.circumplex.emotions[$index].angle"
+          class="form-control"
+          ng-model-options="{ debounce: 500 }"
+        />
+      </td>
+      <td>
+        <button class="btn btn-danger" ng-click="removeEmotionFromList($index)">
+          <i class="fa fa-remove"></i>
+          Remove
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <button
+    class="btn btn-success"
+    ng-click="$parent.config.circumplex.emotions.push({ name: '', valueX: '', valueY: '', angle: ''});"
+  >
+    <i class="fa fa-plus"></i> Add emotion
+  </button>
+</p>
+<!-- Modal -->
+<div
+  class="modal fade bs-example-modal-lg"
+  id="existingCircumplexesModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          Load from an existing Affective space
+        </h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          You can decide to load the settings of an
+          <strong>existing Affective space</strong> clicking on the
+          <strong>"Load" button</strong>. You can then change any setting after
+          loading.
+        </p>
+
+        <p class="alert alert-warning">
+          <i class="fa fa-warning"></i> <strong>Warning: </strong> loading from
+          an existing Affective space will
+          <strong>override <em>ALL</em> your current settings</strong>!
+        </p>
+        <div class="form-group">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control ng-pristine ng-valid ng-touched"
+              ng-model="q"
+              aria-describedby="search"
+              placeholder="Filter the existing Affective spacees"
+            />
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" disabled="">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </div>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center">Algorithm</th>
+              <th>Emotions circumplex</th>
+              <th class="text-center">GRID<sup>1</sup></th>
+              <th>Dim. X</th>
+              <th>Dim. Y</th>
+              <th>Load</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="c in circumplexes | orderBy: 'name' | filter: q">
+              <td class="text-center lead">
+                <span class="label label-success"
+                  ><i
+                    class="fa fa-circle-o"
+                    ng-show="c.circumplex.algorithmType == 'radial'"
+                  ></i
+                  ><i
+                    class="fa fa-plus-square-o"
+                    ng-show="c.circumplex.algorithmType == 'vector'"
+                  ></i>
+                  {{ c.circumplex.algorithmType | uppercase }}</span
+                >
+              </td>
+              <td>
+                <a href="#"><strong>{{ c.settings.name }}</strong></a
+                ><br />
+                <small
+                  >{{ c.circumplex.emotions.length }} emotions ({{
+                  c.settings.lang }})
+                </small>
+                <br />
+                <small>{{ c.circumplex.description }} </small>
+              </td>
+              <td class="text-center">
+                <i
+                  class="fa fa-2x fa-check text-success"
+                  ng-show="c.circumplex.isGrid"
+                ></i
+                ><i
+                  class="fa fa-2x fa-close text-danger"
+                  ng-hide="c.circumplex.isGrid"
+                ></i>
+              </td>
+              <td>{{ c.circumplex.dimX }}</td>
+              <td>{{ c.circumplex.dimY }}</td>
+              <td>
+                <button
+                  class="btn btn-primary"
+                  ng-click="updateCircumplex(c.id)"
+                  ng-hide="compareCircumplexes(c.circumplex)"
+                >
+                  <i class="fa fa-arrow-right"></i> Load
+                </button>
+                <span
+                  class="text text-success"
+                  ng-show="compareCircumplexes(c.circumplex)"
+                  >Already loaded</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <sup>1</sup> The disposition of emotions according to the underlying
+        dimensions is based upon the
+        <a
+          href="http://www
+  .affective-sciences.org/grid"
+          >GRID</a
+        >
+        results.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

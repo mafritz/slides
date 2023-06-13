@@ -1,0 +1,26 @@
+<aside>
+  <div ng-include="'./app/dew/partials/display.html'"></div>
+  <div id="emotion-monitoring">
+    <div ng-include="'./app/dew/partials/timeline.html'"></div>
+    <div
+      ng-if="config.retrieving.showAppraisalSelf"
+      ng-include="'./app/dew/partials/self.html'"
+      onload="initGraph('Self')"
+    ></div>
+    <div
+      ng-if="config.retrieving.showAppraisalOther"
+      ng-include="'./app/dew/partials/other.html'"
+      onload="initGraph('Other')"
+    ></div>
+    <div
+      ng-if="config.retrieving.showAppraisalX"
+      ng-include="'./app/dew/partials/dimx.html'"
+      onload="initGraph('DimX')"
+    ></div>
+    <div
+      ng-if="config.retrieving.showAppraisalY"
+      ng-include="'./app/dew/partials/dimy.html'"
+      onload="initGraph('DimY')"
+    ></div>
+  </div>
+</aside>

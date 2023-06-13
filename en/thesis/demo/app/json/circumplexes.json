@@ -1,0 +1,484 @@
+[
+  {
+    "id": "8a7cff78abdd8b6b",
+    "user": "c3a369604b9a5826",
+    "name": "DEW Master Thesis",
+    "description": "Circumplex used in the original Master Thesis of Mattia A. Fritz",
+    "algorithmType": "radial",
+    "isGrid": false,
+    "isPublic": true,
+    "lang": "Français",
+    "dimX": "Valence",
+    "dimY": "Control",
+    "questionX": "Is the situation pleasant?",
+    "questionY": "Is the situation under your control?",
+    "dimXneg": "Not at all",
+    "dimXpos": "Yes, absolutely!",
+    "dimYneg": "Not at all",
+    "dimYpos": "Yes, absolutely!",
+    "numSubset": 3,
+    "showOtherEmotion": true,
+    "showNoEmotion": true,
+    "showTimeline": true,
+    "showTimelineSelf": true,
+    "showTimelineOther": true,
+    "showAppraisalSelf": true,
+    "showAppraisalOther": true,
+    "showAppraisalX": false,
+    "showAppraisalY": false,
+    "taskUrl": "https://drive.google.com/open?id=1KFWnimFR3iuGHM8-_Ju0b7mqSQbDjYPHvwTPyy0thL8",
+    "isOpen": true,
+    "createdAt": "",
+    "isDemo": true,
+    "emotions": [
+      {
+        "name": "Confiant",
+        "angle": 9,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "b9e215d59f740992"
+      },
+      {
+        "name": "Intéréssé",
+        "angle": 27,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "5db959cc5fdfbb98"
+      },
+      {
+        "name": "Amusé",
+        "angle": 45,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "60921fd792aa7884"
+      },
+      {
+        "name": "Ravi",
+        "angle": 63,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "f8917aa387df8bc0"
+      },
+      {
+        "name": "Concentré",
+        "angle": 81,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "9adbf3213f81f850"
+      },
+      {
+        "name": "Satisfait",
+        "angle": 99,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "8e988b104a1c7a5d"
+      },
+      {
+        "name": "Détendu",
+        "angle": 117,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "a509e6ae00d8cb44"
+      },
+      {
+        "name": "Surpris",
+        "angle": 135,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "5e65183ac2015877"
+      },
+      {
+        "name": "Soulagé",
+        "angle": 153,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "97567ffb075a08fd"
+      },
+      {
+        "name": "Empathique",
+        "angle": 171,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "a9d727272e990ade"
+      },
+      {
+        "name": "Confus",
+        "angle": 189,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "326554f13bce18a4"
+      },
+      {
+        "name": "Anxieux",
+        "angle": 207,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "7b9a99a78eb728d9"
+      },
+      {
+        "name": "Lassé",
+        "angle": 225,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "015e81929e7938ef"
+      },
+      {
+        "name": "Stressé",
+        "angle": 243,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "8438c82d01350aec"
+      },
+      {
+        "name": "Insatisfait",
+        "angle": 261,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "7f9885d26c77b8f2"
+      },
+      {
+        "name": "Frustré",
+        "angle": 279,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "057674e3eaa03b15"
+      },
+      {
+        "name": "Dégoûté",
+        "angle": 315,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "af120c44f9fe8873"
+      },
+      {
+        "name": "Envieux",
+        "angle": 297,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "13eaec314ea97ba4"
+      },
+      {
+        "name": "Enervé",
+        "angle": 333,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "f7d1ebee8c230881"
+      },
+      {
+        "name": "Irrité",
+        "angle": 351,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "03542afa7793f85d"
+      }
+    ]
+  },
+  {
+    "id": "73438gzghgf2634t3",
+    "user": "c3a369604b9a5826",
+    "name": "Geneva Emotion Wheel 3.0",
+    "description": "Circumplex used by the third version of the GEW according to the interface's position.",
+    "algorithmType": "radial",
+    "isGrid": true,
+    "isPublic": true,
+    "lang": "English",
+    "dimX": "Valence",
+    "dimY": "Power",
+    "questionX": "Is the situation pleasant?",
+    "questionY": "Is the situation under your control?",
+    "dimXneg": "Not at all",
+    "dimXpos": "Yes, absolutely!",
+    "dimYneg": "Not at all",
+    "dimYpos": "Yes, absolutely!",
+    "numSubset": 3,
+    "showOtherEmotion": true,
+    "showNoEmotion": true,
+    "showTimeline": true,
+    "showTimelineSelf": true,
+    "showTimelineOther": true,
+    "showAppraisalSelf": false,
+    "showAppraisalOther": false,
+    "showAppraisalX": true,
+    "showAppraisalY": true,
+    "taskUrl": "https://drive.google.com/open?id=1KFWnimFR3iuGHM8-_Ju0b7mqSQbDjYPHvwTPyy0thL8",
+    "isOpen": true,
+    "createdAt": "",
+    "isDemo": true,
+    "emotions": [
+      {
+        "name": "Interest",
+        "angle": 9,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "b9e215d59f740992"
+      },
+      {
+        "name": "Amusement",
+        "angle": 27,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "5db959cc5fdfbb98"
+      },
+      {
+        "name": "Pride",
+        "angle": 45,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "60921fd792aa7884"
+      },
+      {
+        "name": "Joy",
+        "angle": 63,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "f8917aa387df8bc0"
+      },
+      {
+        "name": "Pleasure",
+        "angle": 81,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "9adbf3213f81f850"
+      },
+      {
+        "name": "Contentment",
+        "angle": 99,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "8e988b104a1c7a5d"
+      },
+      {
+        "name": "Love",
+        "angle": 117,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "a509e6ae00d8cb44"
+      },
+      {
+        "name": "Admiration",
+        "angle": 135,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "5e65183ac2015877"
+      },
+      {
+        "name": "Relief",
+        "angle": 153,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "97567ffb075a08fd"
+      },
+      {
+        "name": "Compassion",
+        "angle": 171,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "a9d727272e990ade"
+      },
+      {
+        "name": "Sadness",
+        "angle": 189,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "326554f13bce18a4"
+      },
+      {
+        "name": "Guilt",
+        "angle": 207,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "7b9a99a78eb728d9"
+      },
+      {
+        "name": "Regret",
+        "angle": 225,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "015e81929e7938ef"
+      },
+      {
+        "name": "Shame",
+        "angle": 243,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "8438c82d01350aec"
+      },
+      {
+        "name": "Disappointment",
+        "angle": 261,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "7f9885d26c77b8f2"
+      },
+      {
+        "name": "Fear",
+        "angle": 279,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "057674e3eaa03b15"
+      },
+      {
+        "name": "Disgust",
+        "angle": 315,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "af120c44f9fe8873"
+      },
+      {
+        "name": "Contempt",
+        "angle": 297,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "13eaec314ea97ba4"
+      },
+      {
+        "name": "Hate",
+        "angle": 333,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "f7d1ebee8c230881"
+      },
+      {
+        "name": "Anger",
+        "angle": 351,
+        "configuration": "8a7cff78abdd8b6b",
+        "id": "03542afa7793f85d"
+      }
+    ]
+  },
+  {
+  "id": "43hi34tfzgf652997",
+  "user": "c3a369604b9a5826",
+  "name": "Geneva Emotion Wheel 3.0",
+  "description": "Circumplex used by the third version of the GEW according to the interface's position.",
+  "algorithmType": "vector",
+  "isGrid": true,
+  "isPublic": true,
+  "lang": "English",
+  "dimX": "Valence",
+  "dimY": "Power",
+  "questionX": "Is the situation pleasant?",
+  "questionY": "Is the situation under your control?",
+  "dimXneg": "Not at all",
+  "dimXpos": "Yes, absolutely!",
+  "dimYneg": "Not at all",
+  "dimYpos": "Yes, absolutely!",
+  "numSubset": 3,
+  "showOtherEmotion": true,
+  "showNoEmotion": true,
+  "showTimeline": true,
+  "showTimelineSelf": true,
+  "showTimelineOther": true,
+  "showAppraisalSelf": false,
+  "showAppraisalOther": false,
+  "showAppraisalX": true,
+  "showAppraisalY": true,
+  "taskUrl": "https://drive.google.com/open?id=1KFWnimFR3iuGHM8-_Ju0b7mqSQbDjYPHvwTPyy0thL8",
+  "isOpen": true,
+  "createdAt": "",
+  "isDemo": true,
+  "emotions": [
+    {
+      "name": "Admiration",
+      "valueX": 66,
+      "valueY": 9,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "b9e215d59f740992"
+    },
+    {
+      "name": "Amusement",
+      "valueX": 67,
+      "valueY": 19,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "5db959cc5fdfbb98"
+    },
+    {
+      "name": "Anger",
+      "valueX": -37,
+      "valueY": 47,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "60921fd792aa7884"
+    },
+    {
+      "name": "Compassion",
+      "valueX": -5,
+      "valueY": -55,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "f8917aa387df8bc0"
+    },
+    {
+      "name": "Contempt",
+      "valueX": -55,
+      "valueY": 43,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "9adbf3213f81f850"
+    },
+    {
+      "name": "Contentment",
+      "valueX": 77,
+      "valueY": 3,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "8e988b104a1c7a5d"
+    },
+    {
+      "name": "Disappointment",
+      "valueX": -77,
+      "valueY": -12,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "a509e6ae00d8cb44"
+    },
+    {
+      "name": "Disgust",
+      "valueX": -68,
+      "valueY": 20,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "5e65183ac2015877"
+    },
+    {
+      "name": "Fear",
+      "valueX": -61,
+      "valueY": 7,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "97567ffb075a08fd"
+    },
+    {
+      "name": "Guilt",
+      "valueX": -57,
+      "valueY": -27,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "a9d727272e990ade"
+    },
+    {
+      "name": "Hate",
+      "valueX": -45,
+      "valueY": 43,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "326554f13bce18a4"
+    },
+    {
+      "name": "Interest",
+      "valueX": 61,
+      "valueY": 25,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "7b9a99a78eb728d9"
+    },
+    {
+      "name": "Joy",
+      "valueX": 68,
+      "valueY": 7,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "015e81929e7938ef"
+    },
+    {
+      "name": "Love",
+      "valueX": 58,
+      "valueY": -16,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "8438c82d01350aec"
+    },
+    {
+      "name": "Pleasure",
+      "valueX": 71,
+      "valueY": 2,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "7f9885d26c77b8f2"
+    },
+    {
+      "name": "Pride",
+      "valueX": 72,
+      "valueY": 15,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "057674e3eaa03b15"
+    },
+    {
+      "name": "Regret",
+      "valueX": -70,
+      "valueY": -19,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "af120c44f9fe8873"
+    },
+    {
+      "name": "Relief",
+      "valueX": 66,
+      "valueY": -36,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "13eaec314ea97ba4"
+    },
+    {
+      "name": "Sadness",
+      "valueX": -68,
+      "valueY": -35,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "f7d1ebee8c230881"
+    },
+    {
+      "name": "Shame",
+      "valueX": -61,
+      "valueY": -16,
+      "configuration": "8a7cff78abdd8b6b",
+      "id": "03542afa7793f85d"
+    }
+  ]
+}
+]

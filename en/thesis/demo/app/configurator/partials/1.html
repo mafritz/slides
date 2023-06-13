@@ -1,0 +1,48 @@
+<h4>Define the general settings of your configuration</h4>
+<label>Purpose of the Configuration</label>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="config.settings.isDemo" /> This
+    configuration is for <strong>DEMO use only</strong>!
+    <span id="helpBlock" class="help-block"
+      >Tick if the disposition configuration is intended only to be shared with
+      other researchers so that they can use the Affective space as a base. A
+      DEMO configuration <strong>cannot collect data</strong>!</span
+    >
+  </label>
+</div>
+<div class="form-group">
+  <label for="confLang">Language:</label>
+  <input
+    type="text"
+    class="form-control"
+    id="confLang"
+    ng-model="config.settings.lang"
+    placeholder="Lang of the confgiruation (e.g. English)"
+  />
+</div>
+<div class="form-group">
+  <label for="confName">Name:</label>
+  <input
+    type="text"
+    class="form-control"
+    id="confName"
+    ng-model="config.settings.name"
+  />
+</div>
+<div class="form-group">
+  <label for="confDescription">Short description:</label>
+  <textarea
+    class="form-control"
+    id="confDescription"
+    ng-model="config.settings.description"
+  ></textarea>
+</div>
+<div class="form-group">
+  <label for="confBody">Long description:</label>
+  <textarea
+    class="form-control"
+    id="confBody"
+    ng-model="config.settings.body"
+  ></textarea>
+</div>

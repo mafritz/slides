@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Poster presentation at the ISRE 2015 Conference",
+    "date": "2015-07-09",
+    "image": "assets/images/ISRE2015.png",
+    "body": "A poster about the DEW has been presented during the conference organized by the Internation Society for Research on Emotion, held in Geneva in July 2015.",
+    "url": "http://tecfa.unige.ch/perso/mafritz/assets/docs/MAF_2015_ISRE_hands-out.pdf",
+    "label": "Download the Hands-out"
+  },
+  {
+    "title": "Domain registration",
+    "date": "2015-09-09",
+    "image": "assets/images/web.png",
+    "body": "Registration of the domain www.dynamicemotionwheel.ch for the current site."
+  },
+  {
+    "title": "Google group as a Forum",
+    "date": "2015-09-29",
+    "image": "assets/images/forum.png",
+    "body": "The Google group is to be used as support and discussion forum.",
+    "url": "https://groups.google.com/forum/#!forum/dynamic-emotion-wheel",
+    "label": "Visit the Forum"
+  },
+  {
+    "title": "Poster for NCCR \"Affective Sciences\" Annual Research Forum 2016",
+    "date": "2016-03-04",
+    "image": "assets/images/ARF2016.jpg",
+    "body": "Simple poster that resumes the main information already available in this site, presented at the Annual Research Forum of the Swiss National Center of Competence in Research \"Affective Sciences\"",
+    "url": "http://tecfa.unige.ch/perso/mafritz/assets/docs/MAF_2016_ARF_poster.pdf",
+    "label": "Download the poster"
+  }
+]
