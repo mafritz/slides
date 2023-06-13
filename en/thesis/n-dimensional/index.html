@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="row g-0">
+        <!-- DEW -->
+        <div class="col-md-5 col-lg-4">
+          <section class="bg-light py-3">
+            <appraisal-slider
+              v-for="(appraisal, index) in appraisals"
+              :key="index"
+              :question="appraisal.question"
+              :number="index"
+              @slider-change="onSliderChange($event)"
+              class="px-2"
+            ></appraisal-slider>
+
+            <div class="mx-3 d-flex flex-wrap justify-content-md-around">
+              <button
+                type="button"
+                class="btn btn-primary mb-3 mx-1"
+                style="min-width: 30%"
+                v-for="(feeling, index) in suggestedFeelings"
+              >
+                {{feeling.label}}
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8">
+          <div class="px-5 mt-2">
+            <h1>Configuration</h1>
+            <form class="row g-3 mt-3">
+              <div class="col-md-4">
+                <label for="numAppraisals" class="form-label"
+                  >N° Appraisals</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numEmotions"
+                  v-model.number="numAppraisals"
+                  min="1"
+                  max="20"
+                  required
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="numEmotions" class="form-label">N° Emotions</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numEmotions"
+                  v-model.number="numEmotions"
+                  min="1"
+                  max="100"
+                  required
+                />
+              </div>
+
+              <div class="col-md-4">
+                <label for="numSuggestions" class="form-label"
+                  >N° Suggestions</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numEmotions"
+                  v-model.number="numSuggestions"
+                  min="1"
+                  :max="affectiveSpace.feelings.length"
+                  required
+                />
+              </div>
+            </form>
+
+            <table class="table table-striped table-hover mt-3">
+              <thead>
+                <tr>
+                  <th width="1%">#</th>
+                  <th>Feeling</th>
+                  <th v-for="n in numAppraisals" :key="n">A{{n}}</th>
+                  <th>&#916;</th>
+                </tr>
+                <tr class="bg-success text-white">
+                  <th></th>
+                  <th>Current evaluation</th>
+                  <th v-for="(appraisal, index) in appraisals">
+                    {{ appraisal.value }}
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(feeling, index) in orderedFeelings" :key="index">
+                  <th>{{index + 1}}</th>
+                  <td>{{feeling.label}}</td>
+                  <td v-for="i in feeling.coordinates.length" :key="i">
+                    {{feeling.coordinates[i-1]}}
+                  </td>
+                  <td v-if="numAppraisals">
+                    <span class="badge bg-dark"
+                      >{{ computeDistance(appraisals,
+                      feeling.coordinates)}}</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./dist/dew-core.js"></script>
+    <script>
+      console.log(DEW);
+      const options = {
+        data() {
+          let appraisals = [
+            {
+              question: "Required appraisal dimension",
+              value: 0,
+            },
+          ];
+
+          let initialNumEmotions = 6;
+          let initialNumAppraisals = 1;
+          let initialNumSuggestions = 3;
+
+          let randomAffectiveSpace = DEW.simulateVectorAffectiveSpace(
+            initialNumEmotions,
+            initialNumAppraisals
+          );
+
+          return {
+            appraisals: appraisals,
+            numAppraisals: appraisals.length,
+            numEmotions: initialNumEmotions,
+            numSuggestions: initialNumSuggestions,
+            affectiveSpace: randomAffectiveSpace,
+            orderedFeelings: randomAffectiveSpace.feelings,
+          };
+        },
+        watch: {
+          numAppraisals(newValue, oldValue) {
+            if (oldValue < newValue) {
+              this.appraisals.push({
+                question: "Another appraisal dimension",
+                value: 0,
+              });
+            } else {
+              this.appraisals.pop();
+            }
+            this.affectiveSpace = DEW.simulateVectorAffectiveSpace(
+              this.numEmotions,
+              this.numAppraisals
+            );
+            this.orderedFeelings = this.affectiveSpace.feelings;
+          },
+          numEmotions(newValue, oldValue) {
+            this.affectiveSpace = DEW.simulateVectorAffectiveSpace(
+              this.numEmotions,
+              this.numAppraisals
+            );
+            this.orderedFeelings = this.affectiveSpace.feelings;
+          },
+        },
+        computed: {
+          suggestedFeelings() {
+            return DEW.subsetFeelings(
+              this.orderedFeelings,
+              this.numSuggestions
+            );
+          },
+        },
+        methods: {
+          onSliderChange(payload) {
+            let whichAppraisal = Number(payload.number);
+            let whichValue = Number(payload.value);
+            this.appraisals[whichAppraisal].value = whichValue;
+            let currentAppraisalProfile = this.appraisals.map(function (el) {
+              return el.value;
+            });
+            let currentOrderedFeelings = DEW.sortAffectiveSpace(
+              this.affectiveSpace,
+              currentAppraisalProfile
+            );
+            this.orderedFeelings = currentOrderedFeelings;
+          },
+          computeDistance(appraisals, feeling) {
+            let distance = 0;
+            let currentAppraisalProfile = this.appraisals.map(function (el) {
+              return el.value;
+            });
+            if (currentAppraisalProfile.length == 1) {
+              distance = DEW.computeUniDimensionalDistance(
+                currentAppraisalProfile,
+                feeling
+              );
+            } else {
+              distance = DEW.computeMultiDimensionalDistance(
+                currentAppraisalProfile,
+                feeling
+              );
+            }
+
+            return Math.round(distance);
+          },
+        },
+        created() {},
+      };
+
+      let app = Vue.createApp(options);
+
+      app.component("appraisal-slider", {
+        data() {
+          return {
+            value: 0,
+          };
+        },
+        props: ["question", "number"],
+        template: `
+           <div class="appraisal-slider mb-2 mx-3">
+           <label for="sliderX" class="mb-1"><span class="badge bg-dark">{{number + 1}}</span> {{question}}</label>
+                    <input
+                      type="range"
+                      class="form-range"
+                      min="-100"
+                      max="100"
+                      step="1"
+                      v-model.number="value"
+                      v-on:change="$emit('slider-change', {number: number, value: $event.target.value})"
+                    />
+          </div>
+          `,
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
