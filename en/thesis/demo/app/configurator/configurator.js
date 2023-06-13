@@ -3,44 +3,115 @@ app.controller(
   function ($scope, $location, SharedEmotionsService, Algorithm) {
     //Blank slate
     $scope.$parent.config = {
-      id: "",
+      id: "gv6n5h6rmvbtvs4i",
       user: "695hkknh4rcqh0k9",
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: "Wed Sep 30 2015 14:48:36 GMT+0200",
+      updatedAt: "Wed Sep 30 2015 14:48:36 GMT+0200",
       settings: {
-        lang: "English",
-        name: "The name of your configuration",
-        description: "Short description of the configuration.",
-        body: "Full description (with references etc.)",
-        isDemo: false,
+        lang: "Français",
+        name: "Original DEW Master Thesis Circumplex",
+        description:
+          "Circumplex used in the development and test of the DEW first version",
+        body: "Lorem ipsum...",
+        isPublic: true,
+        isOpen: false,
+        isDemo: true,
       },
       circumplex: {
         algorithmType: "radial",
-        dimX: "Dimension X",
-        dimY: "Dimension Y",
+        dimX: "Valence",
+        dimY: "Control",
         isGrid: false,
         emotions: [
           {
-            name: "Sample",
+            name: "Confiant",
             angle: 9,
-            valueX: 35,
-            valueY: -25,
           },
           {
-            name: "Sample 2",
+            name: "Intéréssé",
             angle: 27,
-            valueX: -67,
-            valueY: 44,
+          },
+          {
+            name: "Amusé",
+            angle: 45,
+          },
+          {
+            name: "Ravi",
+            angle: 63,
+          },
+          {
+            name: "Concentré",
+            angle: 81,
+          },
+          {
+            name: "Satisfait",
+            angle: 99,
+          },
+          {
+            name: "Détendu",
+            angle: 117,
+          },
+          {
+            name: "Surpris",
+            angle: 135,
+          },
+          {
+            name: "Soulagé",
+            angle: 153,
+          },
+          {
+            name: "Empathique",
+            angle: 171,
+          },
+          {
+            name: "Confus",
+            angle: 189,
+          },
+          {
+            name: "Anxieux",
+            angle: 207,
+          },
+          {
+            name: "Lassé",
+            angle: 225,
+          },
+          {
+            name: "Stressé",
+            angle: 243,
+          },
+          {
+            name: "Insatisfait",
+            angle: 261,
+          },
+          {
+            name: "Frustré",
+            angle: 279,
+          },
+          {
+            name: "Dégoûté",
+            angle: 315,
+          },
+          {
+            name: "Envieux",
+            angle: 297,
+          },
+          {
+            name: "Enervé",
+            angle: 333,
+          },
+          {
+            name: "Irrité",
+            angle: 351,
           },
         ],
       },
       inserting: {
-        questionX: "Label for Question X?",
-        dimXneg: "Min. X",
-        dimXpos: "Max. X",
-        questionY: "Label for question Y?",
-        dimYneg: "Min. Y",
-        dimYpos: "Max. Y",
+        questionX: "Is the situation pleasant?",
+        dimXneg: "Not at all",
+        dimXpos: "Yes, absolutely",
+        questionY: "Is the situation under your control?",
+        dimYneg: "Not at all",
+        dimYpos: "Yes, absolutely",
         numSubset: 3,
         showOtherEmotion: true,
         showNoEmotion: true,

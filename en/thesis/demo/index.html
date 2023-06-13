@@ -32,11 +32,11 @@
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active">
             <a
-              href="#template"
-              aria-controls="template"
+              href="#algorithm"
+              aria-controls="algorithm"
               role="tab"
               data-toggle="tab"
-              ><label class="label label-default">1</label> Settings</a
+              ><label class="label label-default">1</label> Algorithm</a
             >
           </li>
           <li role="presentation">
@@ -74,15 +74,22 @@
             >
           </li>
           <li role="presentation">
-            <a href="#tab1" role="tab" data-toggle="tab"
+            <a href="#algorithm" role="tab" data-toggle="tab"
               ><label class="label label-default">6</label> Algorithm</a
             >
           </li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane fade in active" id="template">
-            <div ng-include="'./app/configurator/partials/1.html'"></div>
+          <div class="active tab-pane fade in active" id="algorithm">
+            <div
+              ng-include="'./app/demo/partials/radial-svg.html'"
+              ng-if="config.circumplex.algorithmType=='radial'"
+            ></div>
+            <div
+              ng-include="'./app/demo/partials/vector-svg.html'"
+              ng-if="config.circumplex.algorithmType=='vector'"
+            ></div>
           </div>
           <div role="tabpanel" class="tab-pane" id="circumplex">
             <div ng-include="'./app/configurator/partials/2.html'"></div>
@@ -95,16 +102,6 @@
           </div>
           <div role="tabpanel" class="tab-pane fade" id="task">
             <div ng-include="'./app/configurator/partials/5.html'"></div>
-          </div>
-          <div class="active tab-pane fade in" id="tab1">
-            <div
-              ng-include="'./app/demo/partials/radial-svg.html'"
-              ng-if="config.circumplex.algorithmType=='radial'"
-            ></div>
-            <div
-              ng-include="'./app/demo/partials/vector-svg.html'"
-              ng-if="config.circumplex.algorithmType=='vector'"
-            ></div>
           </div>
         </div>
         <p class="text-right">
