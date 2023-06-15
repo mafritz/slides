@@ -24,83 +24,83 @@ app.controller(
         isGrid: false,
         emotions: [
           {
-            name: "Confiant",
+            name: "Confident",
             angle: 9,
           },
           {
-            name: "Intéréssé",
+            name: "Interested",
             angle: 27,
           },
           {
-            name: "Amusé",
+            name: "Amused",
             angle: 45,
           },
           {
-            name: "Ravi",
+            name: "Delighted",
             angle: 63,
           },
           {
-            name: "Concentré",
+            name: "Attentive",
             angle: 81,
           },
           {
-            name: "Satisfait",
+            name: "Satisfied",
             angle: 99,
           },
           {
-            name: "Détendu",
+            name: "Relaxed",
             angle: 117,
           },
           {
-            name: "Surpris",
+            name: "Surprised",
             angle: 135,
           },
           {
-            name: "Soulagé",
+            name: "Relieved",
             angle: 153,
           },
           {
-            name: "Empathique",
+            name: "Empathetic",
             angle: 171,
           },
           {
-            name: "Confus",
+            name: "Confused",
             angle: 189,
           },
           {
-            name: "Anxieux",
+            name: "Anxious",
             angle: 207,
           },
           {
-            name: "Lassé",
+            name: "Bored",
             angle: 225,
           },
           {
-            name: "Stressé",
+            name: "Stressed",
             angle: 243,
           },
           {
-            name: "Insatisfait",
+            name: "Disappointed",
             angle: 261,
           },
           {
-            name: "Frustré",
+            name: "Frustrated",
             angle: 279,
           },
           {
-            name: "Dégoûté",
+            name: "Envious",
             angle: 315,
           },
           {
-            name: "Envieux",
+            name: "Disgusted",
             angle: 297,
           },
           {
-            name: "Enervé",
+            name: "Annoyed",
             angle: 333,
           },
           {
-            name: "Irrité",
+            name: "Irritated",
             angle: 351,
           },
         ],
