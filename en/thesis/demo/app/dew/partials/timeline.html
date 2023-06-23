@@ -1,0 +1,23 @@
+<!-- Emotions history -->
+<div class="panel panel-default" ng-show="config.retrieving.showTimeline">
+  <div class="panel-heading">Emotion timeline</div>
+  <div class="panel-body">
+    <section id="show-emotions-history">
+      <ul class="list-inline background-line self" ng-show="config.retrieving.showTimelineSelf">
+        <li>You</li>
+        <li ng-repeat="feeling in expressedEmotions" ng-class="isMine(feeling.user)"
+            class="added"><time>{{feeling.createdAt | date:
+          'HH:mm'}}</time>{{feeling
+          .feeling}}</li>
+      </ul>
+      <div class="clear-fix"></div>
+      <ul class="list-inline background-line other" ng-show="config.retrieving.showTimelineOther">
+        <li>Other</li>
+        <li ng-repeat="feeling in expressedEmotions" ng-class="isMine(feeling.user)"
+            class="added"><time>{{feeling.createdAt | date:
+          'HH:mm'}}</time>{{feeling
+          .feeling}}</li>
+      </ul>
+    </section>
+  </div>
+</div>

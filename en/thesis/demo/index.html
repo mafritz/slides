@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dynamic Emotion Wheel: Emotion Self-Report and Awareness Tool</title>
+    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="./assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="./assets/js/chart.min.js"></script>
+    <script src="./assets/js/underscore-min.js"></script>
+    <script src="./assets/js/angular.min.js"></script>
+    <script src="./assets/js/angular-route.min.js"></script>
+    <script src="./app/dew/dew.js"></script>
+    <script src="./app/configurator/configurator.js"></script>
+  </head>
+  <body ng-controller="DynamicEmotionWheelCtrl">
+    <div ng-include="'./app/dew/partials/interface.html'"></div>
+    <!-- Demo -->
+    <main ng-controller="configuratorCtrl">
+      <h1 style="margin-top: 0px">
+        Dynamic Emotion Wheel
+        <a ng-click="simulateOtherEmotion()" class="btn btn-primary pull-right"
+          ><i class="fa fa-user-secret"></i> Simulate other's emotion</a
+        >
+      </h1>
+      <!-- Nav tabs -->
+      <form>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a
+              href="#algorithm"
+              aria-controls="algorithm"
+              role="tab"
+              data-toggle="tab"
+              ><label class="label label-default">1</label>
+              <em>K</em>-nearest</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              href="#circumplex"
+              aria-controls="circumplex"
+              role="tab"
+              data-toggle="tab"
+              ><label class="label label-default">2</label> Affective space</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              href="#insert"
+              aria-controls="insert"
+              role="tab"
+              data-toggle="tab"
+            >
+              <label class="label label-default">3</label> Expressing</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              href="#retrieve"
+              aria-controls="retrieve"
+              role="tab"
+              data-toggle="tab"
+            >
+              <label class="label label-default">4</label> Perceiving</a
+            >
+          </li>
+          <li role="presentation">
+            <a href="#task" aria-controls="task" role="tab" data-toggle="tab">
+              <label class="label label-default">5</label> Task</a
+            >
+          </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="active tab-pane fade in active" id="algorithm">
+            <div
+              ng-include="'./app/demo/partials/radial-svg.html'"
+              ng-if="config.circumplex.algorithmType=='radial'"
+            ></div>
+            <div
+              ng-include="'./app/demo/partials/vector-svg.html'"
+              ng-if="config.circumplex.algorithmType=='vector'"
+            ></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="circumplex">
+            <div ng-include="'./app/configurator/partials/2.html'"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="insert">
+            <div ng-include="'./app/configurator/partials/3.html'"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="retrieve">
+            <div ng-include="'./app/configurator/partials/4.html'"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="task">
+            <div ng-include="'./app/configurator/partials/5.html'"></div>
+          </div>
+        </div>
+        <p class="text-right">
+          <span
+            class="text-success lead"
+            ng-show="configuration.saved.updated_at"
+          >
+            <i class="fa fa-check-circle-o"></i>
+            Last configuration saved at {{ configuration.saved.updated_at |
+            date: 'HH:mm' }}
+          </span>
+          <button
+            class="btn btn-lg btn-success"
+            ng-click="saveConfiguration()"
+            disabled
+          >
+            <i class="fa fa-save" ng-hide="saving"></i>
+            <i class="fa fa-circle-o-notch fa-spin" ng-show="saving"></i>
+            Save current configuration
+          </button>
+        </p>
+        <div style="height: 100px"></div>
+      </form>
+    </main>
+    <!-- Modal -->
+    <div
+      class="modal fade bs-example-modal-lg"
+      id="helpModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+              Help with the Configurator
+            </h4>
+          </div>
+          <div class="modal-body">
+            <p>The configurator...</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script>
+      $(".nav-tabs a").click(function (e) {
+        e.preventDefault();
+        $(this).tab("show");
+      });
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-69059253-1", "auto");
+      ga("send", "pageview");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<h1>Emotion Self-Report and Awareness Tool</h1>
+<div class="row">
+    <div class="col-sm-4 dew-image-swap">
+        <a href="/#/demo">
+            <img src="assets/images/DEW-interface.png" class="img-responsive">
+            <img src="assets/images/DEW-interface-hover.png" class="img-responsive">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <p class="lead">The Dynamic Emotion Wheel (DEW) is a <strong>web application</strong> allowing users to report
+            and
+            share their <strong>emotions</strong>
+            during a <strong>computer-mediated task</strong>.</p>
+
+        <p>It has been developed as part of the <strong><em>Emotion Awareness Tools for Mediated
+            Interaction</em></strong> (EATMINT) project (<a href="http://www.affective-sciences.ch/">NCCR Affective Sciences</a>), which aims at developing emotion awareness tools (EAT) to
+            improve the
+            collaborative processes and outcomes of people working together through computers.</p>
+        <ul class="dew-list">
+            <li>Inspired by the <strong>Geneva Emotion Wheel</strong>, the tool combines the two most widely adopted
+                approaches to
+                emotion self-report: the <strong>dimensional</strong> and <strong>discrete</strong> emotions approaches.
+            </li>
+            <li>Rooted in the <strong>Component Process Model</strong> theoretical framework, the tool adopts appraisal
+                criteria and
+                subjective feeling both for self-assessment and data visualization.
+            </li>
+            <li><strong>Appraisal</strong> and <strong>subjective feelings</strong> are directly <strong>linked</strong>:
+                the tool
+                computes a subset of "most likely"
+                discrete
+                emotions according to a quantitative evaluation on two-dimensional criteria (e.g. Valence and
+                Power).
+            </li>
+            <li>Participants to a <strong>collaborative task</strong> can follow both their own and their partner's
+                <strong>evolution</strong> of
+                emotional episodes over time (awareness).
+            </li>
+            <li>The tool is meant to be <strong>flexible</strong> and <strong>extensible</strong> to different
+                experimental contexts and applications.
+            </li>
+        </ul>
+        <p>The first and current version of the DEW has been developed as a thesis project for the Master of Science
+            in Learning and Teaching Technologies (MALTT) at Geneva University by <a
+                    href="http://tecfa.unige.ch/perso/mafritz/">Mattia A. Fritz</a>, under the supervision
+            of Professor Mireille Bétrancourt.</p>
+        <ul class="list-inline">
+            <li><a class="btn btn-lg btn-default" href="#/about"><i class="fa fa-book"></i> Read more</a></li>
+            <li><a href="#/demo" class="btn
+ btn-lg btn-primary"><i class="fa fa-desktop"></i> Try a Demo</a></li>
+            <li><a href="#/configurator" class="btn btn-lg btn-success"><i class="fa fa-wrench"></i> Try the
+                Configurator</a></li>
+        </ul>
+    </div>
+</div>
+<hr>
+<h2>Updates</h2>
+<p class="lead">News are also available via <a href="https://twitter.com/mattiafritz"><i
+        class="fa fa-twitter-square"></i> Mattia A. Fritz's Twitter account.</a></p>
+<div class="media" ng-repeat="u in updates | orderBy: '-date'">
+    <div class="media-left">
+        <a href="{{ u.url }}" ng-show="u.url" title="{{ u.label }}">
+            <img class="media-object img-thumbnail" src="{{ u.image }}" alt="{{u.title}}">
+        </a>
+        <img class="media-object img-thumbnail" src="{{ u.image }}" alt="{{ u.title }}" ng-hide="u.url">
+    </div>
+    <div class="media-body">
+        <label class="label label-default"><i class="fa fa-clock-o"></i>
+            <time>{{ u.date | date: 'EEE, d MMMM yyyy'}}</time>
+        </label>
+
+        <h3 class="media-heading">{{ u.title }}</h3>
+
+        <p>{{ u.body }} <a href="{{ u.url }}" ng-show="u.url">&rightarrow; {{ u.label }}</a></p>
+    </div>
+</div>
