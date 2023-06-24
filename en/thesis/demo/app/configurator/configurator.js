@@ -146,7 +146,7 @@ app.controller(
     //Update Circumplex
     $scope.updateCircumplex = function (id) {
       var current = _.findWhere($scope.circumplexes, { id: id });
-      $scope.$parent.config.circumplex = angular.copy(current.circumplex);
+      $scope.$parent.config = angular.copy(current);
       $("#existingCircumplexesModal").modal("hide");
     };
     //Remove emotion

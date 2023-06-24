@@ -102,12 +102,12 @@
       ]
     },
     "inserting": {
-      "questionX": "Is the situation pleasant?",
-      "dimXneg": "Not at all",
-      "dimXpos": "Yes, absolutely",
-      "questionY": "Is the situation under your control?",
-      "dimYneg": "Not at all",
-      "dimYpos": "Yes, absolutely",
+      "questionX": "La situation est-elle agréable ?",
+      "dimXneg": "Pas du tout",
+      "dimXpos": "Oui, tout à fait",
+      "questionY": "Pouvez-vous modifier la situation ?",
+      "dimYneg": "Pas du tout",
+      "dimYpos": "Oui, tout à fait",
       "numSubset": 3,
       "showOtherEmotion": true,
       "showNoEmotion": true
@@ -529,10 +529,10 @@
       "showTimeline": true,
       "showTimelineSelf": true,
       "showTimelineOther": true,
-      "showAppraisalSelf": false,
-      "showAppraisalOther": false,
-      "showAppraisalX": true,
-      "showAppraisalY": true
+      "showAppraisalSelf": true,
+      "showAppraisalOther": true,
+      "showAppraisalX": false,
+      "showAppraisalY": false
     },
     "experiment": {
       "isOpen": false,
