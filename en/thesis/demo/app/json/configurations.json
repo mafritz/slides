@@ -516,14 +516,14 @@
     },
     "inserting": {
       "questionX": "What is your level of energy?",
-      "dimXneg": "Low",
-      "dimXpos": "High",
+      "dimXneg": "Very low",
+      "dimXpos": "Very high",
       "questionY": "Is the situation new to you?",
       "dimYneg": "Not at all",
       "dimYpos": "Yes, absolutely",
-      "numSubset": 3,
-      "showOtherEmotion": true,
-      "showNoEmotion": true
+      "numSubset": 6,
+      "showOtherEmotion": false,
+      "showNoEmotion": false
     },
     "retrieving": {
       "showTimeline": true,
