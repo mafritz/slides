@@ -100,25 +100,6 @@
             <div ng-include="'./app/configurator/partials/5.html'"></div>
           </div>
         </div>
-        <p class="text-right">
-          <span
-            class="text-success lead"
-            ng-show="configuration.saved.updated_at"
-          >
-            <i class="fa fa-check-circle-o"></i>
-            Last configuration saved at {{ configuration.saved.updated_at |
-            date: 'HH:mm' }}
-          </span>
-          <button
-            class="btn btn-lg btn-success"
-            ng-click="saveConfiguration()"
-            disabled
-          >
-            <i class="fa fa-save" ng-hide="saving"></i>
-            <i class="fa fa-circle-o-notch fa-spin" ng-show="saving"></i>
-            Save current configuration
-          </button>
-        </p>
         <div style="height: 100px"></div>
       </form>
     </main>
