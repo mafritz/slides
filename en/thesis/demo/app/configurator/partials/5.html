@@ -1,71 +1,135 @@
 <h4>Define your experimental settings and task</h4>
-<p class="lead">The collection of data is <span class="label label-success" ng-show="config.experiment.isOpen">Active</span><span class="label label-danger" ng-show="!config.experiment.isOpen">Closed</span></p>
-<label>Collect data</label>
-<div class="checkbox">
-  <label>
-    <input type="checkbox" ng-model="config.experiment.isOpen" ng-disabled="config.settings.isDemo"> Activate the collection of data
-    <span class="help-block">Tick this checkbox before giving the URL to participants so that they can access the experiment. Collection is closed by default is the configuration is a DEMO.</span>
-  </label>
-</div>
 <div class="form-group">
   <label for="confTaskUrl">URL of the task's web page: </label>
-  <input class="form-control" id="confTaskUrl" ng-model="config.experiment.taskUrl" type="url">
+  <input
+    class="form-control"
+    id="confTaskUrl"
+    ng-model="config.experiment.taskUrl"
+    type="url"
+  />
 </div>
 <div class="form-group">
   <label for="confTimer">Timer (in seconds):</label>
-  <input class="form-control" id="confTimer" ng-model="config.experiment.timer" type="number">
-  <span class="help-block">Set a timer (<strong>in seconds</strong>) for the experiment or leave to 0 for a "stop" button to appear instead of the timer.</span>
+  <input
+    class="form-control"
+    id="confTimer"
+    ng-model="config.experiment.timer"
+    type="number"
+  />
+  <span class="help-block"
+    >Set a timer (<strong>in seconds</strong>) for the experiment or leave to 0
+    for manual stopping</span
+  >
 </div>
-<hr>
+<hr />
 <div class="form-group">
-  <label for="confNumUsers">Define the number of REAL participants to the task: </label>
-  <div class="radio">
-    <label>
-      <input type="radio" name="confNumUsers" id="confAlgorithm" value="1" ng-model="config.experiment.numUsers"><strong class="lead">1</strong> - only one real participant, <strong>without synchronization</strong>
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="confNumUsers" id="confAlgorithm2" value="2" ng-model="config.experiment.numUsers"><strong class="lead">2</strong> - two <strong class="text-success">synchronized</strong> participants
-    </label>
-  </div>
+  <label for="confNumUsers"
+    >Define the number of REAL participants to the task:
+  </label>
+  <form class="form-inline">
+    <label class="sr-only" for="inlineFormInputGroupUsername2">Max</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Min</div>
+      </div>
+      <input
+        type="number"
+        class="form-control"
+        id="inlineFormInputGroupUsername2"
+        placeholder="1"
+      />
+    </div>
+
+    <label class="sr-only" for="inlineFormInputGroupUsername2">Max</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Max</div>
+      </div>
+      <input
+        type="number"
+        class="form-control"
+        id="inlineFormInputGroupUsername2"
+        placeholder="4"
+      />
+    </div>
+  </form>
 </div>
-<div ng-show="config.experiment.numUsers < 2">
+
+<hr />
+<div class="form-group">
   <label>Simulate other participant</label>
   <div class="checkbox">
     <label>
-      <input type="checkbox" ng-model="config.experiment.isSimulation"> Simulate the emotional episodes of a <strong>fake participant</strong>.
-      <span class="help-block">Tick the checkbox if you want to set a list of emotional episodes appearing at given time during the experiment.</span>
+      <input type="checkbox" ng-model="config.experiment.isSimulation" />
+      Simulate the emotional episodes of a <strong>fake participant</strong>.
+      <span class="help-block"
+        >Tick the checkbox if you want to set a list of emotional episodes
+        appearing at given time during the experiment.</span
+      >
     </label>
   </div>
   <div ng-show="config.experiment.isSimulation">
     <table class="table table-striped table-bordered">
       <thead>
-      <tr>
-        <th class="text-center">#</th>
-        <th>Time (sec.)</th>
-        <th>Emotion label</th>
-        <th>{{ config.circumplex.dimX }}</th>
-        <th>{{ config.circumplex.dimY }}</th>
-        <th>Action</th>
-      </tr>
+        <tr>
+          <th class="text-center">#</th>
+          <th>Time (sec.)</th>
+          <th>Emotion label</th>
+          <th>{{ config.circumplex.dimX }}</th>
+          <th>{{ config.circumplex.dimY }}</th>
+          <th>Action</th>
+        </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="s in config.experiment.simulation">
-        <td class="text-center">{{ $index + 1 }}</td>
-        <td><input ng-model="config.experiment.simulation[$index].time" class="form-control" type="number"></td>
-        <td><input ng-model="config.experiment.simulation[$index].name" class="form-control" list="other-emotion-list"></td>
-        <td><input ng-model="config.experiment.simulation[$index].valueX" class="form-control" type="number"></td>
-        <td><input ng-model="config.experiment.simulation[$index].valueY" class="form-control" type="number"></td>
-        <td><button class="btn btn-danger" ng-click="removeItemFromSimulation($index)"><i
-            class="fa fa-remove"></i>
-          Remove
-        </button> </td>
-      </tr>
+        <tr ng-repeat="s in config.experiment.simulation">
+          <td class="text-center">{{ $index + 1 }}</td>
+          <td>
+            <input
+              ng-model="config.experiment.simulation[$index].time"
+              class="form-control"
+              type="number"
+            />
+          </td>
+          <td>
+            <input
+              ng-model="config.experiment.simulation[$index].name"
+              class="form-control"
+              list="other-emotion-list"
+            />
+          </td>
+          <td>
+            <input
+              ng-model="config.experiment.simulation[$index].valueX"
+              class="form-control"
+              type="number"
+            />
+          </td>
+          <td>
+            <input
+              ng-model="config.experiment.simulation[$index].valueY"
+              class="form-control"
+              type="number"
+            />
+          </td>
+          <td>
+            <button
+              class="btn btn-danger"
+              ng-click="removeItemFromSimulation($index)"
+            >
+              <i class="fa fa-remove"></i>
+              Remove
+            </button>
+          </td>
+        </tr>
       </tbody>
     </table>
-    <p><button class="btn btn-success" ng-click="config.experiment.simulation.push({ time: '', name: '', valueX: '', valueY: ''});"><i class="fa fa-plus"></i> Add simulated
-      emotion
-    </button> </p>
+    <p>
+      <button
+        class="btn btn-success"
+        ng-click="config.experiment.simulation.push({ time: '', name: '', valueX: '', valueY: ''});"
+      >
+        <i class="fa fa-plus"></i> Add simulated emotion
+      </button>
+    </p>
   </div>
 </div>
