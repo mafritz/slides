@@ -6,7 +6,7 @@
     "updatedAt": "Wed Sep 30 2015 14:48:36 GMT+0200",
     "settings": {
       "lang": "Français",
-      "name": "Original DEW Master Thesis Circumplex",
+      "name": "EATMINT cirucmplex (Fritz & Bétrancourt, 2017)",
       "description": "Circumplex used in the development and test of the DEW first version",
       "body": "Lorem ipsum...",
       "isPublic": true,
@@ -137,7 +137,7 @@
     "updatedAt": "Fri Oct 02 2015 12:19:43 GMT+0200",
     "settings": {
       "lang": "English",
-      "name": "Geneva Emotion Wheel 3.0",
+      "name": "Geneva Emotion Wheel 3.0 (Scherer et al., 2013)",
       "description": "Circumplex used in the third version of the Geneva Emotion Wheel",
       "body": "Lorem ipsum...",
       "isPublic": true,
@@ -288,7 +288,7 @@
     "updatedAt": "Wed Oct 14 2015 16:55:16 GMT+0200",
     "settings": {
       "lang": "English",
-      "name": "Geneva Emotion Wheel 3.0",
+      "name": "Geneva Emotion Wheel 3.0 (Scherer et al., 2013)",
       "description": "Circumplex used in the third version of the Geneva Emotion Wheel",
       "body": "Lorem ipsum...",
       "isPublic": true,

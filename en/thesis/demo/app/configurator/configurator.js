@@ -9,7 +9,7 @@ app.controller(
       updatedAt: "Wed Sep 30 2015 14:48:36 GMT+0200",
       settings: {
         lang: "Français",
-        name: "Original DEW Master Thesis Circumplex",
+        name: "EATMINT circumplex (Fritz & Bétrancourt, 2017)",
         description:
           "Circumplex used in the development and test of the DEW first version",
         body: "Lorem ipsum...",
@@ -117,11 +117,11 @@ app.controller(
         showNoEmotion: true,
       },
       retrieving: {
-        showTimeline: true,
+        showTimeline: false,
         showTimelineSelf: true,
         showTimelineOther: true,
-        showAppraisalSelf: true,
-        showAppraisalOther: true,
+        showAppraisalSelf: false,
+        showAppraisalOther: false,
         showAppraisalX: false,
         showAppraisalY: false,
       },

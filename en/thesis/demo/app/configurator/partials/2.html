@@ -36,7 +36,7 @@
   </div>
 </div>
 <div class="form-group">
-  <label for="confDimX">Appraisal 2:</label>
+  <label for="confDimX">Appraisal 1:</label>
   <input
     type="text"
     class="form-control"
@@ -45,7 +45,7 @@
   />
 </div>
 <div class="form-group">
-  <label for="confDimY">Appraisal 1:</label>
+  <label for="confDimY">Appraisal 2:</label>
   <input
     type="text"
     class="form-control"
@@ -145,18 +145,6 @@
         </h4>
       </div>
       <div class="modal-body">
-        <p>
-          You can decide to load the settings of an
-          <strong>existing Affective space</strong> clicking on the
-          <strong>"Load" button</strong>. You can then change any setting after
-          loading.
-        </p>
-
-        <p class="alert alert-warning">
-          <i class="fa fa-warning"></i> <strong>Warning: </strong> loading from
-          an existing Affective space will
-          <strong>override <em>ALL</em> your current settings</strong>!
-        </p>
         <div class="form-group">
           <div class="input-group">
             <input
@@ -177,8 +165,7 @@
           <thead>
             <tr>
               <th class="text-center">Algorithm</th>
-              <th>Emotions circumplex</th>
-              <th class="text-center">GRID<sup>1</sup></th>
+              <th>Affective space</th>
               <th>Dim. X</th>
               <th>Dim. Y</th>
               <th>Load</th>
@@ -209,16 +196,6 @@
                 <br />
                 <small>{{ c.circumplex.description }} </small>
               </td>
-              <td class="text-center">
-                <i
-                  class="fa fa-2x fa-check text-success"
-                  ng-show="c.circumplex.isGrid"
-                ></i
-                ><i
-                  class="fa fa-2x fa-close text-danger"
-                  ng-hide="c.circumplex.isGrid"
-                ></i>
-              </td>
               <td>{{ c.circumplex.dimX }}</td>
               <td>{{ c.circumplex.dimY }}</td>
               <td>
@@ -238,14 +215,6 @@
             </tr>
           </tbody>
         </table>
-        <sup>1</sup> The disposition of emotions according to the underlying
-        dimensions is based upon the
-        <a
-          href="http://www
-  .affective-sciences.org/grid"
-          >GRID</a
-        >
-        results.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">

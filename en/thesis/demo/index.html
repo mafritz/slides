@@ -36,8 +36,8 @@
               aria-controls="algorithm"
               role="tab"
               data-toggle="tab"
-              ><label class="label label-default">1</label>
-              <em>K</em>-nearest</a
+              ><label class="label label-default">1</label> Computational
+              model</a
             >
           </li>
           <li role="presentation">
@@ -78,6 +78,7 @@
         <!-- Tab panes -->
         <div class="tab-content">
           <div class="active tab-pane fade in active" id="algorithm">
+            <h4>{{config.settings.name}}</h4>
             <div
               ng-include="'./app/demo/partials/radial-svg.html'"
               ng-if="config.circumplex.algorithmType=='radial'"
