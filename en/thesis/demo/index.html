@@ -31,12 +31,17 @@
       <form>
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active">
+            <a href="#cpm" aria-controls="cpm" role="tab" data-toggle="tab"
+              ><label class="label label-default">1</label> Theoretical model</a
+            >
+          </li>
+          <li role="presentation">
             <a
               href="#algorithm"
               aria-controls="algorithm"
               role="tab"
               data-toggle="tab"
-              ><label class="label label-default">1</label> Computational
+              ><label class="label label-default">2</label> Computational
               model</a
             >
           </li>
@@ -46,7 +51,7 @@
               aria-controls="circumplex"
               role="tab"
               data-toggle="tab"
-              ><label class="label label-default">2</label> Affective space</a
+              ><label class="label label-default">3</label> Affective space</a
             >
           </li>
           <li role="presentation">
@@ -56,7 +61,7 @@
               role="tab"
               data-toggle="tab"
             >
-              <label class="label label-default">3</label> Expressing</a
+              <label class="label label-default">4</label> Expressing</a
             >
           </li>
           <li role="presentation">
@@ -66,19 +71,28 @@
               role="tab"
               data-toggle="tab"
             >
-              <label class="label label-default">4</label> Perceiving</a
+              <label class="label label-default">5</label> Perceiving</a
             >
           </li>
           <li role="presentation">
             <a href="#task" aria-controls="task" role="tab" data-toggle="tab">
-              <label class="label label-default">5</label> Task</a
+              <label class="label label-default">6</label> Task</a
             >
           </li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
-          <div class="active tab-pane fade in active" id="algorithm">
-            <h4>{{config.settings.name}}</h4>
+          <div class="active tab-pane fade in active" id="cpm">
+            <h3>Component Process Model</h3>
+            <img
+              src="../images/component-process-model.png"
+              alt="CPM"
+              style="max-width: 80%"
+            />
+            <p class="text-center">Adapted from Scherer (2010)</p>
+          </div>
+          <div class="tab-pane fade in" id="algorithm">
+            <h3>{{config.settings.name}}</h3>
             <div
               ng-include="'./app/demo/partials/radial-svg.html'"
               ng-if="config.circumplex.algorithmType=='radial'"
