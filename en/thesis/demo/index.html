@@ -47,21 +47,12 @@
           </li>
           <li role="presentation">
             <a
-              href="#circumplex"
-              aria-controls="circumplex"
-              role="tab"
-              data-toggle="tab"
-              ><label class="label label-default">3</label> Affective space</a
-            >
-          </li>
-          <li role="presentation">
-            <a
               href="#insert"
               aria-controls="insert"
               role="tab"
               data-toggle="tab"
             >
-              <label class="label label-default">4</label> Expressing</a
+              <label class="label label-default">3</label> Expressing</a
             >
           </li>
           <li role="presentation">
@@ -71,12 +62,21 @@
               role="tab"
               data-toggle="tab"
             >
-              <label class="label label-default">5</label> Perceiving</a
+              <label class="label label-default">4</label> Perceiving</a
             >
           </li>
           <li role="presentation">
             <a href="#task" aria-controls="task" role="tab" data-toggle="tab">
-              <label class="label label-default">6</label> Task</a
+              <label class="label label-default">5</label> Task</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              href="#circumplex"
+              aria-controls="circumplex"
+              role="tab"
+              data-toggle="tab"
+              ><label class="label label-default">6</label> Affective space</a
             >
           </li>
         </ul>
@@ -102,9 +102,6 @@
               ng-if="config.circumplex.algorithmType=='vector'"
             ></div>
           </div>
-          <div role="tabpanel" class="tab-pane" id="circumplex">
-            <div ng-include="'./app/configurator/partials/2.html'"></div>
-          </div>
           <div role="tabpanel" class="tab-pane fade" id="insert">
             <div ng-include="'./app/configurator/partials/3.html'"></div>
           </div>
@@ -113,6 +110,9 @@
           </div>
           <div role="tabpanel" class="tab-pane fade" id="task">
             <div ng-include="'./app/configurator/partials/5.html'"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="circumplex">
+            <div ng-include="'./app/configurator/partials/2.html'"></div>
           </div>
         </div>
         <div style="height: 100px"></div>
