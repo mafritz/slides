@@ -6,7 +6,10 @@ Some slides are interactive, allowing direct manipulation of content as a means 
 
 ## Slides in english
 
-Not yet available.
+### Thesis
+
+- **[Implementation and Assessment of a Multipurpose Appraisal-Driven
+Emotion Awareness Tool Based on Self-Report](./en/thesis/)** : slides used during the defense of my PhD thesis
 
 ## Slides en français
 
