@@ -1,28 +1,68 @@
 <!-- Radial -->
-<svg version="1.1" id="svg-circumplex" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
-           viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve" class="svgDemo">
-        <style type="text/css">
-          .st0 {
-            fill: none;
-            stroke: #000000;
-            stroke-width: 5;
-            stroke-miterlimit: 10;
-          }
+<svg
+  version="1.1"
+  id="svg-circumplex"
+  xmlns="http://www.w3.org/2000/svg"
+  x="0px"
+  y="0px"
+  viewBox="0 0 1000 1000"
+  style="enable-background: new 0 0 1000 1000"
+  xml:space="preserve"
+  class="svgDemo"
+>
+  <style type="text/css">
+    .st0 {
+      fill: none;
+      stroke: #000000;
+      stroke-width: 5;
+      stroke-miterlimit: 10;
+    }
 
-          .st1 {
-            fill: none;
-            stroke: #008C8C;
-            stroke-width: 10;
-            stroke-miterlimit: 0;
-            stroke-dasharray: 10, 5;
-          }
-        </style>
-        <circle cx="500" cy="500" r="330" style="stroke:black; fill:none; stroke-width: 5"></circle>
-        <line class="st0" x1="500" y1="50" x2="500" y2="1000"/>
-        <line class="st0" x1="50" y1="500" x2="1000" y2="500"/>
-        <line class="st1" x1="500" y1="500" x2="{{ getRadialX(getCurrentAngle()) }}" y2="{{ getRadialY(getCurrentAngle()) }}" transform="rotate(-90 500 500)" ng-show="slideX.value || slideY.value"/>
-        <g ng-repeat="em in config.circumplex.emotions | orderBy: 'angle'" transform="rotate(-90 500 500)">
-          <circle cx="{{ getRadialX(em.angle) }}" cy="{{ getRadialY(em.angle) }}" r="10" style="stroke:black; fill:#eb9316"></circle>
-          <text width="200" text-anchor="middle" x="{{ getRadialX(em.angle) - 0 }}" y="{{ getRadialY(em.angle) + 30 }}" fill="black" transform="rotate(90, {{ getRadialX(em.angle) }}, {{ getRadialY(em.angle) }})">{{ em.name }}</text>
-        </g>
-      </svg>
+    .st1 {
+      fill: none;
+      stroke: #008c8c;
+      stroke-width: 10;
+      stroke-miterlimit: 0;
+      stroke-dasharray: 10, 5;
+    }
+  </style>
+  <circle
+    cx="500"
+    cy="500"
+    r="330"
+    style="stroke: black; fill: none; stroke-width: 5"
+  ></circle>
+  <line class="st0" x1="500" y1="50" x2="500" y2="1000" />
+  <line class="st0" x1="50" y1="500" x2="1000" y2="500" />
+  <line
+    class="st1"
+    x1="500"
+    y1="500"
+    x2="{{ getRadialX(getCurrentAngle()) }}"
+    y2="{{ getRadialY(getCurrentAngle()) }}"
+    transform="rotate(-90 500 500)"
+    stroke-width="10"
+    ng-show="slideX.value || slideY.value"
+  />
+  <g
+    ng-repeat="em in config.circumplex.emotions | orderBy: 'angle'"
+    transform="rotate(-90 500 500)"
+  >
+    <circle
+      cx="{{ getRadialX(em.angle) }}"
+      cy="{{ getRadialY(em.angle) }}"
+      r="10"
+      style="stroke: black; fill: #eb9316"
+    ></circle>
+    <text
+      width="200"
+      text-anchor="middle"
+      x="{{ getRadialX(em.angle) - 0 }}"
+      y="{{ getRadialY(em.angle) + 30 }}"
+      fill="black"
+      transform="rotate(90, {{ getRadialX(em.angle) }}, {{ getRadialY(em.angle) }})"
+    >
+      {{ em.name }}
+    </text>
+  </g>
+</svg>
