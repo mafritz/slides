@@ -52,6 +52,10 @@ Workshops données au sein de l'Unité Technologies de Formation et Apprentissag
 
 - **[Workshop HTML5 et site web TECFA](./fr/tecfa-workshop-site-web/)** : présentation des principes à la base de la création du site web de TECFA.
 
+#### Revues systématiques et méta-analyses
+
+- **[Workshop à l'intention d'étudiant-es dans un MAS en psychologie de la santé](https://github.com/mafritz/systematic-review-workshop-2023>)** : le lien pointe vers un dépôt GitHub avec les slides, mais également des activités à mener dans le cadre du workshop
+
 #### Pensée computationnelle pour les enseignant-es du cycle d'orientation
 
 Slides utilisés pendant une formation à l'intention des enseignant-es du cycle d'orientation :
