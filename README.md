@@ -6,7 +6,10 @@ Some slides are interactive, allowing direct manipulation of content as a means 
 
 ## Slides in english
 
-Not yet available.
+### Thesis
+
+- **[Implementation and Assessment of a Multipurpose Appraisal-Driven
+Emotion Awareness Tool Based on Self-Report](./en/thesis/)** : slides used during the defense of my PhD thesis
 
 ## Slides en français
 
@@ -48,6 +51,10 @@ Slides utilisés pendant des workshop.
 Workshops données au sein de l'Unité Technologies de Formation et Apprentissage ([TECFA](https://tecfa.unige.ch)) de l'Université de Genève.
 
 - **[Workshop HTML5 et site web TECFA](./fr/tecfa-workshop-site-web/)** : présentation des principes à la base de la création du site web de TECFA.
+
+#### Revues systématiques et méta-analyses
+
+- **[Workshop à l'intention d'étudiant-es dans un MAS en psychologie de la santé](https://github.com/mafritz/systematic-review-workshop-2023>)** : le lien pointe vers un dépôt GitHub avec les slides, mais également des activités à mener dans le cadre du workshop
 
 #### Pensée computationnelle pour les enseignant-es du cycle d'orientation
 
