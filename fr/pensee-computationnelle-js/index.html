@@ -366,6 +366,17 @@
             Diviser un problème complexe ou un système en petites parties plus
             simples à gérer.
           </p>
+          <pre><code data-trim="" data-line-numbers="">
+            /*
+            * Use pseudo-code to identify the main steps to solve the problème
+            */
+            
+            // Set the initial state of the game
+
+            // Apply the main rules of the game
+
+            // Update the score and check if the game is over
+          </code></pre>
         </section>
 
         <!-- Pattern -->
@@ -375,6 +386,23 @@
             Identifier des similarités entre problèmes ou à l’intérieur du même
             problème donné.
           </p>
+          <pre><code data-trim="" data-line-numbers="">
+            function1 () {
+              console.log("Hello world!")
+            }
+
+            function2 () {
+              console.log("Hello JavaScript!")
+            }
+
+            // Identify the pattern and apply it
+            function hello(name) {
+              console.log("Hello " + name + "!")
+            }
+
+            hello("world");
+            hello("JavaScript");
+          </code></pre>
         </section>
 
         <!-- Abstraction -->
@@ -383,6 +411,15 @@
           <p>
             Se focaliser exclusivement sur les parties importantes du problème.
           </p>
+          <pre><code data-trim="" data-line-numbers="">
+            let learner = {
+              nickname: "Computational Geek",
+              initialLevel: "beginner",
+              currentLevel: "intermediate",
+              aimedLevel: "advanced",
+              chanceOfSuccess: 0.8
+            }
+          </code></pre>
         </section>
 
         <!-- Algorithmes -->
@@ -392,6 +429,14 @@
             Trouver une solution à travers une règle composée par une série
             d’étapes.
           </p>
+          <pre><code data-trim="" data-line-numbers="">
+            // Reverse the order of a word
+            function reverseWord(word) {
+              return word.split('').reverse().join('');
+            }
+
+            reverseWord("JavaScript"); //Donne "tpircSavaJ"
+          </code></pre>
         </section>
 
         <!-- Déclarative / Procédurale -->
@@ -518,51 +563,6 @@
           </p>
         </section>
 
-        <!-- JavaScript -->
-        <section data-background-color="#f7df1e">
-          <h3>Pourquoi JavaScript ?</h3>
-          <div class="d-flex space-between">
-            <div class="mr-1">
-              <ol>
-                <li>
-                  Disponible dans les navigateurs web (environnement pour
-                  commencer)
-                </li>
-                <li>
-                  D'une <em>simple</em> page web interactive à applications
-                  complexes
-                </li>
-                <li>
-                  <em>Un langage pour les gouverner tous</em>
-                  (web, logiciels, objects connectés, ...)
-                </li>
-              </ol>
-            </div>
-            <div class="ml-1">
-              <figure>
-                <img
-                  src="https://edutechwiki.unige.ch/fmediawiki/images/c/ce/Unofficial_JavaScript_logo.svg"
-                  alt="Logo JavaScript"
-                  title="Logo de JavaScript"
-                  class="border-dark-1"
-                />
-                <figcaption>
-                  <small>Logo non officiel de JavaScript</small>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-          <div class="text-center fragment mt-3">
-            <div class="border-dark-1 mr-1 ml-1 p-1">
-              <i class="fa fa-quote-left"></i>
-              Toute application qui peut être écrite en JavaScript, sera
-              éventuellement écrite en JavaScript
-              <i class="fa fa-quote-right"></i>
-            </div>
-            <p class="text-right pr-5">— Loi de Atwood</p>
-          </div>
-        </section>
-
         <!-- Terrain difficile -->
         <section>
           <h3>Terrain difficile</h3>
@@ -577,6 +577,35 @@
             alt="Cerveau et dispositifs numériques comme systèmes computationnels"
             title="Interaction personne-machine entre deux systèmes computationnels (distribués)"
           />
+        </section>
+
+        <!-- Plusieurs niveaux -->
+        <section>
+          <h3>Niveaux <em>computationnels</em></h3>
+          <ol>
+            <li class="fragment">
+              <strong>Technique</strong><br />
+              <small
+                >L'objectif de la computation est de résoudre un
+                <strong>problème</strong></small
+              >
+            </li>
+            <li class="fragment">
+              <strong>Interaction personne-technologie</strong><br />
+              <small
+                >L'objectif de la computation est d'accomplir une
+                <strong>tâche</strong></small
+              >
+            </li>
+            <li class="fragment">
+              <strong>Intra- et Inter-personnel</strong><br />
+              <small
+                >L'objectif de la computation est d'apporter un
+                <strong>changement comportemental</strong>
+                qui soit bénéfique</small
+              >
+            </li>
+          </ol>
         </section>
 
         <!-- Plus loin -->
