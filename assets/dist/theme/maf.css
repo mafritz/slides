@@ -83,7 +83,7 @@ section.align-center {
 }
 
 .reveal ul li.accent:before {
-  color: #ffd000;
+  color: #ffd700;
 }
 
 input,
@@ -129,7 +129,7 @@ img.img-rounded {
 }
 
 .accent {
-  color: #ffd000;
+  color: #ffd700;
 }
 
 figure {
@@ -464,7 +464,7 @@ figure {
   --heading4-size: 1em;
   --code-font: monospace;
   --link-color: #970000;
-  --link-color-hover: #fd0000;
+  --link-color-hover: #FF6F61;
   --selection-background-color: rgba(0, 0, 0, 0.99);
   --selection-color: #fff;
 }
