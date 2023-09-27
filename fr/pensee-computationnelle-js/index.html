@@ -68,12 +68,14 @@
         <!-- Problème sur les cierges -->
         <section>
           <h3>Problème</h3>
-          <p>
+          <div class="border-light-1 p-1 ml-2 mr-2">
+            <i class="fa fa-quote-left"></i>
             Frère Luc est l'intendant de l'abbaye. Très économe, il réutilise
             les bouts de cierges usagés pour en faire de nouveaux. Il est
             capable de reconstituer un cierge à partir de trois bouts de cierges
             qu'il fait fondre.
-          </p>
+            <i class="fa fa-quote-right"></i>
+          </div>
           <p>
             Combien pourra-t-il reconstituer de cierges avec les neuf bouts de
             cierges qu'il a récupérés ce matin dans l'abbatiale ?
@@ -85,14 +87,19 @@
           <h3>Solution <em>cognitive</em></h3>
           <ol>
             <li class="fragment">
-              Avec 9 bouts, il peut reconstituer 3 cierges.
+              Avec <strong>9</strong> bouts, il peut reconstituer
+              <strong>3</strong> cierges.
             </li>
             <li class="fragment">
-              En brûlant les 3 cierges, il récupère 3 nouveaux bouts.
+              En brûlant les <strong>3</strong> cierges, il récupère
+              <strong>3</strong> nouveaux bouts.
             </li>
             <li class="fragment">
-              Avec ces 3 bouts supplémentaire, il peut reconstituer 1 nouveau
-              cierge (<strong class="text-danger">récursivité</strong>).
+              Avec ces <strong>3</strong> bouts supplémentaire, il peut
+              reconstituer <strong>1</strong> nouveau cierge (<strong
+                class="text-danger"
+                >récursivité</strong
+              >).
             </li>
           </ol>
           <p class="border-dark-1 p-1 text-success text-center fragment">
@@ -368,7 +375,7 @@
           </p>
           <pre><code data-trim="" data-line-numbers="">
             /*
-            * Use pseudo-code to identify the main steps to solve the problème
+            * Use pseudo-code to identify the main steps to solve the problem
             */
             
             // Set the initial state of the game
@@ -590,6 +597,11 @@
               >
             </li>
           </ol>
+          <div class="fragment">
+            Voir la page
+            <a href="https://edutechwiki.unige.ch/fr/algorithme">algorithme</a>
+            sur EduTechWiki.
+          </div>
         </section>
 
         <!-- Terrain difficile -->
