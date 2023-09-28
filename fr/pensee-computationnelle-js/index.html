@@ -604,6 +604,77 @@
           </div>
         </section>
 
+        <!-- Example thumbs up/down -->
+        <section class="align-center">
+          <h3>Exemple du <em>thumbs-up/down</em></h3>
+          <div class="d-flex space-between mt-2 r-stretch">
+            <div class="fragment mr-1">
+              <h4>Technique</h4>
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">post_id</th>
+                    <th scope="col">thumb</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td class="text-center">0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td class="text-center">1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td class="text-center">1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6272</th>
+                    <td class="text-center">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fragment">
+              <h4>Interaction</h4>
+              <p>Un simple clique...</p>
+              <p>
+                <button onclick="countUp()">
+                  <span id="countUpValue">97</span>
+                  <i class="fas fa-thumbs-up"></i>
+                </button>
+                <button onclick="countDown()">
+                  <span id="countDownValue">61</span>
+                  <i class="fas fa-thumbs-down"></i>
+                </button>
+              </p>
+            </div>
+            <div class="fragment ml-1">
+              <h4>Comportements</h4>
+              <ul>
+                <li>Désirabilité</li>
+                <li>Exclusion</li>
+                <li>Depression</li>
+                <li>...</li>
+              </ul>
+            </div>
+          </div>
+          <small class="fragment"
+            >Voir par exemple <em>The Social Dilemma</em> (2020)</small
+          >
+        </section>
+        <script>
+          function countUp() {
+            document.getElementById("countUpValue").innerHTML++;
+          }
+
+          function countDown() {
+            document.getElementById("countDownValue").innerHTML++;
+          }
+        </script>
+
         <!-- Terrain difficile -->
         <section>
           <h3>Terrain difficile</h3>
