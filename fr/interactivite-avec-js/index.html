@@ -651,6 +651,68 @@
           });
         </script>
 
+        <!-- Leonardo da Vinci -->
+        <section class="align-center">
+          <h3>Déclencher des animations</h3>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Annunciation_%28Leonardo%29.jpg/1280px-Annunciation_%28Leonardo%29.jpg"
+            id="flip-image"
+            class="r-stretch"
+          />
+          <small>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Annunciation_(Leonardo).jpg"
+              >Leonardo da Vinci</a
+            >,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0"
+              >CC BY-SA 4.0</a
+            >, via Wikimedia Commons</small
+          ><br />
+          <button id="flip-btn">
+            <i class="fas fa-undo"></i> Rotation de l'image
+          </button>
+        </section>
+        <script>
+          let flipImage = document.getElementById("flip-image");
+          let isFlipped = false;
+          document
+            .getElementById("flip-btn")
+            .addEventListener("click", function () {
+              if (!isFlipped) {
+                flipImage.style.transform = "rotateY(-60deg) scale(0.7)";
+              } else {
+                flipImage.style.transform = "rotateY(0deg) scale(1)";
+              }
+              flipImage.style.transition = "transform 0.5s";
+              isFlipped = !isFlipped;
+            });
+        </script>
+
+        <!-- Déclencher une simulation -->
+        <section class="align-center">
+          <h3>Simulation d'une courbe</h3>
+
+          <label for="skillLevel">Niveau: </label>
+          <select id="skillLevel">
+            <option value="0.7">Bachelor</option>
+            <option value="3">Master</option>
+            <option value="6">PhD</option>
+          </select>
+          <label for="teachingMethod">Méthode: </label>
+          <select id="teachingMethod">
+            <option value="0.5">Lecture</option>
+            <option value="1">Interactive</option>
+            <option value="2">Project-Based</option>
+          </select>
+          <button onclick="updateChart()">Simuler</button>
+
+          <canvas id="learningCurveChart" width="400" height="180"></canvas>
+          <small
+            ><i class="fa fa-exclamation-triangle"></i> Cette courbe n'a aucune
+            validité empirique, c'est juste un exemple</small
+          >
+        </section>
+
         <!-- Résumé -->
         <section>
           <h3>En synthèse</h3>
@@ -787,5 +849,143 @@
       src="https://kit.fontawesome.com/ac5eb0c407.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      let ctx = document.getElementById("learningCurveChart").getContext("2d");
+      let chart;
+
+      function calculatePerformance(skillLevel, teachingMethod, time) {
+        let C, Exponent;
+
+        // Low skill level
+        if (skillLevel === 0.7) {
+          if (teachingMethod === 0.5) {
+            // Lecture
+            C = 15; // Increase for a positive effect
+            Exponent = 0.2; // Increase for a positive effect
+          } else if (teachingMethod === 1) {
+            // Interactive
+            C = 5;
+            Exponent = -0.2; // Set to negative for a negative effect
+          } else {
+            // Project-Based
+            C = 5;
+            Exponent = -0.3; // Set to negative for a stronger negative effect
+          }
+        }
+
+        // Medium skill level
+        else if (skillLevel === 3) {
+          if (teachingMethod === 0.5) {
+            // Lecture
+            C = 25;
+            Exponent = 0.2;
+          } else if (teachingMethod === 1) {
+            // Interactive
+            C = 30;
+            Exponent = 0.35;
+          } else {
+            // Project-Based
+            C = 35;
+            Exponent = 0.55;
+          }
+        }
+
+        // High skill level
+        else {
+          if (teachingMethod === 0.5) {
+            // Lecture
+            C = 20;
+            Exponent = -0.15;
+          } else if (teachingMethod === 1) {
+            // Interactive
+            C = 40;
+            Exponent = 0.6;
+          } else {
+            // Project-Based
+            C = 50;
+            Exponent = 0.75;
+          }
+        }
+
+        if (time == 0 && skillLevel == 0.7) {
+          return 0;
+        } else if (time == 0 && skillLevel == 3) {
+          return 20;
+        } else if (time == 0 && skillLevel == 6) {
+          return 50;
+        }
+
+        return C * Math.pow(time, Exponent);
+      }
+
+      function updateChart() {
+        let skillLevel = parseFloat(
+          document.getElementById("skillLevel").value
+        );
+        let teachingMethod = parseFloat(
+          document.getElementById("teachingMethod").value
+        );
+
+        let data = [];
+        for (let time = 0; time <= 10; time++) {
+          let performance = calculatePerformance(
+            skillLevel,
+            teachingMethod,
+            time
+          );
+          data.push({ x: time, y: performance });
+        }
+
+        if (chart) {
+          chart.destroy();
+        }
+
+        chart = new Chart(ctx, {
+          type: "line",
+          data: {
+            datasets: [
+              {
+                label: "Learning Curve",
+                data: data,
+                pointBackgroundColor: "#970000", // point fill color
+                pointBorderColor: "#970000", // point border color
+                pointRadius: 5,
+                borderColor: "#970000",
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            legend: {
+              display: false,
+            },
+            scales: {
+              x: {
+                type: "linear",
+                position: "bottom",
+                title: {
+                  display: true,
+                  text: "Time",
+                },
+              },
+              y: {
+                min: 0, // Set minimum value
+                max: 200, // Set maximum value
+                title: {
+                  display: true,
+                  text: "Learning",
+                },
+              },
+            },
+          },
+        });
+      }
+
+      // Initialize the chart
+      updateChart();
+    </script>
   </body>
 </html>
