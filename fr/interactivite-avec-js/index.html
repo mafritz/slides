@@ -881,14 +881,14 @@
           if (teachingMethod === 0.5) {
             // Lecture
             C = 25;
-            Exponent = 0.2;
+            Exponent = 0.27;
           } else if (teachingMethod === 1) {
             // Interactive
-            C = 30;
-            Exponent = 0.35;
+            C = 35;
+            Exponent = 0.4;
           } else {
             // Project-Based
-            C = 35;
+            C = 45;
             Exponent = 0.55;
           }
         }
@@ -952,18 +952,24 @@
                 data: data,
                 pointBackgroundColor: "#970000", // point fill color
                 pointBorderColor: "#970000", // point border color
-                pointRadius: 5,
+                pointRadius: 3,
                 borderColor: "#970000",
                 tension: 0.4,
               },
             ],
           },
           options: {
-            legend: {
-              display: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
             },
+            responsive: true,
             scales: {
               x: {
+                min: 0,
+                max: 10,
+                step: 1,
                 type: "linear",
                 position: "bottom",
                 title: {
@@ -973,7 +979,7 @@
               },
               y: {
                 min: 0, // Set minimum value
-                max: 200, // Set maximum value
+                max: 300, // Set maximum value
                 title: {
                   display: true,
                   text: "Learning",
