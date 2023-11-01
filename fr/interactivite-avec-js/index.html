@@ -688,29 +688,59 @@
             });
         </script>
 
-        <!-- Déclencher une simulation -->
+        <!-- Pixellisation d'une image -->
         <section class="align-center">
-          <h3>Simulation d'une courbe</h3>
+          <h3>Interaction en continu</h3>
+          <canvas id="canvas" style="border: 1px solid #000"></canvas>
+          <div class="text-center">
+            Taille du pixel
+            <i class="fa fa-square fa-2x"></i>
+            <input
+              type="range"
+              id="pixel-slider"
+              min="1"
+              max="100"
+              value="1"
+              step="1"
+              style="width: 150px; transform: scale(1) !important"
+              onmousemove="pixelate()"
+            />
+            <i class="fa fa-square"></i>
+            <input
+              type="file"
+              id="file-input"
+              accept="image/*"
+              onchange="loadImage()"
+              style="display: none"
+            />
+            <button id="uploadButton" class="ml-2">
+              <i class="fa fa-upload"></i> Image
+            </button>
+          </div>
+        </section>
 
-          <label for="skillLevel">Niveau: </label>
-          <select id="skillLevel">
-            <option value="0.7">Bachelor</option>
-            <option value="3">Master</option>
-            <option value="6">PhD</option>
-          </select>
-          <label for="teachingMethod">Méthode: </label>
-          <select id="teachingMethod">
-            <option value="0.5">Lecture</option>
-            <option value="1">Interactive</option>
-            <option value="2">Project-Based</option>
-          </select>
-          <button onclick="updateChart()">Simuler</button>
-
-          <canvas id="learningCurveChart" width="400" height="180"></canvas>
-          <small
-            ><i class="fa fa-exclamation-triangle"></i> Cette courbe n'a aucune
-            validité empirique, c'est juste un exemple</small
-          >
+        <!-- Interaction avec la voix -->
+        <section class="align-center">
+          <h3>Interaction avec la voix</h3>
+          <!-- HTML -->
+          <p>
+            Click the microphone and say the name of one of these colors. It
+            will appear on screen!
+          </p>
+          <div class="d-flex space-evenly">
+            <i class="fa fa-circle fa-3x" style="color: red"></i>
+            <i class="fa fa-circle fa-3x" style="color: blue"></i>
+            <i class="fa fa-circle fa-3x" style="color: green"></i>
+            <i class="fa fa-circle fa-3x" style="color: orange"></i>
+            <i class="fa fa-circle fa-3x" style="color: purple"></i>
+          </div>
+          <div class="mt-2">
+            <button id="startButton">
+              <i class="fa fa-microphone"></i>
+              <span id="message">Say the color out loud</span>
+            </button>
+          </div>
+          <h4 id="output" class="pt-3"></h4>
         </section>
 
         <!-- Résumé -->
@@ -850,148 +880,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Chartjs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      let ctx = document.getElementById("learningCurveChart").getContext("2d");
-      let chart;
-
-      function calculatePerformance(skillLevel, teachingMethod, time) {
-        let C, Exponent;
-
-        // Low skill level
-        if (skillLevel === 0.7) {
-          if (teachingMethod === 0.5) {
-            // Lecture
-            C = 15; // Increase for a positive effect
-            Exponent = 0.2; // Increase for a positive effect
-          } else if (teachingMethod === 1) {
-            // Interactive
-            C = 5;
-            Exponent = -0.2; // Set to negative for a negative effect
-          } else {
-            // Project-Based
-            C = 5;
-            Exponent = -0.3; // Set to negative for a stronger negative effect
-          }
-        }
-
-        // Medium skill level
-        else if (skillLevel === 3) {
-          if (teachingMethod === 0.5) {
-            // Lecture
-            C = 25;
-            Exponent = 0.27;
-          } else if (teachingMethod === 1) {
-            // Interactive
-            C = 35;
-            Exponent = 0.4;
-          } else {
-            // Project-Based
-            C = 45;
-            Exponent = 0.55;
-          }
-        }
-
-        // High skill level
-        else {
-          if (teachingMethod === 0.5) {
-            // Lecture
-            C = 20;
-            Exponent = -0.15;
-          } else if (teachingMethod === 1) {
-            // Interactive
-            C = 40;
-            Exponent = 0.6;
-          } else {
-            // Project-Based
-            C = 50;
-            Exponent = 0.75;
-          }
-        }
-
-        if (time == 0 && skillLevel == 0.7) {
-          return 0;
-        } else if (time == 0 && skillLevel == 3) {
-          return 20;
-        } else if (time == 0 && skillLevel == 6) {
-          return 50;
-        }
-
-        return C * Math.pow(time, Exponent);
-      }
-
-      function updateChart() {
-        let skillLevel = parseFloat(
-          document.getElementById("skillLevel").value
-        );
-        let teachingMethod = parseFloat(
-          document.getElementById("teachingMethod").value
-        );
-
-        let data = [];
-        for (let time = 0; time <= 10; time++) {
-          let performance = calculatePerformance(
-            skillLevel,
-            teachingMethod,
-            time
-          );
-          data.push({ x: time, y: performance });
-        }
-
-        if (chart) {
-          chart.destroy();
-        }
-
-        chart = new Chart(ctx, {
-          type: "line",
-          data: {
-            datasets: [
-              {
-                label: "Learning Curve",
-                data: data,
-                pointBackgroundColor: "#970000", // point fill color
-                pointBorderColor: "#970000", // point border color
-                pointRadius: 3,
-                borderColor: "#970000",
-                tension: 0.4,
-              },
-            ],
-          },
-          options: {
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-            responsive: true,
-            scales: {
-              x: {
-                min: 0,
-                max: 10,
-                step: 1,
-                type: "linear",
-                position: "bottom",
-                title: {
-                  display: true,
-                  text: "Time",
-                },
-              },
-              y: {
-                min: 0, // Set minimum value
-                max: 300, // Set maximum value
-                title: {
-                  display: true,
-                  text: "Learning",
-                },
-              },
-            },
-          },
-        });
-      }
-
-      // Initialize the chart
-      updateChart();
-    </script>
+    <!-- Pixelate -->
+    <script src="./js/pixelate.js"></script>
+    <!-- Speech recognition -->
+    <script src="./js/speech-recognition.js"></script>
   </body>
 </html>
