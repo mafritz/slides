@@ -60,26 +60,34 @@ section.align-center {
 .reveal ul li {
   margin: 0em;
   margin-left: 0rem;
+  margin-right: 0.5rem;
 }
 
-.reveal ul li:before {
-  content: "\f054";
+.reveal ul li::before {
+  content: "\276F";
   color: #44546a;
-  font-family: "FontAwesome";
+  font-size: 0.9em;
   float: left;
   margin-left: -2rem;
+  margin-top: 0.3rem;
 }
 
-.reveal ul.times li:before {
-  font-family: "FontAwesome";
-  content: "\f057";
+.reveal ul.times li::before {
+  content: "\2716";
   color: #dd0000;
+  font-size: 0.9em;
+  float: left;
+  margin-left: -2rem;
+  margin-top: 0.3rem;
 }
 
-.reveal ul.check li:before {
-  font-family: "FontAwesome";
-  content: "\f058";
+.reveal ul.check li::before {
+  content: "\2714";
   color: #016121;
+  font-size: 0.9em;
+  float: left;
+  margin-left: -2rem;
+  margin-top: 0.3rem;
 }
 
 .reveal ul li.accent:before {
@@ -464,7 +472,7 @@ figure {
   --heading4-size: 1em;
   --code-font: monospace;
   --link-color: #970000;
-  --link-color-hover: #FF6F61;
+  --link-color-hover: #ff6f61;
   --selection-background-color: rgba(0, 0, 0, 0.99);
   --selection-color: #fff;
 }
@@ -717,7 +725,7 @@ figure {
 }
 
 .reveal a:hover {
-  color: #FF6F61;
+  color: #ff6f61;
   text-shadow: none;
   border: none;
 }
