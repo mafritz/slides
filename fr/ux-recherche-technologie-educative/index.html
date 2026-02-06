@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>
+      UX - Mesures et évaluation UX dans la recherche en technologie éducative
+    </title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://mafritz.ch/slides/assets/images/maf-favicon.svg"
+    />
+
+    <meta
+      name="description"
+      content="Présentation sur les mesures et l'évaluation UX dans la recherche en technologie éducative"
+    />
+    <meta name="author" content="Mattia A. Fritz" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/dist/reveal.css"
+    />
+    <link rel="stylesheet" href="../../assets/dist/theme/maf.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://mafritz.ch/slides/assets/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <img
+            class="r-stretch"
+            src="./images/ux-ed-tech-icon.svg"
+            alt="Test utilisateur"
+            title="Test utilisateur"
+          />
+          <h3>
+            Mesures et évaluation
+            <abbr title="User Experience">UX</abbr> en technologie éducative
+          </h3>
+          <p>
+            Mattia A. Fritz<br />
+            <small>TECFA, Université de Genève</small>
+          </p>
+        </section>
+
+        <!-- comment -->
+        <section>
+          <h3>Technologie éducative</h3>
+          <p>
+            <small>
+              La technologie éducative étudie et développe l'usage systématique
+              des procédés, théories et méthodes technologiques pour améliorer
+              l'enseignement, l'apprentissage et les systèmes éducatifs (Bates
+              & Bates, 2005 ; Weller, 2020).</small
+            >
+          </p>
+          <ul>
+            <li class="fragment">
+              Elle scénarise une interaction avec la technologie qui sous-tend
+              des processus d'apprentissage
+            </li>
+            <li class="fragment">
+              Elle défère à la technologie une partie ou l'ensemble du
+              <em>contrat pédagogique</em> (rapport effort/retour)
+            </li>
+            <li class="fragment">
+              <strong>
+                Elle part du principe que l'utilisation de la technologie est
+                instrumentale à l'apprentissage</strong
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Learning with interactivity and computation -->
+        <section class="align-center">
+          <h3>Avec une interface utilisateur</h3>
+          <img
+            src="./images/learning-interactivity-computation.png"
+            class="r-stretch"
+            alt="Schema apprentissage avec une interface utilisateur"
+            title="Schema apprentissage avec une interface utilisateur"
+          />
+          <small
+            >L'interface (1) numérise un processus cognitif, affectif ou social
+            de l'apprenant-e, (2) déclenche un traitement
+            <a href="https://edutechwiki.unige.ch/fr/algorithme"
+              >algorithmique</a
+            >
+            et (3)restitue un état reflétant l'évolution du contrat
+            pédagogique.</small
+          >
+        </section>
+
+        <!-- Merci -->
+        <section class="align-center">
+          <h3>Merci pour votre attention !</h3>
+          <div class="r-stretch">
+            <p>
+              Mattia A. Fritz<br />
+              <small>TECFA, Université de Genève</small>
+            </p>
+            <p>
+              <a href="mailto:mattia.fritz@unige.ch"
+                ><i class="fas fa-envelope fa-fw"></i
+              ></a>
+
+              <a href="https://mafritz.ch">
+                <i class="fas fa-link fa-fw"></i>
+              </a>
+
+              <a href="https://twitter.com/mattiafritz">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+
+              <a href="https://github.com/mafritz">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+
+              <a href="https://www.researchgate.net/profile/Mattia_Fritz">
+                <i class="fab fa-researchgate fa-fw"></i>
+              </a>
+            </p>
+          </div>
+          <div>
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              ><img
+                alt="Licence Creative Commons"
+                style="border-width: 0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a
+            ><br />
+            <small
+              >Présentation créée avec
+              <a href="https://revealjs.com/">Reveal.js</a>.</small
+            >
+          </div>
+        </section>
+
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="https://mafritz.ch/slides/assets/vendor/vuejs/vue.min.js"></script>
+
+    <script src="https://mafritz.ch/slides/assets/dist/reveal.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/zoom/zoom.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/notes/notes.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/search/search.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/markdown/markdown.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/highlight/highlight.js"></script>
+    <script src="https://mafritz.ch/slides/assets/plugin/math/math.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        hash: true,
+        slideNumber: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath,
+        ],
+      });
+    </script>
+    <!-- Fontawesome -->
+    <script src="../../assets/vendor/fontawesome/js/all.min.js"></script>
+  </body>
+</html>
