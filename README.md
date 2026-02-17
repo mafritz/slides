@@ -9,7 +9,7 @@ Some slides are interactive, allowing direct manipulation of content as a means 
 ### Thesis
 
 - **[Implementation and Assessment of a Multipurpose Appraisal-Driven
-Emotion Awareness Tool Based on Self-Report](./en/thesis/)** : slides used during the defense of my PhD thesis
+  Emotion Awareness Tool Based on Self-Report](./en/thesis/)** : slides used during the defense of my PhD thesis
 
 ## Slides en français
 
@@ -41,6 +41,7 @@ Slides en relation avec l'interaction personne machine, notamment l'expérience 
 - **[Prototypage Low-Fi](./fr/ux-prototypage-low-fi)** : illustration du prototypage _low-fidelity_ (prototype papier et _wireframes_)
 - **[Prototypage High-Fi](./fr/ux-prototypage-high-fi)** : illustration du prototypage _high-fidelity_ (layout et maquettes interactives)
 - **[Techniques d'évaluation en expérience utilisateur](./fr/ux-techniques-evaluation)** : présentation de différentes techniques d'évaluation dans le domaine UX (échelles, oculométrie, test A/B, test utilisateur)
+- **[Mesures et évaluation UX en technologie éducative](./fr/ux-recherche-technologie-educative/)** : présentation sur l'utilisation d'une approche UX pour évaluer des outils pédagogiques en technologie éducative
 
 ### Workshops
 
@@ -54,7 +55,7 @@ Workshops données au sein de l'Unité Technologies de Formation et Apprentissag
 
 #### Revues systématiques et méta-analyses
 
-- **[Workshop à l'intention d'étudiant-es dans un MAS en psychologie de la santé](https://github.com/mafritz/systematic-review-workshop-2023>)** : le lien pointe vers un dépôt GitHub avec les slides, mais également des activités à mener dans le cadre du workshop
+- **[Workshop à l'intention d'étudiant-es dans un MAS en psychologie de la santé](https://github.com/mafritz/systematic-review-workshop-2025)** : le lien pointe vers un dépôt GitHub avec les slides, mais également des activités à mener dans le cadre du workshop
 
 #### Pensée computationnelle pour les enseignant-es du cycle d'orientation
 
