@@ -69,5 +69,19 @@
 			"<img src=\"${1:url}\" class=\"r-stretch\" alt=\"${2:alt}\" title=\"${3:title}\" />"
 		],
 		"description": "Add an image with remaining height"
+	},
+	"Section slide":{
+		"prefix": ["slide-section"],
+		"body": [
+			"<!-- ${1:comment} -->",
+			"<section",
+			"class=\"align-center center text-white\"",
+			"data-background-color=\"#970000\"",
+			">",
+			"<h3><i class=\"fa-solid fa-toolbox\"></i> ${2:title}</h3>",
+			"<small>${3:description}</small>",
+			"</section>"
+		],
+		"description": "Add a new section slide"
 	}
 }
